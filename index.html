@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>לומדה – ניהול זמן | STEM מתמטיקה</title>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <!-- Fonts: local @font-face declarations live in css/style.css (offline-friendly). -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/time-management-widget.css">
   <link rel="stylesheet" href="css/weekend-widget.css">
@@ -23,12 +23,12 @@
 
     <!-- וידאו מלא-מסך ברקע (poster = הפריים הראשון) -->
     <!-- poster הוסר — play-btn-big.png מכסה הכל לפני ההפעלה, אין צורך ב-thumbnail נפרד -->
-    <video id="noa-video" class="screen-video" src="video/noa_intro.mp4"
+    <video id="noa-video" class="screen-video" src="assets/video/noa_intro.mp4"
            playsinline></video>
 
     <!-- תיבת טקסט עליונה — גלויה בכל המצבים (פיגמה: left:542, top:0) -->
     <div class="textbox1-wrap" id="textbox-s0">
-      <img class="textbox1-bg" src="img/textbox1-msg2.png" alt="">
+      <img class="textbox1-bg" src="assets/images/textbox1-msg2.png" alt="">
       <div class="textbox1-content">
         <p>נועה לומדת בכיתה ח׳ בבית הספר.</p>
         <p>בכל יום חול, אחרי שהיא חוזרת הביתה, יש לה בערך 5 שעות פנויות (שהן 300 דקות),</p>
@@ -38,18 +38,18 @@
 
     <!-- Play overlay מלא-מסך 1920×1080 (PlayBrn_Big מפיגמה) — נעלם בלחיצה -->
     <button id="play-btn-s0" class="play-btn-big" aria-label="התחל לומדה">
-      <img src="img/play-btn-big.png" alt="הפעל">
+      <img src="assets/images/play-btn-big.png" alt="הפעל">
     </button>
 
     <!-- טלפון + הודעה — מופיע אחרי סיום הוידאו -->
     <div id="frame1-phone" class="frame1-state hidden">
       <div class="phone-wrap">
-        <img class="phone-cats-img" src="img/phone-cats-msg2.png" alt="">
+        <img class="phone-cats-img" src="assets/images/phone-cats.png" alt="">
 
         <!-- הודעה 2 — מופיעה מיד עם סיום הוידאו (Message 1 הוסרה) -->
         <img id="notif-2"
              class="phone-notif-img notif-slide"
-             src="img/notification-msg2.png"
+             src="assets/images/notification-msg2.png"
              alt="4 שעות ו-21 דקות ביום">
 
       </div>
@@ -73,14 +73,14 @@
     <div id="alex-video-wrap">
 
       <!-- וידאו — ללא scale (פקדים גלויים לאורך כל הזמן) -->
-      <video id="alex-video" class="alex-video" src="video/Noa_Alex_Sub.mp4"
+      <video id="alex-video" class="alex-video" src="assets/video/Noa_Alex_Sub.mp4"
              controls playsinline webkit-playsinline></video>
 
     </div><!-- /alex-video-wrap -->
 
     <!-- תיבת טקסט עליונה — left:542, top:0 (פיגמה) -->
     <div class="textbox1-wrap textbox1-s2">
-      <img class="textbox1-bg" src="img/textbox1-frame2.png" alt="">
+      <img class="textbox1-bg" src="assets/images/textbox1-frame2.png" alt="">
       <div class="textbox1-content">
         <p>רגע לפני שסגרה את הטלפון, היא נתקלה בסרטון חדש של אלכס, יוצרת התוכן האהובה עליה.</p>
         <p>אלכס היא תלמידת תיכון שמשתפת סרטונים מהחיים שלה.</p>
@@ -90,7 +90,7 @@
 
     <!-- כפתור Play — left:316, top:585, w:198, h:202 (פיגמה מדויק) -->
     <button id="play-btn" class="play-btn" aria-label="הפעל סרטון">
-      <img src="img/btn-play.png" alt="הפעל">
+      <img src="assets/images/btn-play.png" alt="הפעל">
     </button>
 
     <button class="nav-btn prev-btn" onclick="goTo(0)" aria-label="חזרה"></button>
@@ -104,7 +104,7 @@
        רקע + שאלה + יישומון מקומי (TimeManagementWidget Container) + עזרה
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="2">
-    <img class="screen-bg" src="img/bg-frame3.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame3.png" alt="">
     <div class="dark-overlay"></div>
 
     <!-- כפתור עזרה — מצבים מנוהלים ע"י CSS + class is-open -->
@@ -126,7 +126,7 @@
 
       <!-- כרטיסיית תוכן -->
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
         <!-- פאנל שמאל: טקסט השאלה -->
         <div class="left-panel">
@@ -201,7 +201,7 @@
        רקע + שדות קלט + iframe + פידבק
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="3">
-    <img class="screen-bg" src="img/bg-frame4.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame4.png" alt="">
     <div class="dark-overlay"></div>
 
     <!-- כפתור עזרה -->
@@ -223,7 +223,7 @@
 
       <!-- רקע textbox2 — לוח לבן עגול, ללא פאנלים פנימיים -->
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2-f4.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2-f4.png" alt="">
       </div>
     </div>
 
@@ -236,7 +236,7 @@
       <div class="timers-list">
 
         <div class="timer-row">
-          <img class="clock-icon" src="img/clock-icon-f4.png" alt="">
+          <img class="clock-icon" src="assets/images/clock-icon-f4.png" alt="">
           <div class="timer-fields">
             <span class="timer-label"><strong>זמן חדר הכושר ברוטו</strong> <span class="lbl-normal">(20% מתוך 300)</span> =</span>
             <input type="number" id="timer1" class="timer-input" min="0" max="999" placeholder="?">
@@ -245,7 +245,7 @@
         </div>
 
         <div class="timer-row">
-          <img class="clock-icon" src="img/clock-icon-f4.png" alt="">
+          <img class="clock-icon" src="assets/images/clock-icon-f4.png" alt="">
           <div class="timer-fields">
             <span class="timer-label"><strong>זמן האימון נטו</strong> <span class="lbl-normal">(בלי זמן ההגעה והחזרה)</span> =</span>
             <input type="number" id="timer2" class="timer-input" min="0" max="999" placeholder="?">
@@ -254,7 +254,7 @@
         </div>
 
         <div class="timer-row">
-          <img class="clock-icon" src="img/clock-icon-f4.png" alt="">
+          <img class="clock-icon" src="assets/images/clock-icon-f4.png" alt="">
           <div class="timer-fields">
             <span class="timer-label"><strong>מקסימום זמן מסך</strong> <span class="lbl-normal">(35% מתוך 300)</span> =</span>
             <input type="number" id="timer3" class="timer-input" min="0" max="999" placeholder="?">
@@ -281,7 +281,7 @@
 
     <!-- פידבק: תשובה נכונה -->
     <div id="feedback-correct" class="feedback-panel hidden">
-      <img class="feedback-bg-img" src="img/feedback-bg-q1-correct.png" alt="">
+      <img class="feedback-bg-img" src="assets/images/feedback-bg-q1-correct.png" alt="">
       <div class="feedback-text">
         <p class="feedback-title correct-title">צדקת! </p>
         <p>זמן חדר הכושר ברוטו הוא 20% מתוך 300 דקות.</p>
@@ -300,7 +300,7 @@
 
     <!-- פידבק: תשובה שגויה -->
     <div id="feedback-incorrect" class="feedback-panel hidden">
-      <img class="feedback-bg-img" src="img/feedback-bg-q1-incorrect.png" alt="">
+      <img class="feedback-bg-img" src="assets/images/feedback-bg-q1-incorrect.png" alt="">
       <div class="feedback-text">
         <p class="feedback-title incorrect-title">זו טעות</p>
         <p>זמן חדר הכושר ברוטו הוא 20% מתוך 300 דקות.</p>
@@ -328,7 +328,7 @@
        (אין iframe — פאנל ימין תמיד גלוי ברמת מסך)
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="4">
-    <img class="screen-bg" src="img/bg-frame5.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame5.png" alt="">
     <div class="dark-overlay"></div>
 
     <!-- כפתור עזרה — מחובר ל-popup נפרד לשאלה 2 -->
@@ -350,7 +350,7 @@
 
       <!-- כרטיסיית תוכן -->
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
         <!-- פאנל שמאל: שאלה + טיימר יחיד + פידבק (מוסתר עד תשובה) -->
         <div class="left-panel left-panel-q4">
@@ -362,7 +362,7 @@
           <!-- שדה טיימר יחיד -->
           <div class="timers-list">
             <div class="timer-row">
-              <img class="clock-icon" src="img/clock-icon.png" alt="">
+              <img class="clock-icon" src="assets/images/clock-icon.png" alt="">
               <div class="timer-fields">
                 <span class="timer-label">פרק בסדרה =</span>
                 <input type="number" id="timer-s4" class="timer-input" min="0" max="999" placeholder="?">
@@ -405,7 +405,7 @@
       <div class="s4-tv-box">
         <p class="s4-tv-title">105 דקות של זמן מסך:</p>
         <div class="s4-tv-visual">
-          <img class="s4-tv-img" src="img/tv-time.png" alt="">
+          <img class="s4-tv-img" src="assets/images/tv-time.png" alt="">
           <span class="s4-tv-label s4-tv-40">40%</span>
           <span class="s4-tv-label s4-tv-rest">השאר</span>
         </div>
@@ -494,11 +494,11 @@
        הודעות WhatsApp של אופרי — float-in אחת אחת
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="5">
-    <img class="screen-bg" src="img/bg-frame6.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame6.png" alt="">
 
     <!-- תיבת טקסט עליונה — full-canvas 1920×1080, overflow-clipped לאזור (542,0)–(1920,209) -->
     <div class="f6-textbox1">
-      <img src="img/textbox1-frame6.png" alt="">
+      <img src="assets/images/textbox1-frame6.png" alt="">
     </div>
 
     <!-- טקסט header — Figma node 120:448-449: right:0, top:0, h:163px, px:50px -->
@@ -512,21 +512,21 @@
 
     <!-- טלפון של אופרי — full-canvas 1920×1080, overflow-clipped לאזור (139,225)–(741,1080) -->
     <div class="f6-phone">
-      <img src="img/ofri-phone.png" alt="">
+      <img src="assets/images/ofri-phone.png" alt="">
     </div>
 
     <!-- הודעות WhatsApp — containers עם overflow:hidden, מוסתרות בהתחלה, float-in בתורה -->
     <div id="ofri-m1" class="ofri-msg ofri-m1 hidden">
-      <img src="img/ofri-m1.png" alt="הודעה 1">
+      <img src="assets/images/ofri-m1.png" alt="הודעה 1">
     </div>
     <div id="ofri-m2" class="ofri-msg ofri-m2 hidden">
-      <img src="img/ofri-m2.png" alt="הודעה 2">
+      <img src="assets/images/ofri-m2.png" alt="הודעה 2">
     </div>
     <div id="ofri-m3" class="ofri-msg ofri-m3 hidden">
-      <img src="img/ofri-m3.png" alt="הודעה 3">
+      <img src="assets/images/ofri-m3.png" alt="הודעה 3">
     </div>
     <div id="ofri-m4" class="ofri-msg ofri-m4 hidden">
-      <img src="img/ofri-m4.png" alt="הודעה 4">
+      <img src="assets/images/ofri-m4.png" alt="הודעה 4">
     </div>
 
     <!-- שני כפתורי ניווט: next (שמאל) + prev (ימין) -->
@@ -540,7 +540,7 @@
        שאלה 3א: האם "40% מתוך 35%" הוא חישוב נכון?
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="6">
-    <img class="screen-bg" src="img/bg-frame7.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame7.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s6" class="help-btn" data-popup="help-popup-s6" aria-label="עזרה"></button>
@@ -558,7 +558,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2-q3.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2-q3.png" alt="">
 
         <div class="left-panel left-panel-q3">
           <div>
@@ -572,15 +572,15 @@
           <div class="radio-group">
             <div class="radio-option" id="s6-radio-yes" onclick="radioClick('s6','yes')">
               <span class="radio-label" id="s6-label-yes">נכון</span>
-              <div class="radio-icon-wrap"><img id="s6-icon-yes" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s6-icon-yes" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s6-radio-no" onclick="radioClick('s6','no')">
               <span class="radio-label" id="s6-label-no">לא נכון</span>
-              <div class="radio-icon-wrap"><img id="s6-icon-no" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s6-icon-no" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s6-radio-dontknow" onclick="radioClick('s6','dontknow')">
               <span class="radio-label" id="s6-label-dontknow">לא ניתן לדעת</span>
-              <div class="radio-icon-wrap"><img id="s6-icon-dontknow" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s6-icon-dontknow" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
 
@@ -609,7 +609,7 @@
         <p class="q3-tv-title">300 דקות:</p>
         <div class="q3-tv-visual">
           <div class="q3-tv-img-wrap">
-            <img class="q3-tv-img" src="img/tv-time-q3.png" alt="">
+            <img class="q3-tv-img" src="assets/images/tv-time-q3.png" alt="">
           </div>
           <span class="q3-tv-label q3-tv-rest-top">השאר</span>
           <span class="q3-tv-label q3-tv-35">35%</span>
@@ -638,7 +638,7 @@
        שאלה 3ב: האם "40% מזמן המסך = 40% מהזמן הפנוי"?
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="7">
-    <img class="screen-bg" src="img/bg-frame8.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame8.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s7" class="help-btn" data-popup="help-popup-s7" aria-label="עזרה"></button>
@@ -656,7 +656,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2-q3.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2-q3.png" alt="">
 
         <div class="left-panel left-panel-q3">
           <div>
@@ -668,15 +668,15 @@
           <div class="radio-group">
             <div class="radio-option" id="s7-radio-yes" onclick="radioClick('s7','yes')">
               <span class="radio-label" id="s7-label-yes">נכון</span>
-              <div class="radio-icon-wrap"><img id="s7-icon-yes" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s7-icon-yes" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s7-radio-no" onclick="radioClick('s7','no')">
               <span class="radio-label" id="s7-label-no">לא נכון</span>
-              <div class="radio-icon-wrap"><img id="s7-icon-no" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s7-icon-no" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s7-radio-dontknow" onclick="radioClick('s7','dontknow')">
               <span class="radio-label" id="s7-label-dontknow">לא ניתן לדעת</span>
-              <div class="radio-icon-wrap"><img id="s7-icon-dontknow" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s7-icon-dontknow" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
 
@@ -705,7 +705,7 @@
         <p class="q3-tv-title">300 דקות:</p>
         <div class="q3-tv-visual">
           <div class="q3-tv-img-wrap">
-            <img class="q3-tv-img" src="img/tv-time-q3.png" alt="">
+            <img class="q3-tv-img" src="assets/images/tv-time-q3.png" alt="">
           </div>
           <span class="q3-tv-label q3-tv-rest-top">השאר</span>
           <span class="q3-tv-label q3-tv-35">35%</span>
@@ -734,10 +734,10 @@
        נועה כמעט שכחה — התראת לוח שנה מופיעה
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="8">
-    <img class="screen-bg" src="img/bg-frame9.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame9.png" alt="">
 
     <div class="f9-textbox1">
-      <img src="img/textbox1-frame9.png" alt="">
+      <img src="assets/images/textbox1-frame9.png" alt="">
     </div>
 
     <div class="f6-header-text">
@@ -748,11 +748,11 @@
     </div>
 
     <div class="f9-phone">
-      <img src="img/phone-frame9.png" alt="">
+      <img src="assets/images/phone-frame9.png" alt="">
     </div>
 
     <div id="f9-m1" class="f9-m1 hidden">
-      <img src="img/m1-frame9.png" alt="">
+      <img src="assets/images/m1-frame9.png" alt="">
       <div class="f9-m1-text">
         <p class="f9-m1-title">לוח שנה</p>
         <p class="f9-m1-body">תזכורת - תור לרופא שיניים!</p>
@@ -768,7 +768,7 @@
        שאלה 4: חדר כושר (60 ד') = כמה % מ-210 ד' פנויות?
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="9">
-    <img class="screen-bg" src="img/bg-frame10.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame10.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s9" class="help-btn" data-popup="help-popup-s9" aria-label="עזרה"></button>
@@ -786,7 +786,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2-q3.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2-q3.png" alt="">
 
         <div class="left-panel left-panel-f10">
           <div>
@@ -799,19 +799,19 @@
           <div class="radio-group">
             <div class="radio-option" id="s9-radio-a" onclick="radioClick('s9','a')">
               <span class="radio-label" id="s9-label-a">כ-15.5%</span>
-              <div class="radio-icon-wrap"><img id="s9-icon-a" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s9-icon-a" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s9-radio-b" onclick="radioClick('s9','b')">
               <span class="radio-label" id="s9-label-b">כ-20.5%</span>
-              <div class="radio-icon-wrap"><img id="s9-icon-b" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s9-icon-b" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s9-radio-c" onclick="radioClick('s9','c')">
               <span class="radio-label" id="s9-label-c">כ-28.5%</span>
-              <div class="radio-icon-wrap"><img id="s9-icon-c" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s9-icon-c" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s9-radio-d" onclick="radioClick('s9','d')">
               <span class="radio-label" id="s9-label-d">כ-35.5%</span>
-              <div class="radio-icon-wrap"><img id="s9-icon-d" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s9-icon-d" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
 
@@ -847,10 +847,10 @@
        נועה מתרגלת ומתכוננת למבחן
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="10">
-    <img class="screen-bg" src="img/bg-frame11.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame11.png" alt="">
 
     <div class="f6-textbox1">
-      <img src="img/textbox1-frame11.png" alt="">
+      <img src="assets/images/textbox1-frame11.png" alt="">
     </div>
 
     <div class="f6-header-text">
@@ -870,7 +870,7 @@
        תשובה נכונה: 400 (60 נטו + 20 הליכה = 80 ברוטו = 20% × 400)
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="11">
-    <img class="screen-bg" src="img/bg-frame12.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame12.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s11" class="help-btn" data-popup="help-popup-s11" aria-label="עזרה"></button>
@@ -889,7 +889,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
         <!-- פאנל שמאל: שאלה + שדה קלט -->
         <div class="left-panel left-panel-q5a">
@@ -931,7 +931,7 @@
 
           <!-- תמונת הגרף (חיתוך מתוך 1920×1080) -->
           <div class="graph-img-container">
-            <img class="graph-full-img" src="img/graph-q5.png" alt="גרף">
+            <img class="graph-full-img" src="assets/images/graph-q5.png" alt="גרף">
           </div>
 
           <!-- תוויות ציר -->
@@ -943,7 +943,7 @@
 
           <!-- כפתור זום — חלק מהיחידה המוגדלת -->
           <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card')" aria-label="הגדל/הקטן גרף">
-            <img src="img/btn-zoom-in.png" alt="">
+            <img src="assets/images/btn-zoom-in.png" alt="">
           </button>
 
           <!-- קווי הטלה לצירים — מנוהלים ע"י JS בזמן ריחוף על נקודה -->
@@ -954,68 +954,68 @@
                data-cx/cy = מרכז הנקודה בפיקסלים; left/top = פינה שמאל-עליון (28×26) -->
           <!-- data-cx/cy = מרכז הנקודה (left+14, top+13) לחישוב קווי ההטלה -->
           <div class="gp" data-cx="135" data-cy="416" style="left:121px;top:403px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(10 ,50)</span>
           </div>
           <div class="gp" data-cx="180" data-cy="369" style="left:166px;top:356px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(20 ,100)</span>
           </div>
           <div class="gp" data-cx="225" data-cy="319" style="left:211px;top:306px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(30 ,150)</span>
           </div>
           <div class="gp" data-cx="270" data-cy="272" style="left:256px;top:259px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(40 ,200)</span>
           </div>
           <div class="gp" data-cx="315" data-cy="221" style="left:301px;top:208px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(50 ,250)</span>
           </div>
           <div class="gp" data-cx="360" data-cy="174" style="left:346px;top:161px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(60 ,300)</span>
           </div>
           <div class="gp" data-cx="405" data-cy="125" style="left:391px;top:112px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(70 ,350)</span>
           </div>
           <!-- הנקודה (80,400) היא התשובה לשאלה — data-answer="true" -->
           <div class="gp" data-cx="451" data-cy="77" data-answer="true" style="left:437px;top:64px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(80 ,400)</span>
           </div>
 
@@ -1025,7 +1025,7 @@
 
     <!-- ══ כדור כחול + טקסט הסבר (מחוץ לפאנלים — ברמת מסך) ══
          Figma dot: left:1079, top:605 | text: visual-left≈473, top:593, w≈591 -->
-    <img class="s11-dot-bullet" src="img/dot-blue-q5.svg" alt="">
+    <img class="s11-dot-bullet" src="assets/images/dot-blue-q5.svg" alt="">
     <div class="s11-graph-note">
       <p>כל נקודה על הקו מייצגת זוג סדור שמתאים לשיטה: </p>
       <p>כמה דקות מוקדשות לחדר הכושר (כולל 20 דקות הליכה),</p>
@@ -1078,7 +1078,7 @@
        תשובה נכונה: 50 דקות נטו (70 ברוטו − 20 הליכה)
   ═══════════════════════════════════════════════════════════ -->
   <section class="screen" data-screen="12">
-    <img class="screen-bg" src="img/bg-frame12.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame12.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s12" class="help-btn" data-popup="help-popup-s12" aria-label="עזרה"></button>
@@ -1097,7 +1097,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
         <!-- פאנל שמאל: שאלה + שדה קלט -->
         <div class="left-panel left-panel-q5a">
@@ -1137,7 +1137,7 @@
 
           <!-- תמונת הגרף -->
           <div class="graph-img-container">
-            <img class="graph-full-img" src="img/graph-q5.png" alt="גרף">
+            <img class="graph-full-img" src="assets/images/graph-q5.png" alt="גרף">
           </div>
 
           <!-- תוויות ציר -->
@@ -1149,7 +1149,7 @@
 
           <!-- כפתור זום -->
           <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card-s12')" aria-label="הגדל/הקטן גרף">
-            <img src="img/btn-zoom-in.png" alt="">
+            <img src="assets/images/btn-zoom-in.png" alt="">
           </button>
 
           <!-- קווי הטלה -->
@@ -1158,68 +1158,68 @@
 
           <!-- נקודות נתונים — זהות ל-Q5A, אך data-answer="true" על (70,350) -->
           <div class="gp" data-cx="135" data-cy="416" style="left:121px;top:403px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(10 ,50)</span>
           </div>
           <div class="gp" data-cx="180" data-cy="369" style="left:166px;top:356px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(20 ,100)</span>
           </div>
           <div class="gp" data-cx="225" data-cy="319" style="left:211px;top:306px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(30 ,150)</span>
           </div>
           <div class="gp" data-cx="270" data-cy="272" style="left:256px;top:259px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(40 ,200)</span>
           </div>
           <div class="gp" data-cx="315" data-cy="221" style="left:301px;top:208px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(50 ,250)</span>
           </div>
           <div class="gp" data-cx="360" data-cy="174" style="left:346px;top:161px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(60 ,300)</span>
           </div>
           <!-- הנקודה (70,350) היא התשובה לשאלה 5ב — data-answer="true" -->
           <div class="gp" data-cx="405" data-cy="125" data-answer="true" style="left:391px;top:112px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(70 ,350)</span>
           </div>
           <div class="gp" data-cx="451" data-cy="77" style="left:437px;top:64px;">
-            <img class="gp-n"  src="img/gp-dot-normal.svg"    alt="">
-            <img class="gp-h"  src="img/gp-dot-hover.svg"     alt="">
-            <img class="gp-s"  src="img/gp-dot-selected.svg"  alt="">
-            <img class="gp-ck" src="img/gp-icon-correct.svg"  alt="">
-            <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+            <img class="gp-n"  src="assets/images/gp-dot-normal.svg"    alt="">
+            <img class="gp-h"  src="assets/images/gp-dot-hover.svg"     alt="">
+            <img class="gp-s"  src="assets/images/gp-dot-selected.svg"  alt="">
+            <img class="gp-ck" src="assets/images/gp-icon-correct.svg"  alt="">
+            <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
             <span class="gp-lbl">(80 ,400)</span>
           </div>
 
@@ -1228,7 +1228,7 @@
     </div><!-- /s11-right-panel -->
 
     <!-- ══ כדור כחול + טקסט הסבר ══ -->
-    <img class="s11-dot-bullet" src="img/dot-blue-q5.svg" alt="">
+    <img class="s11-dot-bullet" src="assets/images/dot-blue-q5.svg" alt="">
     <div class="s11-graph-note">
       <p>כל נקודה על הקו מייצגת זוג סדור שמתאים לשיטה: </p>
       <p>כמה דקות מוקדשות לחדר הכושר (כולל 20 דקות הליכה),</p>
@@ -1274,7 +1274,7 @@
        תשובות נכונות: (10,50) ו-(20,100)
   ═══════════════════════════════════════════════════════════ -->
   <section class="screen" data-screen="13">
-    <img class="screen-bg" src="img/bg-frame13.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame13.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s13" class="help-btn" data-popup="help-popup-s13" aria-label="עזרה"></button>
@@ -1292,7 +1292,7 @@
         <span class="crumb" data-q="1">1</span>
       </nav>
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
       </div>
     </div>
 
@@ -1311,7 +1311,7 @@
         <!-- הסבר בכחול — גלוי רק כשגרף לצדו.
              wrapper מכיל גם את הכדור הכחול (Ellipse 3 מפיגמה: left:606, top:12 בתוך frame רוחב 621px) -->
         <div class="s13-note-wrapper">
-          <img class="s13-dot-bullet" src="img/dot-blue-q5.svg" alt="">
+          <img class="s13-dot-bullet" src="assets/images/dot-blue-q5.svg" alt="">
           <div class="s13-note-text">
             <p>כל נקודה על הקו מייצגת זוג סדור שמתאים לשיטה: </p>
             <p>כמה דקות מוקדשות לחדר הכושר (כולל 20 דקות הליכה),</p>
@@ -1325,7 +1325,7 @@
 
             <!-- תמונת הגרף -->
             <div class="graph-img-container">
-              <img class="graph-full-img" src="img/graph-q5.png" alt="גרף">
+              <img class="graph-full-img" src="assets/images/graph-q5.png" alt="גרף">
             </div>
 
             <!-- תוויות ציר -->
@@ -1337,7 +1337,7 @@
 
             <!-- כפתור זום -->
             <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card-s13')" aria-label="הגדל/הקטן גרף">
-              <img src="img/btn-zoom-in.png" alt="">
+              <img src="assets/images/btn-zoom-in.png" alt="">
             </button>
 
             <!-- קווי הטלה -->
@@ -1347,74 +1347,74 @@
             <!-- נקודות נתונים — s13-gp (multi-select, 2 correct: (20,100) ו-(10,50)) -->
             <!-- (80,400) -->
             <div class="s13-gp gp" data-cx="450" data-cy="74" style="left:440px;top:64px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(80 ,400)</span>
             </div>
             <!-- (70,350) -->
             <div class="s13-gp gp" data-cx="405" data-cy="124" style="left:398px;top:110px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(70 ,350)</span>
             </div>
             <!-- (60,300) -->
             <div class="s13-gp gp" data-cx="360" data-cy="174" style="left:350px;top:163px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(60 ,300)</span>
             </div>
             <!-- (50,250) -->
             <div class="s13-gp gp" data-cx="315" data-cy="221" style="left:305px;top:214px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(50 ,250)</span>
             </div>
             <!-- (40,200) -->
             <div class="s13-gp gp" data-cx="270" data-cy="272" style="left:261px;top:262px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(40 ,200)</span>
             </div>
             <!-- (30,150) -->
             <div class="s13-gp gp" data-cx="225" data-cy="319" style="left:215px;top:310px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(30 ,150)</span>
             </div>
             <!-- (20,100) — CORRECT ANSWER -->
             <div class="s13-gp gp" data-cx="180" data-cy="369" data-answer="true" style="left:169px;top:358px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(20 ,100)</span>
             </div>
             <!-- (10,50) — CORRECT ANSWER -->
             <div class="s13-gp gp" data-cx="135" data-cy="416" data-answer="true" style="left:123px;top:406px;">
-              <img class="gp-n"  src="img/gp-dot-normal.svg"     alt="">
-              <img class="gp-h"  src="img/gp-dot-hover.svg"      alt="">
-              <img class="gp-s"  src="img/gp-dot-selected.svg"   alt="">
-              <img class="gp-ck" src="img/gp-icon-correct.svg"   alt="">
-              <img class="gp-xk" src="img/gp-icon-incorrect.svg" alt="">
+              <img class="gp-n"  src="assets/images/gp-dot-normal.svg"     alt="">
+              <img class="gp-h"  src="assets/images/gp-dot-hover.svg"      alt="">
+              <img class="gp-s"  src="assets/images/gp-dot-selected.svg"   alt="">
+              <img class="gp-ck" src="assets/images/gp-icon-correct.svg"   alt="">
+              <img class="gp-xk" src="assets/images/gp-icon-incorrect.svg" alt="">
               <span class="gp-lbl">(10 ,50)</span>
             </div>
 
@@ -1461,10 +1461,10 @@
        SCREEN 14 — Frame 15: narrative — נועה נחה אחרי המבחן
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="14">
-    <img class="screen-bg" src="img/bg-frame14.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame14.png" alt="">
 
     <div class="f6-textbox1">
-      <img src="img/textbox1.png" alt="">
+      <img src="assets/images/textbox1.png" alt="">
     </div>
 
     <div class="f6-header-text">
@@ -1483,7 +1483,7 @@
        תשובה נכונה: c (126 דקות)
   ═══════════════════════════════════════════════════════════ -->
   <section class="screen" data-screen="15">
-    <img class="screen-bg" src="img/bg-frame15.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame15.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s15" class="help-btn" data-popup="help-popup-s15" aria-label="עזרה"></button>
@@ -1501,7 +1501,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
         <div class="left-panel left-panel-f10">
           <div>
@@ -1513,19 +1513,19 @@
           <div class="radio-group">
             <div class="radio-option" id="s15-radio-a" onclick="radioClick('s15','a')">
               <span class="radio-label" id="s15-label-a">120 דקות</span>
-              <div class="radio-icon-wrap"><img id="s15-icon-a" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s15-icon-a" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s15-radio-b" onclick="radioClick('s15','b')">
               <span class="radio-label" id="s15-label-b">125 דקות</span>
-              <div class="radio-icon-wrap"><img id="s15-icon-b" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s15-icon-b" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s15-radio-c" onclick="radioClick('s15','c')">
               <span class="radio-label" id="s15-label-c">126 דקות</span>
-              <div class="radio-icon-wrap"><img id="s15-icon-c" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s15-icon-c" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s15-radio-d" onclick="radioClick('s15','d')">
               <span class="radio-label" id="s15-label-d">230 דקות</span>
-              <div class="radio-icon-wrap"><img id="s15-icon-d" src="img/radio-normal.svg" alt="" class="radio-icon-img"></div>
+              <div class="radio-icon-wrap"><img id="s15-icon-d" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
 
@@ -1572,7 +1572,7 @@
        אין submit — שאלת חקירה חופשית
   ═══════════════════════════════════════════════════════════ -->
   <section class="screen" data-screen="16">
-    <img class="screen-bg" src="img/bg-frame16.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame16.png" alt="">
     <div class="dark-overlay"></div>
 
     <div class="content-area">
@@ -1588,7 +1588,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
         <!-- פאנל שמאל: שאלה -->
         <div class="left-panel">
@@ -1661,7 +1661,7 @@
        dropdown1: "35%", dropdown2: "לא משתנה"
   ═══════════════════════════════════════════════════════════ -->
   <section class="screen" data-screen="17">
-    <img class="screen-bg" src="img/bg-frame17.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame17.png" alt="">
     <div class="dark-overlay"></div>
 
     <button id="help-btn-s17" class="help-btn" data-popup="help-popup-s17" aria-label="עזרה"></button>
@@ -1679,7 +1679,7 @@
       </nav>
 
       <div class="content-card">
-        <img class="textbox2-bg" src="img/textbox2.png" alt="">
+        <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
         <!-- פאנל שמאל: שאלה + fill-in dropdowns -->
         <div class="left-panel left-panel-f10 s17-left-panel">
@@ -1702,7 +1702,7 @@
                         onclick="toggleDropdownMenu(17, 1)" aria-haspopup="listbox"
                         aria-expanded="false" type="button">
                   <span id="dd1-value" class="s17-dd-value">בחרו תשובה</span>
-                  <img src="img/chevron-down.svg" class="s17-dd-chevron" alt="">
+                  <img src="assets/images/chevron-down.svg" class="s17-dd-chevron" alt="">
                 </button>
                 <ul class="s17-dropdown-list hidden" id="dd1-list" role="listbox">
                   <li onclick="selectDropdown(17,1,'35%')">35%</li>
@@ -1723,7 +1723,7 @@
                         onclick="toggleDropdownMenu(17, 2)" aria-haspopup="listbox"
                         aria-expanded="false" type="button">
                   <span id="dd2-value" class="s17-dd-value">בחרו תשובה</span>
-                  <img src="img/chevron-down.svg" class="s17-dd-chevron" alt="">
+                  <img src="assets/images/chevron-down.svg" class="s17-dd-chevron" alt="">
                 </button>
                 <ul class="s17-dropdown-list hidden" id="dd2-list" role="listbox">
                   <li onclick="selectDropdown(17,2,'גדל')">גדל</li>
@@ -1790,7 +1790,7 @@
          Figma: node 141:1740, bottom:0, left:calc(50%-266.75px)=693px, 444×715
          overflow:hidden clips the full character image to the visible portrait -->
     <div class="s17-noa-wrap">
-      <img class="s17-noa-img" src="img/noa-character-s17.png" alt="נועה">
+      <img class="s17-noa-img" src="assets/images/noa-character-s17.png" alt="נועה">
     </div>
 
     <button class="nav-btn prev-btn" onclick="goTo(16)" aria-label="חזרה"></button>
@@ -1802,10 +1802,10 @@
        נועה מסיימת — סיכום ו-"סיימתי"
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="18">
-    <img class="screen-bg" src="img/bg-frame18.png" alt="">
+    <img class="screen-bg" src="assets/images/bg-frame18.png" alt="">
 
     <div class="f6-textbox1">
-      <img src="img/textbox1.png" alt="">
+      <img src="assets/images/textbox1.png" alt="">
     </div>
 
     <div class="f6-header-text">
@@ -1830,7 +1830,7 @@
     <div id="s18-completion-overlay" class="s18-completion-overlay hidden"
          role="dialog" aria-modal="true" aria-label="משימה הושלמה">
       <div class="s18-completion-modal">
-        <img class="s18-modal-bg" src="img/textbox3.png" alt="">
+        <img class="s18-modal-bg" src="assets/images/textbox3.png" alt="">
         <div class="s18-modal-text">
           <p class="s18-modal-title">כל הכבוד, המשימה הושלמה!</p>
           <p class="s18-modal-grade">הציון שלך הוא <span id="user-grade-display">--</span>.</p>

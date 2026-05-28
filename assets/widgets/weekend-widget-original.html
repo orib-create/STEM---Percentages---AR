@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתגר סוף השבוע של נועה - ממוקד אחוזים וגילוי</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: space-between;
+            background-color: #8e44ad;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .score-item span { color: #f1c40f; margin-right: 5px; }
+
+        .info-box {
+            background-color: #fef9e7;
+            border-right: 4px solid #f1c40f;
+            padding: 12px;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            line-height: 1.5;
+        }
+
+        .slider-container {
+            background-color: #f3e5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+            border: 1px solid #e1bee7;
+        }
+
+        .slider-container label {
+            font-weight: bold;
+            color: #8e44ad;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+            margin-bottom: 15px;
+        }
+
+        input[type=range]:focus { outline: none; }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #d1c4e9;
+            border-radius: 4px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #8e44ad;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .percent-display {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .input-group input:focus {
+            border-color: #8e44ad;
+            outline: none;
+        }
+
+        .input-group input:disabled {
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .highlight-input {
+            background-color: #e8f8f5 !important;
+            border-color: #1abc9c !important;
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px !important;
+        }
+
+        .btn-check {
+            width: 100%;
+            padding: 14px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-check:hover { background-color: #219653; }
+        .btn-check:disabled { background-color: #95a5a6; cursor: not-allowed; }
+
+        .btn-restart {
+            width: 100%;
+            padding: 14px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .btn-restart:hover { background-color: #d35400; }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            font-size: 16px;
+        }
+
+        .feedback.error { background-color: #fadbd8; color: #c0392b; border: 1px solid #e74c3c; }
+        .feedback.success { background-color: #d5f5e3; color: #27ae60; border: 1px solid #2ecc71; }
+        .feedback.finished {
+            background-color: #fdf2e9;
+            color: #d35400;
+            border: 2px solid #e67e22;
+            font-size: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>אתגר סוף השבוע</h1>
+    <div class="subtitle">חוקיות ההגדלה וההקטנה</div>
+
+    <div class="scoreboard">
+        <div class="score-item">ניסיונות: <span id="attemptsVal">0</span> מתוך 5</div>
+        <div class="score-item">הצלחות: <span id="successesVal">0</span></div>
+    </div>
+
+    <div class="info-box">
+        <b>תזכורת:</b> ביום רגיל יש לנועה <b>300 דקות פנויות</b>, ומתוכן היא מקדישה <b>105 דקות למסכים</b> (שהם 35%). בסוף השבוע, גם הזמן הפנוי וגם זמן המסך שלה גדלים!
+    </div>
+
+    <div class="slider-container">
+        <label>בחרו בכמה אחוזים תרצו להגדיל את הזמן הפנוי של נועה:</label>
+        <input type="range" id="percSlider" min="20" max="100" step="20" value="40">
+        <div class="percent-display">הגדלה של: <span id="percDisplayVal">40</span>%</div>
+    </div>
+
+    <div class="input-group" id="inputsArea">
+        <label>1. הזמן הפנוי החדש (מחושב אוטומטית):</label>
+        <input type="number" id="newTotalInput" disabled>
+
+        <label style="margin-top: 15px;">2. זמן המסך החדש (מחושב אוטומטית):</label>
+        <input type="number" id="newScreenInput" disabled>
+
+        <label style="margin-top: 15px; color:#16a085;">3. האחוז החדש מהשלם:</label>
+        <div style="font-size:12px; color:#16a085; margin-bottom:5px;">חשבו: איזה אחוז מהווה זמן המסך החדש מתוך הזמן הפנוי החדש?</div>
+        <input type="number" id="finalPercInput" class="highlight-input" placeholder="הקלידו אחוז סופי (%)">
+    </div>
+
+    <button class="btn-check" id="checkBtn" onclick="checkAnswers()">בדקו את תשובותיכם</button>
+    <button class="btn-restart" id="restartBtn" onclick="restartGame()">התחל משחק מחדש</button>
+
+    <div id="feedbackBox" class="feedback"></div>
+
+</div>
+
+<script>
+    let attempts = 0;
+    let successes = 0;
+    const MAX_ATTEMPTS = 5;
+    let isFinished = false;
+    let hasAnsweredCurrentPercent = false;
+
+    const slider = document.getElementById('percSlider');
+    const percDisplayVal = document.getElementById('percDisplayVal');
+    const newTotalInput = document.getElementById('newTotalInput');
+    const newScreenInput = document.getElementById('newScreenInput');
+    const finalPercInput = document.getElementById('finalPercInput');
+    const feedbackBox = document.getElementById('feedbackBox');
+    const checkBtn = document.getElementById('checkBtn');
+    const restartBtn = document.getElementById('restartBtn');
+
+    const attemptsDisplay = document.getElementById('attemptsVal');
+    const successesDisplay = document.getElementById('successesVal');
+
+    const BASE_TOTAL = 300;
+    const BASE_SCREEN = 105;
+
+    // פונקציה לעדכון השדות האוטומטיים
+    function updateCalculatedFields() {
+        const percIncrease = parseInt(slider.value);
+        const expectedTotal = BASE_TOTAL + Math.round(BASE_TOTAL * (percIncrease / 100));
+        const expectedScreen = BASE_SCREEN + Math.round(BASE_SCREEN * (percIncrease / 100));
+
+        newTotalInput.value = expectedTotal;
+        newScreenInput.value = expectedScreen;
+    }
+
+    // כשמזיזים את הסליידר
+    slider.addEventListener('input', function() {
+        if(isFinished) return;
+
+        percDisplayVal.innerText = this.value;
+        hasAnsweredCurrentPercent = false;
+
+        // עדכון השדות המספריים אוטומטית
+        updateCalculatedFields();
+
+        // פתיחת שדה האחוז לאיפוס
+        finalPercInput.disabled = false;
+        finalPercInput.value = '';
+
+        // החזרת כפתור הבדיקה למצב פעיל
+        checkBtn.disabled = false;
+        checkBtn.innerText = "בדקו את תשובותיכם";
+        feedbackBox.style.display = 'none';
+    });
+
+    // הרצה ראשונית של השדות
+    updateCalculatedFields();
+
+    function checkAnswers() {
+        if(isFinished || hasAnsweredCurrentPercent) return;
+
+        const expectedFinalPerc = 35;
+        const userFinalPerc = parseInt(finalPercInput.value);
+
+        if (isNaN(userFinalPerc)) {
+            feedbackBox.innerText = 'נא להקליד את האחוז החדש לפני הבדיקה.';
+            feedbackBox.className = 'feedback error';
+            feedbackBox.style.display = 'block';
+            return;
+        }
+
+        // נעילת השדה והכפתור
+        hasAnsweredCurrentPercent = true;
+        finalPercInput.disabled = true;
+
+        attempts++;
+        attemptsDisplay.innerText = attempts;
+
+        if (userFinalPerc === expectedFinalPerc) {
+            successes++;
+            successesDisplay.innerText = successes;
+            feedbackBox.innerHTML = 'כל הכבוד! תשובה נכונה ומדויקת.';
+            feedbackBox.className = 'feedback success';
+        } else {
+            feedbackBox.innerHTML = 'טעיתם בחישוב האחוז - נסו שוב.';
+            feedbackBox.className = 'feedback error';
+        }
+
+        feedbackBox.style.display = 'block';
+
+        if (attempts >= MAX_ATTEMPTS) {
+            isFinished = true;
+            checkBtn.style.display = 'none';
+            restartBtn.style.display = 'block';
+
+            feedbackBox.innerHTML += `<br><br><span style="font-size:22px;">סיימתם את המשימה!</span><br>הצלחתם ${successes} פעמים מתוך 5.`;
+            feedbackBox.className = 'feedback finished';
+        } else {
+            checkBtn.disabled = true;
+            checkBtn.innerText = "הזיזו את הסליידר לבחירת אחוז חדש ->";
+        }
+    }
+
+    function restartGame() {
+        attempts = 0;
+        successes = 0;
+        isFinished = false;
+        hasAnsweredCurrentPercent = false;
+
+        attemptsDisplay.innerText = '0';
+        successesDisplay.innerText = '0';
+
+        restartBtn.style.display = 'none';
+        checkBtn.style.display = 'block';
+
+        slider.value = 40;
+        slider.dispatchEvent(new Event('input'));
+        updateCalculatedFields();
+    }
+</script>
+
+</body>
+</html>

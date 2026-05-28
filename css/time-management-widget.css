@@ -1,6 +1,6 @@
 /* ============================================================
    Time Management Widget — internal/local implementation
-   Source reference (unchanged): widgets/time-management-widget-original.html
+   Source reference (unchanged): assets/widgets/time-management-widget-original.html
    All selectors prefixed `tmw-` to avoid colliding with lesson styles.
    ============================================================ */
 
@@ -61,7 +61,7 @@
   height: 55px;
   padding: 0;
   background-color: rgba(0, 0, 0, 0.75);        /* Figma: dark semi-transparent frame */
-  background-image: url('../img/btn-zoom-in.png');
+  background-image: url('../assets/images/btn-zoom-in.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;                     /* icon's transparent corners reveal the dark frame */
@@ -77,7 +77,7 @@
 }
 
 .tmw-container.tmw-zoomed .tmw-zoom-btn {
-  background-image: url('../img/btn-zoom-out.png');
+  background-image: url('../assets/images/btn-zoom-out.png');
 }
 
 .tmw-scoreboard {

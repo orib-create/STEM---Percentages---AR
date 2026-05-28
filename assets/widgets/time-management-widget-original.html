@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתגר המודל של נועה - הערכה ומשוב</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .score-item span { color: #f1c40f; margin-right: 5px; }
+
+        .slider-container {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+            border: 1px solid #d4e6f1;
+        }
+
+        .slider-container label {
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+            margin-bottom: 15px;
+        }
+
+        input[type=range]:focus { outline: none; }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #bdc3c7;
+            border-radius: 4px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .time-display {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+            font-size: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        
+        /* כפתור כבוי כשכבר ענו על הזמן הזה */
+        .input-group input:disabled {
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+        }
+
+        .btn-check {
+            width: 100%;
+            padding: 14px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-check:hover { background-color: #219653; }
+        
+        .btn-check:disabled { 
+            background-color: #95a5a6; 
+            cursor: not-allowed; 
+        }
+
+        .btn-restart {
+            width: 100%;
+            padding: 14px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .btn-restart:hover { background-color: #d35400; }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            font-size: 16px;
+        }
+
+        .feedback.error {
+            background-color: #fadbd8;
+            color: #c0392b;
+            border: 1px solid #e74c3c;
+        }
+
+        .feedback.success {
+            background-color: #d5f5e3;
+            color: #27ae60;
+            border: 1px solid #2ecc71;
+        }
+
+        .feedback.finished {
+            background-color: #fdf2e9;
+            color: #d35400;
+            border: 2px solid #e67e22;
+            font-size: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.2);
+        }
+        
+        .correct-answers-box {
+            background-color: rgba(255,255,255,0.7);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            text-align: right;
+        }
+
+        .chart-container {
+            margin-top: 25px;
+            display: none;
+        }
+
+        .stacked-bar {
+            width: 100%;
+            height: 30px;
+            background-color: #ecf0f1;
+            border-radius: 15px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .bar-segment {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            width: 0%; 
+            transition: width 1s ease-in-out;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .gym-segment { background-color: #2ecc71; }
+        .screen-segment { background-color: #3498db; }
+        .other-segment { background-color: #bdc3c7; color: #2c3e50; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>כלי לניהול הזמן</h1>
+    
+    <div class="scoreboard">
+        <div class="score-item">ניסיונות: <span id="attemptsVal">0</span> מתוך 5</div>
+        <div class="score-item">הצלחות: <span id="successesVal">0</span></div>
+    </div>
+    
+    <div class="slider-container">
+        <label>המשימה: בדקו 5 זמנים שונים.</label>
+        <input type="range" id="timeSlider" min="120" max="400" step="10" value="300">
+        <div class="time-display">זמן פנוי נבחר: <span id="timeDisplayVal">300</span> דקות</div>
+    </div>
+
+    <div class="input-group" id="inputsArea">
+        <label>1. חדר כושר סך הכל (20%):</label>
+        <input type="number" id="gymTotalInput" placeholder="הקלידו דקות">
+        
+        <label style="margin-top: 15px; color: #e67e22;">זמן אימון נטו (לאחר הפחתת 20 ד' הליכה):</label>
+        <input type="number" id="gymNetInput" placeholder="הקלידו דקות נטו">
+        
+        <label style="margin-top: 15px;">2. זמן מסך מקסימלי (35%):</label>
+        <input type="number" id="screenInput" placeholder="הקלידו דקות">
+    </div>
+
+    <button class="btn-check" id="checkBtn" onclick="checkAnswers()">בדקו את התשובות</button>
+    <button class="btn-restart" id="restartBtn" onclick="restartGame()">התחל משחק מחדש</button>
+
+    <div id="feedbackBox" class="feedback"></div>
+
+    <div id="chartSection" class="chart-container">
+        <div class="stacked-bar">
+            <div id="chartGym" class="bar-segment gym-segment">כושר</div>
+            <div id="chartScreen" class="bar-segment screen-segment">מסך</div>
+            <div id="chartOther" class="bar-segment other-segment">אחר</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let attempts = 0;
+    let successes = 0;
+    const MAX_ATTEMPTS = 5;
+    let isFinished = false;
+    let hasAnsweredCurrentTime = false; // בקרת מניעת רמאויות
+
+    const slider = document.getElementById('timeSlider');
+    const timeDisplayVal = document.getElementById('timeDisplayVal');
+    const gymTotalInput = document.getElementById('gymTotalInput');
+    const gymNetInput = document.getElementById('gymNetInput');
+    const screenInput = document.getElementById('screenInput');
+    const feedbackBox = document.getElementById('feedbackBox');
+    const chartSection = document.getElementById('chartSection');
+    const checkBtn = document.getElementById('checkBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    
+    const attemptsDisplay = document.getElementById('attemptsVal');
+    const successesDisplay = document.getElementById('successesVal');
+
+    const chartGym = document.getElementById('chartGym');
+    const chartScreen = document.getElementById('chartScreen');
+    const chartOther = document.getElementById('chartOther');
+
+    // כשמזיזים את הסליידר, המערכת מתאפסת לזמן החדש
+    slider.addEventListener('input', function() {
+        if(isFinished) return; 
+
+        timeDisplayVal.innerText = this.value;
+        hasAnsweredCurrentTime = false;
+        
+        // פתיחת השדות מחדש ואיפוס התוכן
+        gymTotalInput.disabled = false;
+        gymNetInput.disabled = false;
+        screenInput.disabled = false;
+        gymTotalInput.value = '';
+        gymNetInput.value = '';
+        screenInput.value = '';
+        
+        // החזרת כפתור הבדיקה למצב פעיל
+        checkBtn.disabled = false;
+        checkBtn.innerText = "בדקו את התשובות";
+        
+        feedbackBox.style.display = 'none';
+        chartSection.style.display = 'none';
+        chartGym.style.width = '0%';
+        chartScreen.style.width = '0%';
+        chartOther.style.width = '0%';
+    });
+
+    function checkAnswers() {
+        if(isFinished || hasAnsweredCurrentTime) return;
+
+        const currentTotalTime = parseInt(slider.value);
+        
+        // חישוב מראש של התשובות הנכונות כדי שנוכל להציג אותן במשוב
+        const expectedGymTotal = Math.round(currentTotalTime * 0.20);
+        const expectedGymNet = expectedGymTotal - 20;
+        const expectedScreen = Math.round(currentTotalTime * 0.35);
+
+        const userGymTotal = parseInt(gymTotalInput.value);
+        const userGymNet = parseInt(gymNetInput.value);
+        const userScreen = parseInt(screenInput.value);
+
+        if (isNaN(userGymTotal) || isNaN(userGymNet) || isNaN(userScreen)) {
+            feedbackBox.innerText = 'נא למלא את כל השדות לפני הבדיקה.';
+            feedbackBox.className = 'feedback error';
+            feedbackBox.style.display = 'block';
+            return;
+        }
+
+        // נעילת השדות והכפתור (חובה לשנות זמן)
+        hasAnsweredCurrentTime = true;
+        gymTotalInput.disabled = true;
+        gymNetInput.disabled = true;
+        screenInput.disabled = true;
+        
+        attempts++;
+        attemptsDisplay.innerText = attempts;
+
+        const isCorrect = (userGymTotal === expectedGymTotal && 
+                           userGymNet === expectedGymNet && 
+                           userScreen === expectedScreen);
+
+        if (isCorrect) {
+            successes++;
+            successesDisplay.innerText = successes;
+            feedbackBox.innerHTML = 'כל הכבוד! חישבתם במדויק.';
+            feedbackBox.className = 'feedback success';
+            showChart();
+        } else {
+            // משוב מלמד במקרה של טעות
+            feedbackBox.innerHTML = `
+                יש לכם טעות בחישוב.
+                <div class="correct-answers-box">
+                    <b>התשובות הנכונות עבור ${currentTotalTime} דקות:</b><br>
+                    כושר סך הכל (20%): ${expectedGymTotal} דקות.<br>
+                    אימון נטו (-20): ${expectedGymNet} דקות.<br>
+                    זמן מסך (35%): ${expectedScreen} דקות.
+                </div>
+            `;
+            feedbackBox.className = 'feedback error';
+        }
+
+        feedbackBox.style.display = 'block';
+
+        // טיפול בסיום המשחק או בקשת מעבר לזמן הבא
+        if (attempts >= MAX_ATTEMPTS) {
+            isFinished = true;
+            checkBtn.style.display = 'none';
+            restartBtn.style.display = 'block';
+            
+            feedbackBox.innerHTML += `<br><br><span style="font-size:22px;">סיימתם את המשימה!</span><br>הצלחתם ${successes} פעמים מתוך 5.`;
+            feedbackBox.className = 'feedback finished';
+        } else {
+            checkBtn.disabled = true;
+            checkBtn.innerText = "הזיזו את הסליידר לבחירת זמן חדש ->";
+        }
+    }
+
+    function showChart() {
+        chartSection.style.display = 'block';
+        setTimeout(() => {
+            chartGym.style.width = '20%';
+            chartScreen.style.width = '35%';
+            chartOther.style.width = '45%';
+        }, 50);
+    }
+    
+    function restartGame() {
+        attempts = 0;
+        successes = 0;
+        isFinished = false;
+        hasAnsweredCurrentTime = false;
+        
+        attemptsDisplay.innerText = '0';
+        successesDisplay.innerText = '0';
+        
+        restartBtn.style.display = 'none';
+        checkBtn.style.display = 'block';
+        
+        // הדמיית תזוזת סליידר לאיפוס המערכת
+        slider.value = 300;
+        slider.dispatchEvent(new Event('input'));
+    }
+</script>
+
+</body>
+</html>

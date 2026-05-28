@@ -1,6 +1,6 @@
 /* ============================================================
    Weekend Widget (Question 7) — internal/local implementation
-   Source reference (unchanged): widgets/weekend-widget-original.html
+   Source reference (unchanged): assets/widgets/weekend-widget-original.html
    All selectors prefixed `ww-` to avoid colliding with lesson styles
    and with the Time Management Widget (`tmw-`).
    ============================================================ */
@@ -48,7 +48,7 @@
   height: 55px;
   padding: 0;
   background-color: rgba(0, 0, 0, 0.75);        /* dark semi-transparent frame */
-  background-image: url('../img/btn-zoom-in.png');
+  background-image: url('../assets/images/btn-zoom-in.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -64,7 +64,7 @@
 }
 
 .ww-container.ww-zoomed .ww-zoom-btn {
-  background-image: url('../img/btn-zoom-out.png');
+  background-image: url('../assets/images/btn-zoom-out.png');
 }
 
 .ww-inner {

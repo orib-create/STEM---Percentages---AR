@@ -793,7 +793,7 @@ function enterFrame6() {
       el.offsetHeight;   // force reflow
       el.style.animation = 'floatIn 0.6s ease forwards';
       // צליל WhatsApp
-      new Audio('audio/whatsapp_message_3.mp3').play().catch(() => {});
+      new Audio('assets/audio/whatsapp_message_3.mp3').play().catch(() => {});
     }, delays[i]);
   });
 
@@ -820,7 +820,7 @@ function enterFrame9() {
     el.style.animation = 'none';
     el.offsetHeight;   // force reflow
     el.style.animation = 'floatIn 0.6s ease forwards';
-    new Audio('audio/whatsapp_message_3.mp3').play().catch(() => {});
+    new Audio('assets/audio/whatsapp_message_3.mp3').play().catch(() => {});
   }, 1000);
 
   frame9Seen = true;
@@ -835,7 +835,7 @@ function setRadioVisual(screen, optId, state) {
   const wrap  = icon?.parentElement;  // .radio-icon-wrap
   if (!icon || !label) return;
 
-  icon.src = `img/radio-${state}.svg`;
+  icon.src = `assets/images/radio-${state}.svg`;
 
   /* toggle size classes per state (Figma: normal=20×20, selected/incorrect=20×21, correct=20×15) */
   if (wrap) {
@@ -1239,7 +1239,7 @@ function openGraphZoom(cardId) {
   zoomedCardId = cardId;
   card.classList.add('is-zoomed');
   const zoomImg = card.querySelector('.graph-zoom-btn img');
-  if (zoomImg) zoomImg.src = 'img/btn-zoom-out.png';
+  if (zoomImg) zoomImg.src = 'assets/images/btn-zoom-out.png';
 }
 
 function closeGraphZoom() {
@@ -1249,7 +1249,7 @@ function closeGraphZoom() {
   card.classList.remove('is-zoomed');
   hideProjection();
   const zoomImg = card.querySelector('.graph-zoom-btn img');
-  if (zoomImg) zoomImg.src = 'img/btn-zoom-in.png';
+  if (zoomImg) zoomImg.src = 'assets/images/btn-zoom-in.png';
   zoomedCardId = null;
 }
 

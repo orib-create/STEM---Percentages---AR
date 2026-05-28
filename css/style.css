@@ -5,6 +5,132 @@
    Fonts: Assistant (Hebrew), Open Sans (numbers)
    ============================================================ */
 
+/* ─── Local @font-face — offline-friendly (no Google Fonts) ───
+   All font files live in ../assets/fonts/ and are loaded via
+   relative paths so the lomda renders correctly from file://
+   and inside LMS/SCORM environments without internet access.
+   ─────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Assistant';
+  src: url('../assets/fonts/Assistant-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('../assets/fonts/Assistant-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('../assets/fonts/Assistant-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('../assets/fonts/Assistant-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('../assets/fonts/Assistant-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('../assets/fonts/Assistant-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('../assets/fonts/Assistant-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* ─── Reset & Base ─────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -197,7 +323,7 @@ html, body {
 
 .next-btn {
   left: 0;
-  background: url('../img/btn-nav.png') center/contain no-repeat;
+  background: url('../assets/images/btn-nav.png') center/contain no-repeat;
   animation: pulse-nav 2s ease-in-out infinite;
   transform-origin: left bottom;
 }
@@ -205,7 +331,7 @@ html, body {
 /* Hover = State=Hover מפיגמה — תמונה אחרת, מיידי, בלי אנימציה */
 .next-btn:hover {
   animation: none;
-  background-image: url('../img/btn-nav-hover.png');
+  background-image: url('../assets/images/btn-nav-hover.png');
   transition: none;
 }
 
@@ -217,12 +343,12 @@ html, body {
 /* PREV button — RIGHT side, אותה תמונה עם flip אופקי (scaleX(-1)) */
 .prev-btn {
   right: 0;
-  background: url('../img/btn-nav.png') center/contain no-repeat;
+  background: url('../assets/images/btn-nav.png') center/contain no-repeat;
   transform: scaleX(-1);
 }
 
 .prev-btn:hover {
-  background-image: url('../img/btn-nav-hover.png');
+  background-image: url('../assets/images/btn-nav-hover.png');
   transform: scaleX(-1);
   transition: none;
 }
@@ -283,6 +409,7 @@ html, body {
 }
 
 /* ─── SCREEN 1 — Phone wrap ─────────────────────────────── */
+/* Phone shape comes from the PNG (transparent corners); no clip needed. */
 .phone-wrap {
   position: absolute;
   left: 102px;
@@ -290,16 +417,13 @@ html, body {
   width: 636px;
   height: 902px;
   z-index: 5;
-  border-radius: 60px;
-  overflow: hidden;
 }
 
 .phone-cats-img {
   position: absolute;
-  width: 301.89%;
-  height: 119.73%;
-  left: -14.15%;
-  top: -19.73%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   user-select: none;
 }
@@ -313,6 +437,8 @@ html, body {
   height: 179px;
   pointer-events: none;
   user-select: none;
+  /* Figma: drop-shadow על הודעת "messages" */
+  filter: drop-shadow(0px 0px 2.5px rgba(0, 0, 0, 0.5));
 }
 
 .notif-bold {
@@ -367,7 +493,7 @@ html, body {
   top: 20px;
   width: 150px;
   height: 150px;
-  background: url('../img/btn-help-open-normal.png') center/contain no-repeat;
+  background: url('../assets/images/btn-help-open-normal.png') center/contain no-repeat;
   border: none;
   cursor: pointer;
   z-index: 20;
@@ -376,15 +502,15 @@ html, body {
 }
 
 .help-btn:hover {
-  background-image: url('../img/btn-help-open-hover.png');
+  background-image: url('../assets/images/btn-help-open-hover.png');
 }
 
 .help-btn.is-open {
-  background-image: url('../img/btn-help-close-normal.png');
+  background-image: url('../assets/images/btn-help-close-normal.png');
 }
 
 .help-btn.is-open:hover {
-  background-image: url('../img/btn-help-close-hover.png');
+  background-image: url('../assets/images/btn-help-close-hover.png');
 }
 
 /* ─── Help Popup (Screens 3 & 4) ───────────────────────────
@@ -669,7 +795,7 @@ html, body {
   /* Sprite approach: button at canvas (265,717) in a 1920x1080 Figma export.
      Corners are alpha=0 (transparent) — verified via pixel inspection.
      get_screenshot gives alpha=255 (opaque dark bg) at corners — do NOT use. */
-  background-image: url('../img/btn-submit-sprite-normal.png');
+  background-image: url('../assets/images/btn-submit-sprite-normal.png');
   background-size: 1920px 1080px;
   background-position: -265px -717px;
   background-repeat: no-repeat;
@@ -702,7 +828,7 @@ html, body {
 }
 
 .submit-btn:hover  {
-  background-image: url('../img/btn-submit-sprite-hover.png');
+  background-image: url('../assets/images/btn-submit-sprite-hover.png');
 }
 .submit-btn:active { opacity: 0.85; }
 .submit-btn:disabled {
@@ -2117,7 +2243,7 @@ html, body {
   left: 0;
   width: 206px;
   height: 136px;
-  background-image: url('../img/btn-submit-sprite-normal.png');
+  background-image: url('../assets/images/btn-submit-sprite-normal.png');
   background-size: 1920px 1080px;
   background-position: -265px -717px;
   background-repeat: no-repeat;
@@ -2134,7 +2260,7 @@ html, body {
   transition: none;
 }
 .s18-done-btn:hover {
-  background-image: url('../img/btn-submit-sprite-hover.png');
+  background-image: url('../assets/images/btn-submit-sprite-hover.png');
 }
 
 /* ─── After-interaction overlay ──────────────────────────────
