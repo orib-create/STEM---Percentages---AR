@@ -1558,3 +1558,9 @@ function completeMission() {
   const overlay = document.getElementById('s18-completion-overlay');
   if (overlay) overlay.classList.remove('hidden');
 }
+
+/* QA r1 (item 12): close the completion dialog via the X button. */
+function closeMission() {
+  const overlay = document.getElementById('s18-completion-overlay');
+  if (overlay) overlay.classList.add('hidden');
+}

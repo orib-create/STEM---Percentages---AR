@@ -2296,6 +2296,21 @@ html, body {
   overflow: hidden;
 }
 
+/* QA r1 (item 12): כפתור סגירה X — נכס PNG מ-Figma node 348:1583,
+   ממוקם בפינה הימנית-עליונה של הכרטיס (left:759, top:45, 55×50). */
+.s18-modal-close-btn {
+  position: absolute;
+  left: 759px;
+  top: 45px;
+  width: 55px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  background: url('../assets/images/btn-completion-close.png') center / contain no-repeat;
+  cursor: pointer;
+  z-index: 2;
+}
+
 /* ─── ספרייט textbox3 — 1920×1080 canvas sprite ─────────────
    Figma: width=222.71% (1920÷862), height=238.06% (1080÷453.674)
    left=-61.40% (-529.31÷862), top=-64.92% (-294.52÷453.674) ─ */
