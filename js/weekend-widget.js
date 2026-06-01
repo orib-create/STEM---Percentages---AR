@@ -57,6 +57,9 @@
      no init re-run, so all widget state is preserved across zoom. */
   function toggleZoom() {
     const zoomed = elRoot.classList.toggle('ww-zoomed');
+    // Relax the question-card clip so the enlarged widget can break out (QA r1 item 11).
+    const card = elRoot.closest('.content-card');
+    if (card) card.classList.toggle('ww-zoom-open', zoomed);
     const label  = zoomed ? 'הקטן יישומון' : 'הגדל יישומון';
     zoomBtn.setAttribute('aria-label', label);
     zoomBtn.setAttribute('title', label);

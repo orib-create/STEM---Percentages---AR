@@ -30,10 +30,18 @@
    unzoomed value and clips the bottom).
    Factor 1.2 matches the Time Management Widget and keeps the visual right
    edge clear of the prev-nav button given .right-panel sits at x=923. */
+/* QA r1 (item 11): enlarge significantly without an internal scrollbar.
+   Same technique as the Time Management Widget — scale the whole widget
+   (anchored at the host's right edge, vertically centred) so it grows into
+   the canvas and fits within 1920×1080, with overflow visible (no scroll).
+   The parent .content-card clip is relaxed via .ww-zoom-open while zoomed. */
 .ww-container.ww-zoomed {
-  zoom: 1.2;
-  z-index: 5;
+  transform: scale(1.4);
+  transform-origin: right center;
+  overflow: visible;
+  z-index: 30;
 }
+.content-card.ww-zoom-open { overflow: visible; }
 
 /* Single toggle button — same Figma "Zoom In / Zoom Out" style as the
    Time Management Widget (node 227:1832): 50×55 dark rounded frame with the
@@ -72,6 +80,9 @@
   padding: 22px 24px;
   box-sizing: border-box;
   font-family: 'Assistant', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* QA r1 (item 11): shrink the embedded content slightly so it fits the
+     605×754 host with no scrollbar by default (content was ~792px tall). */
+  zoom: 0.94;
 }
 
 .ww-container h1 {

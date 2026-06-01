@@ -20,19 +20,22 @@
   z-index: 1;
 }
 
-/* When zoomed, the widget keeps the same DOM (so all state is preserved)
-   but layout boxes actually grow — using CSS `zoom` instead of
-   `transform: scale()` so that scrollHeight, clientHeight, font sizes,
-   paddings, and absolute-positioned child coordinates all scale together.
-   This is what makes "scroll to the bottom" reveal the true visual
-   bottom in zoomed mode (transform: scale alone left scrollHeight at the
-   unzoomed value and clipped the bottom).
-   Factor 1.2 keeps the visual right edge clear of the prev-nav button
-   given .right-panel sits at #app x=1059 inside .content-card. */
+/* QA r1 (item 1): zoom must be much bigger and is allowed to cover the
+   breadcrumb numbers and the back arrow. The widget already fills its
+   605×754 host, so a real enlargement must break out of the host. We scale
+   the whole widget with transform: scale() (anchored at the host's right
+   edge, vertically centred) so it grows left + up/down and fits the
+   1920×1080 canvas without any internal scrollbar (the content already fits
+   the box at 1×, so scaling adds no scroll). The clip on the parent
+   .content-card is relaxed via .tmw-zoom-open while zoomed. */
 .tmw-container.tmw-zoomed {
-  zoom: 1.2;
-  z-index: 5;
+  transform: scale(1.4);
+  transform-origin: right center;
+  overflow: visible;
+  z-index: 30;
 }
+/* Let the enlarged widget overflow the question card while zoomed. */
+.content-card.tmw-zoom-open { overflow: visible; }
 
 .tmw-inner {
   direction: rtl;
