@@ -967,6 +967,9 @@ html, body {
 .correct-title   { color: #1a7f37 !important; }   /* ירוק — "צדקת!" */
 .incorrect-title { color: #ca433d !important; }   /* אדום — "זו טעות" */
 
+/* QA round 1 (item 3): הערה בפידבק שגוי — "התשובות הנכונות מופיעות כעת" */
+.feedback-note { font-weight: 700 !important; color: #ca433d !important; }
+
 /* ─── (Time Management Widget iframe zoom modal removed —
        widget is now a local in-page widget; no zoom UI required.) ─── */
 

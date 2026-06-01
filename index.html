@@ -247,7 +247,7 @@
         <div class="timer-row">
           <img class="clock-icon" src="assets/images/clock-icon-f4.png" alt="">
           <div class="timer-fields">
-            <span class="timer-label"><strong>זמן האימון נטו</strong> <span class="lbl-normal">(בלי זמן ההגעה והחזרה)</span> =</span>
+            <span class="timer-label"><strong>זמן האימון נטו</strong> <span class="lbl-normal">(לאחר הפחתת 20 דקות הליכה)</span> =</span>
             <input type="number" id="timer2" class="timer-input" min="0" max="999" placeholder="?">
             <span class="unit-label">דקות</span>
           </div>
@@ -303,6 +303,7 @@
       <img class="feedback-bg-img" src="assets/images/feedback-bg-q1-incorrect.png" alt="">
       <div class="feedback-text">
         <p class="feedback-title incorrect-title">זו טעות</p>
+        <p class="feedback-note">התשובות הנכונות מופיעות כעת.</p>
         <p>זמן חדר הכושר ברוטו הוא 20% מתוך 300 דקות.</p>
         <p>נמיר אותו למספר עשרוני ונחשב: 60 = 0.2 · 300</p>
         <p><strong>כלומר, זמן חדר הכושר ברוטו הוא 60 דקות.</strong></p>
@@ -383,6 +384,7 @@
           <!-- פידבק: תשובה שגויה — מופיע אחרי ניסיון שני -->
           <div id="feedback-s4-incorrect" class="s4-feedback-box hidden">
             <p class="s4-feedback-title incorrect-title">זו טעות</p>
+            <p class="s4-feedback-body feedback-note">התשובות הנכונות מופיעות כעת.</p>
             <p class="s4-feedback-body">כשהשלם משתנה, גם ערכו של האחוז משתנה בהתאם.</p>
             <p class="s4-feedback-body">נחשב 40% מתוך זמן המסך בלבד, שהוא 105 דקות.</p>
             <p class="s4-feedback-body">נמיר 40% למספר עשרוני ונחשב: 42 = 0.4 · 105</p>
@@ -457,9 +459,8 @@
 
   <!-- Popup שאלה 4 (מסך 9) -->
   <div id="help-popup-s9" class="help-popup hidden" role="tooltip">
-    <p>האם זמן המסך הוא</p>
-    <p>כל הזמן הפנוי או</p>
-    <p>רק חלק ממנו?</p>
+    <p>החלק הוא 60,</p>
+    <p>והשלם החדש הוא 210.</p>
   </div>
 
   <!-- Popup שאלה 5א (מסך 11) — טקסט מ-Figma node 132-1761 -->
@@ -1227,13 +1228,8 @@
       </div><!-- /graph-card-s12-host -->
     </div><!-- /s11-right-panel -->
 
-    <!-- ══ כדור כחול + טקסט הסבר ══ -->
-    <img class="s11-dot-bullet" src="assets/images/dot-blue-q5.svg" alt="">
-    <div class="s11-graph-note">
-      <p>כל נקודה על הקו מייצגת זוג סדור שמתאים לשיטה: </p>
-      <p>כמה דקות מוקדשות לחדר הכושר (כולל 20 דקות הליכה),</p>
-      <p>ומהו הזמן הכולל שמתאים לכך.</p>
-    </div>
+    <!-- QA round 1 (item 9): הוסר טקסט ההסבר "כל נקודה על הקו…" + הכדור הכחול (Ellipse 3)
+         ממסך 12 (Q5B) — הטקסט מתאים לסעיף א' בלבד, לא לסעיף ב'. -->
 
     <!-- ══ פידבק נכון — מסך 12 (Q5B) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s12-correct" class="q8-feedback-box s11s12-feedback-pos hidden">
