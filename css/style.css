@@ -895,15 +895,16 @@ html, body {
   /* inherits left/top/width/height from .right-panel — no overrides */
 }
 
-/* ─── Feedback Panels (Screen 3 — screen-level absolute) ────
+/* ─── Feedback Panels (Screen 3 / Q1B — screen-level absolute) ────
    פאנל המשוב — שאלה 1 (Figma 51:320 / 296:1439)
-   שניהם: left:151, top:144, 809×818
+   QA r1 fix B: width צומצם מ-809 ל-745 כדי שהפאנל לא יכסה את שורות
+   הטיימרים של השאלה (קצה ימני 896 < תוכן השאלה השמאלי 913). הטקסט נשמר.
    ──────────────────────────────────────────────────────── */
 .feedback-panel {
   position: absolute;
   left: 151px;
   top: 144px;
-  width: 809px;
+  width: 745px;
   height: 818px;
   background: #171717;
   border-radius: 45px;

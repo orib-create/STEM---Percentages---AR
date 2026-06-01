@@ -1553,8 +1553,23 @@ function completeMission() {
   if (overlay) overlay.classList.remove('hidden');
 }
 
-/* QA r1 (item 12): close the completion dialog via the X button. */
+/* QA r1 (item 12 + review fix E): close the completion dialog AND signal the
+   host to close the whole activity.
+   1) Hide the completion overlay (returns to the underlying screen).
+   2) postMessage to the host/LMS that the activity should close (no-op if not
+      embedded; unknown message types are ignored by the dev harness).
+   3) Attempt window.close() as a fallback (browsers ignore it for windows not
+      opened by script, so it is harmless in local testing).
+   The lomda is NOT reset to the first screen. */
 function closeMission() {
   const overlay = document.getElementById('s18-completion-overlay');
   if (overlay) overlay.classList.add('hidden');
+
+  try {
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'LOMDA_CLOSE', action: 'close' }, '*');
+    }
+  } catch (e) { /* cross-origin parent — ignore */ }
+
+  try { window.close(); } catch (e) { /* not script-opened — ignore */ }
 }
