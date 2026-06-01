@@ -12,6 +12,18 @@ const CORRECT_ANSWERS = { timer1: 60, timer2: 40, timer3: 105 };
 let attemptCount = 0;
 const MAX_ATTEMPTS = 2;
 
+/* QA r1 (item 5): parse a numeric answer field.
+   Empty/blank/non-numeric → NaN (treated as "not filled" → shake, no attempt).
+   A real number such as 42.2 / 42.5 is returned as-is so the strict === check
+   below routes it through the normal "incorrect" path instead of being
+   truncated by parseInt() and wrongly accepted as the integer answer. */
+function parseAnswer(value) {
+  const s = String(value).trim();
+  if (s === '') return NaN;
+  const n = Number(s);
+  return Number.isNaN(n) ? NaN : n;
+}
+
 /* ─── Scale canvas to viewport ─────────────────────────── */
 function scaleApp() {
   const app = document.getElementById('app');
@@ -548,9 +560,9 @@ function updateSubmitVisibility() {
 function checkAnswers() {
   if (attemptCount >= MAX_ATTEMPTS) return;
 
-  const t1 = parseInt(document.getElementById('timer1').value, 10);
-  const t2 = parseInt(document.getElementById('timer2').value, 10);
-  const t3 = parseInt(document.getElementById('timer3').value, 10);
+  const t1 = parseAnswer(document.getElementById('timer1').value);
+  const t2 = parseAnswer(document.getElementById('timer2').value);
+  const t3 = parseAnswer(document.getElementById('timer3').value);
 
   if (isNaN(t1) || isNaN(t2) || isNaN(t3)) {
     highlightEmptyFields(t1, t2, t3);
@@ -710,7 +722,7 @@ function updateSubmitVisibilityS4() {
 function checkAnswersS4() {
   if (attemptCountS4 >= MAX_ATTEMPTS) return;
 
-  const t = parseInt(document.getElementById('timer-s4').value, 10);
+  const t = parseAnswer(document.getElementById('timer-s4').value);
   if (isNaN(t)) { shakeInput('timer-s4'); return; }
 
   attemptCountS4++;
