@@ -1822,9 +1822,12 @@ html, body {
 .gp .gp-s,
 .gp .gp-ck,
 .gp .gp-xk { display: none; position: absolute; pointer-events: none; }
-.gp .gp-lbl { display: none; position: absolute; left: 28px; top: 3px;
+/* QA r1 (item 8): תווית קואורדינטה במעבר עכבר על רקע לבן (שקוף-חלקית) לקריאוּת,
+   בהתאם לקומפוננטת Figma 132:1629 (State=Hover — תיבת bg-white). */
+.gp .gp-lbl { display: none; position: absolute; left: 30px; top: 1px;
   font-family: 'Assistant', sans-serif; font-size: 20px; font-weight: 500;
-  color: #030303; white-space: nowrap; direction: ltr; }
+  color: #030303; white-space: nowrap; direction: ltr;
+  background: rgba(255, 255, 255, 0.9); padding: 1px 7px; border-radius: 5px; }
 
 /* ── NORMAL: עיגול קטן 20×20, ממורכז באזור 28×26 ── */
 .gp .gp-n { display: block; width: 20px; height: 20px; left: 4px; top: 3px; }
@@ -1834,22 +1837,26 @@ html, body {
 .gp:hover .gp-h  { display: block; width: 28px; height: 26px; left: 0; top: 0; }
 .gp:hover .gp-lbl { display: block; }
 
-/* ── SELECTED: עיגול כהה 25×25 ── */
+/* QA r1 (item 10): נקודות גדולות יותר לפי קומפוננטת Figma 132:1629.
+   הטבעת הכחולה (gp-s) בגודל 35×35 ממורכזת על מרכז הנקודה (14,13 בתוך תיבת 28×26),
+   במקום העיגול הכהה הקטן הקודם. החיווי (וי/איקס) מונח מעל הטבעת. */
+
+/* ── SELECTED: טבעת כחולה 35×35 ── */
 .gp.is-selected .gp-n { display: none; }
-.gp.is-selected .gp-s { display: block; width: 25px; height: 25px; left: 2px; top: 1px; }
+.gp.is-selected .gp-s { display: block; width: 35px; height: 35px; left: -3.5px; top: -4.5px; }
 
-/* ── CORRECT: עיגול רגיל + וי ירוק ── */
-/* וי: 17×16px, Figma offset: left≈9, top≈3 */
-.gp.is-correct .gp-ck { display: block; width: 17px; height: 16px; left: 9px; top: 3px; }
-/* שמור גם תמונת hover כשהנקודה נכונה */
-.gp.is-correct:hover .gp-n  { display: none; }
-.gp.is-correct:hover .gp-h  { display: block; width: 28px; height: 26px; left: 0; top: 0; }
+/* ── CORRECT: טבעת כחולה 35×35 + וי ירוק ── */
+.gp.is-correct .gp-n { display: none; }
+.gp.is-correct .gp-s  { display: block; width: 35px; height: 35px; left: -3.5px; top: -4.5px; }
+.gp.is-correct .gp-ck { display: block; width: 25px; height: 23.5px; left: 1.5px; top: 1.5px; }
+/* בריחוף מעל נקודה נכונה — שמור טבעת+וי גדולים (לא הריחוף הקטן) */
+.gp.is-correct:hover .gp-h { display: none; }
 
-/* ── INCORRECT: עיגול רגיל + X אדום ── */
-/* X: 8×8px, Figma offset: left=10, top=9 */
-.gp.is-incorrect .gp-xk { display: block; width: 8px; height: 8px; left: 10px; top: 9px; }
-.gp.is-incorrect:hover .gp-n { display: none; }
-.gp.is-incorrect:hover .gp-h { display: block; width: 28px; height: 26px; left: 0; top: 0; }
+/* ── INCORRECT: טבעת כחולה 35×35 + X אדום ── */
+.gp.is-incorrect .gp-n { display: none; }
+.gp.is-incorrect .gp-s  { display: block; width: 35px; height: 35px; left: -3.5px; top: -4.5px; }
+.gp.is-incorrect .gp-xk { display: block; width: 15px; height: 15px; left: 6.5px; top: 5.5px; }
+.gp.is-incorrect:hover .gp-h { display: none; }
 
 /* ── קווי הטלה לצירים (JS מציב ומציג) ── */
 .gp-proj-h,
