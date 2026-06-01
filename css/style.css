@@ -1200,6 +1200,36 @@ html, body {
 .ofri-m4 { left: 198px; top: 855px; width: 483.311px; height: 112.215px; }
 .ofri-m4 img { left: -198px; top: -855px; }
 
+/* QA r1 (item 6): live message text + live timestamp over the empty bubbles
+   (Figma node 118:428). Positions are in-bubble offsets from the Figma frame;
+   text is right-aligned (anchored by `right`). Hebrew uses the project font
+   Assistant (Figma's Inter is Latin-only / not bundled offline). */
+.ofri-text,
+.ofri-time {
+  position: absolute;
+  margin: 0;
+  direction: rtl;
+  text-align: right;
+  white-space: nowrap;
+  line-height: normal;
+  font-family: 'Assistant', sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+.ofri-text { font-weight: 400; font-size: 28px; color: #2d2c2c; }
+/* timestamp reads left-to-right ("4:30 PM"), still flush to the bubble's right edge */
+.ofri-time { font-weight: 600; font-size: 14px; color: #6b6b6b; direction: ltr; }
+
+/* Per-message offsets (right edge / top, within each bubble box) */
+.ofri-text-m1 { right: 112.6px; top: 44.36px; }
+.ofri-time-m1 { right: 71.47px; top: 86.95px; }
+.ofri-text-m2 { right: 47.61px; top: 27.64px; }
+.ofri-time-m2 { right: 56.99px; top: 69.07px; }
+.ofri-text-m3 { right: 47.61px; top: 42.39px; }
+.ofri-time-m3 { right: 72.36px; top: 164.69px; }
+.ofri-text-m4 { right: 47.61px; top: 27.44px; }
+.ofri-time-m4 { right: 57.88px; top: 66.27px; }
+
 /* ─── Left panel Q3 variant ─────────────────────────────── */
 .left-panel-q3 {
   gap: 15px;
