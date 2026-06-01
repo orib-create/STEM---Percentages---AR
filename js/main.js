@@ -1553,23 +1553,33 @@ function completeMission() {
   if (overlay) overlay.classList.remove('hidden');
 }
 
-/* QA r1 (item 12 + review fix E): close the completion dialog AND signal the
-   host to close the whole activity.
-   1) Hide the completion overlay (returns to the underlying screen).
-   2) postMessage to the host/LMS that the activity should close (no-op if not
-      embedded; unknown message types are ignored by the dev harness).
-   3) Attempt window.close() as a fallback (browsers ignore it for windows not
-      opened by script, so it is harmless in local testing).
-   The lomda is NOT reset to the first screen. */
+/* Close the completion dialog (X button).
+ *
+ * DEPLOYMENT CONTEXT (verified in this repo): the lomda ships as a STANDALONE
+ * static site (GitHub Pages; no SCORM/LMS wrapper, manifest, or host-close API
+ * exists here). The only postMessage channel is the dev-only navigation bridge
+ * in index_dev.html (DEV_READY / DEV_GOTO) — it does NOT handle a "close" event.
+ *
+ * Therefore there is no confirmed host close API to call, and browsers block
+ * window.close() for user-opened tabs. So when index.html is opened directly /
+ * in standalone deployment, clicking X only HIDES the completion overlay and
+ * returns to the final screen — it does NOT close the browser tab. (Expected.)
+ * The lomda is NOT reset to the first screen.
+ *
+ * >>> When embedded in a host (LMS/iframe) that exposes a close API, wire the
+ * host's EXACT expected message + origin in the hook below. Do NOT invent a
+ * message shape the host does not listen for. <<<
+ */
 function closeMission() {
   const overlay = document.getElementById('s18-completion-overlay');
   if (overlay) overlay.classList.add('hidden');
 
-  try {
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({ type: 'LOMDA_CLOSE', action: 'close' }, '*');
-    }
-  } catch (e) { /* cross-origin parent — ignore */ }
-
-  try { window.close(); } catch (e) { /* not script-opened — ignore */ }
+  // ── Host close hook — intentionally NOT wired (no confirmed host API) ──────
+  // Enable ONLY once the host integration is confirmed, using the host's real
+  // event shape and origin, e.g.:
+  //   if (window.parent !== window) {
+  //     window.parent.postMessage(<HOST_EXACT_CLOSE_EVENT>, '<HOST_ORIGIN>');
+  //   }
+  //   // or, only if the host opened this lomda as a script popup window:
+  //   // if (window.opener) window.close();
 }
