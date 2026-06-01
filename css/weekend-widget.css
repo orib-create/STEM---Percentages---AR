@@ -36,7 +36,10 @@
    the canvas and fits within 1920×1080, with overflow visible (no scroll).
    The parent .content-card clip is relaxed via .ww-zoom-open while zoomed. */
 .ww-container.ww-zoomed {
-  transform: scale(1.4);
+  /* QA r1 fix A: shift further right (translateX) so the enlarged widget no
+     longer covers the question text (right edge ≈ x:934); it may still overlap
+     the progress numbers and nav arrow. Size unchanged (scale 1.4). */
+  transform: translateX(150px) scale(1.4);
   transform-origin: right center;
   overflow: visible;
   z-index: 30;

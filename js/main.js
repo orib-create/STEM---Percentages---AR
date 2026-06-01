@@ -1099,11 +1099,8 @@ function disableSubmitS11(feedbackType) {
   if (inp) inp.disabled = true;
   document.getElementById('next-s11')?.classList.remove('hidden');
 
-  // מסמן את נקודת התשובה (80,400) על גרף Q5A (ממוקדת ב-#graph-card)
-  const answerDot = document.querySelector('#graph-card .gp[data-answer="true"]');
-  if (answerDot) {
-    answerDot.classList.add(feedbackType === 'correct' ? 'is-correct' : 'is-incorrect');
-  }
+  // QA r1 fix D: Q5A הוא שאלת קלט — הגרף אינפורמטיבי בלבד.
+  // אין סימון מצב נקודה (is-correct/is-incorrect) על הגרף. (רק ב-Q5C/מסך 13.)
 
   // הסתר dot (Ellipse 3) + טקסט הסבר כשמופיע פידבק
   document.querySelector('[data-screen="11"] .s11-dot-bullet')?.classList.add('hidden');
@@ -1173,11 +1170,8 @@ function disableSubmitS12(feedbackType) {
   if (inp) inp.disabled = true;
   document.getElementById('next-s12')?.classList.remove('hidden');
 
-  // מסמן את נקודת התשובה (70,350) על גרף Q5B
-  const answerDot = document.querySelector('#graph-card-s12 .gp[data-answer="true"]');
-  if (answerDot) {
-    answerDot.classList.add(feedbackType === 'correct' ? 'is-correct' : 'is-incorrect');
-  }
+  // QA r1 fix D: Q5B הוא שאלת קלט — הגרף אינפורמטיבי בלבד.
+  // אין סימון מצב נקודה (is-correct/is-incorrect) על הגרף. (רק ב-Q5C/מסך 13.)
 
   // הסתר dot (Ellipse 3) + טקסט הסבר כשמופיע פידבק
   document.querySelector('[data-screen="12"] .s11-dot-bullet')?.classList.add('hidden');

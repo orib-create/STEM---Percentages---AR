@@ -1852,12 +1852,13 @@ html, body {
 .gp .gp-s,
 .gp .gp-ck,
 .gp .gp-xk { display: none; position: absolute; pointer-events: none; }
-/* QA r1 (item 8): תווית קואורדינטה במעבר עכבר על רקע לבן (שקוף-חלקית) לקריאוּת,
-   בהתאם לקומפוננטת Figma 132:1629 (State=Hover — תיבת bg-white). */
+/* QA r1 (item 8 / fix C): תווית קואורדינטה במעבר עכבר על רקע לבן אטום (לא שקוף),
+   בהתאם לקומפוננטת Figma 132:1629 (State=Hover — תיבת bg-white). רקע אטום מבטיח
+   שקווי הגרף לא ייראו מבעד לרקע התווית. */
 .gp .gp-lbl { display: none; position: absolute; left: 30px; top: 1px;
   font-family: 'Assistant', sans-serif; font-size: 20px; font-weight: 500;
   color: #030303; white-space: nowrap; direction: ltr;
-  background: rgba(255, 255, 255, 0.9); padding: 1px 7px; border-radius: 5px; }
+  background: #ffffff; padding: 1px 7px; border-radius: 5px; }
 
 /* ── NORMAL: עיגול קטן 20×20, ממורכז באזור 28×26 ── */
 .gp .gp-n { display: block; width: 20px; height: 20px; left: 4px; top: 3px; }
