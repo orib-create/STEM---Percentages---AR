@@ -214,9 +214,9 @@ html, body {
 }
 
 /* ─── SCREEN 1 — alex-video wrapper ─────────────────────────────────────
-   Wraps the video so that the wrapper (not just the video element) is
-   fullscreened. JS (onAlexFullscreenChange) handles the redirect and
-   applies the correct scale transform inside fullscreen.
+   Holds the intro <video>. Fullscreen uses the video's own native control
+   (no JS redirect); subtitles are baked into the video file so they stay
+   visible. The lomda does not depend on fullscreen (layout uses scaleApp()).
 ─────────────────────────────────────────────────────────────────────── */
 #alex-video-wrap {
   position: absolute;
@@ -234,13 +234,6 @@ html, body {
   pointer-events: auto;
   cursor: default;
   /* No transform — controls visible at the bottom of the element */
-}
-
-/* In fullscreen the wrapper fills the screen; inner layout stays 1920×1080
-   via JS transform (onAlexFullscreenChange).  Make bg black during transition. */
-#alex-video-wrap:fullscreen,
-#alex-video-wrap:-webkit-full-screen {
-  background: #000;
 }
 
 /* Frame 1 states — טלפון + הודעות (מופיע אחרי וידאו) */

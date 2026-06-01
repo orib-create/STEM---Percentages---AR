@@ -464,43 +464,10 @@ function initAlexVideo() {
     if (nextBtn) nextBtn.classList.remove('hidden');
   });
 
-  // ── Fullscreen: כאשר הוידאו עצמו עובר למסך-מלא (דרך כפתור הנגן),
-  //    מפנים מיד ל-wrapper כדי שה-Sub יישאר גלוי.
-  //    כאשר ה-wrapper עצמו במסך-מלא — מחשבים scale כמו scaleApp.
-  function onAlexFullscreenChange() {
-    const wrap = document.getElementById('alex-video-wrap');
-    if (!wrap) return;
-
-    const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
-    const exit = (document.exitFullscreen || document.webkitExitFullscreen).bind(document);
-    const enterWrap = (wrap.requestFullscreen || wrap.webkitRequestFullscreen).bind(wrap);
-
-    if (fsEl === alexVideo) {
-      // הוידאו עצמו הלך למסך-מלא → מפנים ל-wrapper
-      exit().then(() => enterWrap().catch(console.error)).catch(console.error);
-      return;
-    }
-
-    if (fsEl === wrap) {
-      // ה-wrapper במסך-מלא → scale כדי לשמור 1920×1080
-      const sw = window.screen.width;
-      const sh = window.screen.height;
-      const scale = Math.min(sw / 1920, sh / 1080);
-      const ox = (sw - 1920 * scale) / 2;
-      const oy = (sh - 1080 * scale) / 2;
-      wrap.style.width          = '1920px';
-      wrap.style.height         = '1080px';
-      wrap.style.transformOrigin = 'top left';
-      wrap.style.transform      = `translate(${ox}px, ${oy}px) scale(${scale})`;
-    } else {
-      // יצאנו ממסך-מלא → איפוס
-      wrap.style.width = wrap.style.height = '';
-      wrap.style.transform = wrap.style.transformOrigin = '';
-    }
-  }
-
-  document.addEventListener('fullscreenchange',       onAlexFullscreenChange);
-  document.addEventListener('webkitfullscreenchange', onAlexFullscreenChange);
+  // Fullscreen: handled by the <video> element's own native control only.
+  // No JS redirect — the native fullscreen button is a real user gesture
+  // handled by the browser, and subtitles are baked into the video file so they
+  // stay visible. The lomda never forces fullscreen (layout uses scaleApp()).
 }
 
 /* ─── Help Popup — כל המסכים ───────────────────────────────
