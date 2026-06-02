@@ -11,7 +11,11 @@
 .ww-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  /* QA r1: let the white card grow downward so feedback stays inside the white
+     background. min-height keeps it filling the 754px host when there's no
+     feedback; height:auto lets it extend when the content gets taller. */
+  min-height: 100%;
+  height: auto;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -36,10 +40,14 @@
    the canvas and fits within 1920×1080, with overflow visible (no scroll).
    The parent .content-card clip is relaxed via .ww-zoom-open while zoomed. */
 .ww-container.ww-zoomed {
-  /* QA r1 fix A: shift further right (translateX) so the enlarged widget no
-     longer covers the question text (right edge ≈ x:934); it may still overlap
-     the progress numbers and nav arrow. Size unchanged (scale 1.4). */
-  transform: translateX(150px) scale(1.35);
+  /* QA r1 fix A: shift right (translateX) so the enlarged widget clears the
+     question text (right edge ≈ x:934); may overlap progress numbers/nav arrow.
+     QA r1 (white-card grow): translateY(-23px) re-centres the now-growable card
+     vertically so per-attempt feedback stays centred in the 1920×1080 canvas
+     (all content visible). The rare end-of-5 "finished" message is taller than
+     the canvas at this zoom and may reach the edge — acceptable, no layout break.
+     Scale unchanged (1.35). */
+  transform: translateX(150px) translateY(-23px) scale(1.35);
   transform-origin: right center;
   overflow: visible;
   z-index: 30;

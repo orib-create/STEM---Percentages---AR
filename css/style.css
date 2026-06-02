@@ -2105,6 +2105,11 @@ html, body {
    ──────────────────────────────────────────────────────────── */
 /* No additional CSS needed — #ww-host-s16 inherits .right-panel styles */
 
+/* QA r1: screen 16 only — let the question card not crop the Weekend Widget's
+   white card when it grows downward to contain feedback. Scoped to screen 16
+   so no other screen's .content-card clipping changes. */
+[data-screen="16"] .content-card { overflow: visible; }
+
 /* ─── Screen 17 (Q8) — dropdown fill-in ──────────────────────── */
 
 /* Override bottom padding for screen 17 — Noa char is screen-level (not inside panel),
