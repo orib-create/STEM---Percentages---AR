@@ -39,7 +39,7 @@
   /* QA r1 fix A: shift further right (translateX) so the enlarged widget no
      longer covers the question text (right edge ≈ x:934); it may still overlap
      the progress numbers and nav arrow. Size unchanged (scale 1.4). */
-  transform: translateX(150px) scale(1.4);
+  transform: translateX(150px) scale(1.35);
   transform-origin: right center;
   overflow: visible;
   z-index: 30;
