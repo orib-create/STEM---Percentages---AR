@@ -10,7 +10,12 @@
 .tmw-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  /* QA r1: let the white card grow downward so feedback stays inside the white
+     background. min-height keeps it filling the 754px host when there's no
+     feedback; height:auto lets it extend when the content gets taller.
+     (Same pattern as the Weekend Widget.) */
+  min-height: 100%;
+  height: auto;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);

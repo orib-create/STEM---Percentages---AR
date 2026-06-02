@@ -2110,6 +2110,10 @@ html, body {
    so no other screen's .content-card clipping changes. */
 [data-screen="16"] .content-card { overflow: visible; }
 
+/* QA r1: screen 2 only — same as above for the Time Management Widget so its
+   grown white card isn't cropped by the question card. Scoped to screen 2. */
+[data-screen="2"] .content-card { overflow: visible; }
+
 /* ─── Screen 17 (Q8) — dropdown fill-in ──────────────────────── */
 
 /* Override bottom padding for screen 17 — Noa char is screen-level (not inside panel),
