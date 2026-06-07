@@ -441,6 +441,66 @@ html, body {
   line-height: 1.4;
 }
 
+/* ─── Notification live-text overlay (Phase 2 refactor) ─────
+   Replaces baked-text notification-msg2.png.
+   notification-icon.png = pill background + hourglass icon only.
+   Text is live HTML (Figma: node I154:1541;5:26, font: Assistant).
+   ─────────────────────────────────────────────────────────── */
+
+/* Background/icon image — fills the 537×179 pill container */
+.notif-icon-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Text overlay container — Figma: top:27, left:144, w:369, h:133
+   (calc(50%+60px) − translateX(50%) = 268.5+60−184.5 = 144px) */
+.notif-text-wrap {
+  position: absolute;
+  top: 27px;
+  left: 144px;
+  width: 369px;
+  height: 133px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 0 10px;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+.notif-text-inner {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* Line 1 — Figma: Assistant SemiBold 24px */
+.notif-line1 {
+  font-family: 'Assistant', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #030303;
+  line-height: normal;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Line 2 — Figma: Assistant Bold 28px */
+.notif-line2 {
+  font-family: 'Assistant', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #030303;
+  line-height: normal;
+  margin: 0;
+  white-space: nowrap;
+}
+
 /* ─── Play buttons ──────────────────────────────────────── */
 
 /* בסיס משותף */

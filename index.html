@@ -46,11 +46,22 @@
       <div class="phone-wrap">
         <img class="phone-cats-img" src="assets/images/phone-cats.png" alt="">
 
-        <!-- הודעה 2 — מופיעה מיד עם סיום הוידאו (Message 1 הוסרה) -->
-        <img id="notif-2"
+        <!-- הודעה 2 — מופיעה מיד עם סיום הוידאו (Message 1 הוסרה).
+             Phase 2 refactor: notification-msg2.png (baked Hebrew text) replaced with
+             notification-icon.png (pill background + hourglass icon only) + live HTML text.
+             Figma ref: node 154:1541 / 81:159 -->
+        <div id="notif-2"
              class="phone-notif-img notif-slide"
-             src="assets/images/notification-msg2.png"
-             alt="4 שעות ו-21 דקות ביום">
+             role="img"
+             aria-label="4 שעות ו-21 דקות ביום">
+          <img class="notif-icon-bg" src="assets/images/notification-icon.png" alt="">
+          <div class="notif-text-wrap">
+            <div class="notif-text-inner">
+              <p class="notif-line1">השבוע זמן המסך הממוצע שלך עמד על</p>
+              <p class="notif-line2">4 שעות ו-21 דקות ביום.</p>
+            </div>
+          </div>
+        </div>
 
       </div>
       <!-- חץ "הבא" — מופיע יחד עם הטלפון -->
