@@ -582,7 +582,7 @@ html, body {
   /* Open-state image (1920×1080) is offset by background-position:-47px -30px.
      Circle bounds in button space: x=[0..132] y=[0..133] → center=(66,67).
      50%/50% would be (75,75) — 9px right and 8px below the true circle center. */
-  top: 67px;
+  top: 63px;
   left: 66px;
   transform: translate(-50%, -50%);
   font-family: 'Assistant', sans-serif;
