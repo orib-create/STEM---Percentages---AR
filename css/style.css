@@ -971,16 +971,6 @@ html, body {
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* תמונת הרקע — שקופה (Figma image fill ללא color fill), מוחבאת */
-.feedback-bg-img {
-  display: none;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: bottom;
-}
 
 /* טקסט הפידבק — Figma: pt:80 pr:80 pb:271 pl:50, items-end, direction:rtl */
 .feedback-text {
