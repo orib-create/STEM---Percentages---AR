@@ -546,7 +546,10 @@ html, body {
   top: 20px;
   width: 150px;
   height: 150px;
-  background: url('../assets/images/btn-help-open-normal.png') center/contain no-repeat;
+  /* Open-state images are 1920×1080 canvas exports; button circle is at x=47 y=30.
+     background-size:auto shows at natural scale; position offsets to the circle.
+     Close-state images (300×300) override back to contain/center below. */
+  background: url('../assets/images/btn-help-open-normal.png') -47px -30px / auto no-repeat;
   border: none;
   cursor: pointer;
   z-index: 20;
@@ -560,6 +563,9 @@ html, body {
 
 .help-btn.is-open {
   background-image: url('../assets/images/btn-help-close-normal.png');
+  /* Close-state images are 300×300 — restore contain/center sizing */
+  background-size: contain;
+  background-position: center;
 }
 
 .help-btn.is-open:hover {
