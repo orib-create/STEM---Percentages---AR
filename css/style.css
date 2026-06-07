@@ -566,6 +566,31 @@ html, body {
   background-image: url('../assets/images/btn-help-close-hover.png');
 }
 
+/* ─── Help button live text label ────────────────────────────
+   Figma: Assistant Bold 36px #fcfafa, centered in the 150×150 button.
+   Label appears only in Open state; hidden in Close state (X shown in image).
+   Figma node: 44:41 / 43:38 (text layer within "Role=Open, State=Normal")
+   ─────────────────────────────────────────────────────────── */
+.help-btn-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Assistant', sans-serif;
+  font-size: 36px;
+  font-weight: 700;           /* Bold — Figma: font-['Assistant:Bold'] */
+  color: #fcfafa;             /* Figma: text-[#fcfafa] */
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+/* Close state: hide text label — only the X icon in the background image */
+.help-btn.is-open .help-btn-label {
+  display: none;
+}
+
 /* ─── Help Popup (Screens 3 & 4) ───────────────────────────
    הפופ-אפ יושב מחוץ לכל .screen ישירות ב-#app.
    top: 175px = מתחת לכפתור (top:20 + height:150 + 5px gap)
