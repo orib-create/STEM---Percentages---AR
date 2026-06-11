@@ -351,6 +351,29 @@ html, body {
   transition: none;
 }
 
+/*
+   SCREEN 1 only — hitbox matches the visible circle so it no longer
+   intercepts the native video controls (especially fullscreen).
+   Visible artwork (circle + drop shadow) in the 120×122 asset: 112×115 at
+   offset x:4, y:1. Fixed background-size keeps it at its original on-screen
+   size; bottom: 64px lifts it clear of the native control bar.
+*/
+.screen[data-screen="1"] .nav-btn {
+  width: 112px;
+  height: 115px;
+  bottom: 64px;
+  background-size: 120px 122px;
+  background-position: -4px -1px; /* full visible artwork incl. drop shadow */
+}
+
+.screen[data-screen="1"] .next-btn {
+  left: 4px;
+}
+
+.screen[data-screen="1"] .prev-btn {
+  right: 4px;
+}
+
 .next-btn-disabled {
   opacity: 0.3;
   cursor: default;
