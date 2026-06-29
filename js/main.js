@@ -356,8 +356,7 @@ function initNoaVideo() {
         .then(() => {
           playBtn.style.display = 'none';
         })
-        .catch(err => {
-          console.warn('noa-video play failed:', err);
+        .catch(() => {
           playBtn.style.display = 'none';
           revealPhone();
         });
@@ -369,7 +368,6 @@ function initNoaVideo() {
 
   // קובץ חסר → מדלג ישירות לטלפון
   noaVideo.addEventListener('error', () => {
-    console.warn('noa-video could not load — skipping to phone state');
     if (playBtn) playBtn.style.display = 'none';
     revealPhone();
   });
@@ -467,8 +465,7 @@ function initAlexVideo() {
       .then(() => {
         playBtn.style.display = 'none';
       })
-      .catch(err => {
-        console.warn('Alex video play failed:', err);
+      .catch(() => {
         playBtn.style.display = 'none';
         if (nextBtn) nextBtn.classList.remove('hidden');
       });
@@ -485,7 +482,6 @@ function initAlexVideo() {
 
   // שגיאת טעינה → דלג לחץ הבא
   alexVideo.addEventListener('error', () => {
-    console.warn('alex-video could not load — showing next button');
     playBtn.style.display = 'none';
     if (nextBtn) nextBtn.classList.remove('hidden');
   });
