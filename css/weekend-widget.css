@@ -54,6 +54,11 @@
 }
 .content-card.ww-zoom-open { overflow: visible; }
 
+@keyframes ww-zoom-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
+}
+
 /* Single toggle button — same Figma "Zoom In / Zoom Out" style as the
    Time Management Widget (node 227:1832): 50×55 dark rounded frame with the
    white magnifier icon. Positioned as a container-level overlay at the
@@ -75,15 +80,20 @@
   border-radius: 10px;
   cursor: pointer;
   z-index: 10;
-  transition: transform 0.15s ease;
+  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.55), 0 0 14px rgba(241, 196, 15, 0.35);
+  animation: ww-zoom-pulse 2s ease-in-out infinite;
 }
 
 .ww-zoom-btn:hover {
-  transform: scale(1.08);
+  animation: none;
+  transform: scale(1.1);
+  transition: none;
 }
 
 .ww-container.ww-zoomed .ww-zoom-btn {
   background-image: url('../assets/images/btn-zoom-out.png');
+  box-shadow: none;
+  animation: none;
 }
 
 .ww-inner {

@@ -1023,7 +1023,7 @@ html, body {
   position: absolute;
   left: 151px;
   top: 144px;
-  width: 745px;
+  width: 720px;
   height: 818px;
   background: #171717;
   border-radius: 45px;
@@ -1184,7 +1184,7 @@ html, body {
    Figma: width:672, height:275, bg:#111, border-radius:45
    ─────────────────────────────────────────────────────── */
 .s4-feedback-box {
-  width: 672px;
+  width: 710px;
   min-height: 275px;
   background: #111;
   border-radius: 45px;
@@ -1745,7 +1745,7 @@ html, body {
 .s11s12-feedback-pos {
   position: absolute;
   left: 220px;
-  top: 510px;
+  top: 580px;
   width: 740px;
   z-index: 20;
 }
@@ -2034,7 +2034,7 @@ html, body {
   position: absolute;
   left: 473px;
   top: 593px;
-  width: 591px;
+  width: 680px;
   direction: rtl;
   text-align: right;
   z-index: 5;
@@ -2229,6 +2229,11 @@ html, body {
 /* QA r1: screen 2 only — same as above for the Time Management Widget so its
    grown white card isn't cropped by the question card. Scoped to screen 2. */
 [data-screen="2"] .content-card { overflow: visible; }
+
+/* QA r2: screen 17 — feedback box overflows the panel/card boundary; allow it
+   to render below on the dark background (same pattern as screens 2 and 16). */
+[data-screen="17"] .content-card { overflow: visible; }
+[data-screen="17"] .left-panel   { overflow: visible; }
 
 /* ─── Screen 17 (Q8) — dropdown fill-in ──────────────────────── */
 
