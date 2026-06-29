@@ -1,6 +1,5 @@
 /* ============================================================
    Weekend Widget (Question 7) — internal/local implementation
-   Source reference (unchanged): assets/widgets/weekend-widget-original.html
    IIFE-scoped to avoid colliding with main.js globals and with the
    Time Management Widget. No shared DOM, state, IDs, or functions.
    ============================================================ */

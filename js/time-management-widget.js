@@ -1,6 +1,5 @@
 /* ============================================================
    Time Management Widget — internal/local implementation
-   Source reference (unchanged): assets/widgets/time-management-widget-original.html
    IIFE-scoped to avoid colliding with main.js globals
    (the lesson already defines a top-level checkAnswers()).
    ============================================================ */
