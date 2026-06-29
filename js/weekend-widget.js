@@ -112,6 +112,11 @@
     attempts++;
     attemptsDisplay.innerText = attempts;
 
+    if (attempts === 2) {
+      const nextS16 = document.getElementById('next-s16');
+      if (nextS16) nextS16.classList.remove('hidden');
+    }
+
     if (userFinalPerc === EXPECTED_FINAL_PERC) {
       successes++;
       successesDisplay.innerText = successes;

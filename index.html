@@ -37,7 +37,8 @@
     </div>
 
     <!-- Play overlay מלא-מסך 1920×1080 (PlayBrn_Big מפיגמה) — נעלם בלחיצה -->
-    <button id="play-btn-s0" class="play-btn-big" aria-label="התחל לומדה">
+    <!-- מוסתר מראש; מופיע אחרי עיכוב קריאה (initNoaVideo / resetScreenState) -->
+    <button id="play-btn-s0" class="play-btn-big" style="display:none" aria-label="התחל לומדה">
       <img src="assets/images/play-btn-big.png" alt="הפעל">
     </button>
 
@@ -1661,7 +1662,7 @@
     </div><!-- /content-area -->
 
     <button class="nav-btn prev-btn" onclick="goTo(15)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(17)" aria-label="המשך"></button>
+    <button id="next-s16" class="nav-btn next-btn hidden" onclick="goTo(17)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
