@@ -116,6 +116,11 @@
     attempts++;
     attemptsDisplay.innerText = attempts;
 
+    if (attempts === 1) {
+      const nextS2 = document.getElementById('next-s2');
+      if (nextS2) nextS2.classList.remove('hidden');
+    }
+
     const isCorrect = (userGymTotal === expectedGymTotal &&
                        userGymNet   === expectedGymNet &&
                        userScreen   === expectedScreen);
