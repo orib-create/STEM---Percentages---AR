@@ -916,7 +916,7 @@ html, body {
 .hint-card-header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 10px;
 }
 
@@ -1559,22 +1559,20 @@ html, body {
   flex-shrink: 0;
 }
 
-/* 514.952×378.422 inner clip container, offset per Figma */
+/* tv-time-q3-fix.png is 522×430 — fills the full visual container directly */
 .q3-tv-img-wrap {
   position: absolute;
-  left: 0.19px;
-  top: 27.91px;
-  width: 514.952px;
-  height: 378.422px;
+  left: 0;
+  top: 0;
+  width: 522px;
+  height: 430px;
   overflow: hidden;
 }
 
 .q3-tv-img {
-  position: absolute;
-  width: 353.97%;
-  height: 270.95%;
-  left: -205.93%;
-  top: -114.74%;
+  display: block;
+  width: 100%;
+  height: 100%;
   max-width: none;
   pointer-events: none;
   user-select: none;
@@ -1590,13 +1588,16 @@ html, body {
   z-index: 1;
 }
 
-/* Top row labels (top:107px) */
+/* Top row labels */
 .q3-tv-rest-top { right: 335px; top: 107px; color: #030303; }
 .q3-tv-35       { right: 197px; top: 107px; color: #fcfafa; }
 .q3-tv-20       { right: 80px;  top: 107px; color: #fcfafa; }
 
-/* Bottom row labels (top:328px) */
-.q3-tv-rest-bot { right: 304px; top: 328px; color: #030303; }
+/* Zoom-box header label */
+.q3-tv-105      { right: 150px; top: 193px; color: #fcfafa; }
+
+/* Bottom row labels */
+.q3-tv-rest-bot { right: 282px; top: 328px; color: #030303; }
 .q3-tv-40       { right: 121px; top: 328px; color: #030303; }
 
 /* ─── Frame 9 (Screen 8): Calendar notification ──────────── */
