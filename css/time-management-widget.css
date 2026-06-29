@@ -63,28 +63,26 @@
   50%       { transform: scale(1.06); }
 }
 
-/* Single toggle button — Figma component "Zoom In / Zoom Out" (node 227:1832):
-   50×55 dark rounded frame, with the white magnifier icon laid on top.
-   Positioned as a container-level overlay at the top-right corner of the
-   TimeManagementWidget Container (visual right in the dir="ltr" outer wrapper),
-   so it reads as a separate UI control — not as an input inside the widget form. */
+/* Single toggle button — circular icon positioned half outside the top-right
+   corner of the right-panel host (sibling of the container). The yellow glow
+   ring matches the circular icon shape. */
 .tmw-zoom-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;                                  /* visual right edge of container (LTR) */
-  width: 50px;                                  /* Figma 227:1831 / 227:1833 */
-  height: 55px;
+  top: -35px;
+  right: -10px;
+  width: 70px;
+  height: 70px;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.75);        /* Figma: dark semi-transparent frame */
-  background-image: url('../assets/images/btn-zoom-in.png');
+  background-color: transparent;
+  background-image: url('../assets/images/zoom-in1.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;                     /* icon's transparent corners reveal the dark frame */
+  background-size: 230%;   /* PNG has wide transparent margins; scale up so the icon's circle fills the glow ring */
   border: none;
-  border-radius: 10px;                          /* Figma */
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.55), 0 0 14px rgba(241, 196, 15, 0.35);
+  z-index: 40;   /* must stay above the zoomed container (z:30) so it's never covered */
+  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.8), 0 0 20px rgba(241, 196, 15, 0.6);
   animation: tmw-zoom-pulse 2s ease-in-out infinite;
 }
 
@@ -94,10 +92,15 @@
   transition: none;
 }
 
-.tmw-container.tmw-zoomed .tmw-zoom-btn {
-  background-image: url('../assets/images/btn-zoom-out.png');
-  box-shadow: none;
-  animation: none;
+.content-card.tmw-zoom-open .tmw-zoom-btn {
+  background-image: url('../assets/images/zoom-out.png');
+  animation: none;   /* stop pulse once open; keep the yellow glow ring */
+  /* widget grows up-and-right when zoomed — move the button to the new
+     top-right corner of the enlarged widget */
+  transform: translate(126px, -85px);
+}
+.content-card.tmw-zoom-open .tmw-zoom-btn:hover {
+  transform: translate(126px, -85px) scale(1.1);
 }
 
 .tmw-scoreboard {

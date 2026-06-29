@@ -411,7 +411,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   padding: 10px 50px;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   text-align: right;
@@ -516,7 +516,7 @@ html, body {
 /* Line 2 — Figma: Assistant Bold 28px */
 .notif-line2 {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #030303;
   line-height: normal;
@@ -717,15 +717,15 @@ html, body {
   width: 1646px;
   height: 858px;
   flex-shrink: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .textbox2-bg {
   position: absolute;
-  width: 116.65%;
-  height: 130.43%;
-  left: -8.26%;
-  top: -15.7%;
+  width: 124.34%;
+  height: 139.03%;
+  left: -12.10%;
+  top: -20.01%;
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -749,14 +749,14 @@ html, body {
 }
 
 .q-text {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   line-height: 1.55;
 }
 
 .q-bold {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #030303;
   line-height: 1.55;
@@ -765,6 +765,9 @@ html, body {
 /* Q1B left panel adjustments (legacy — kept for other refs) */
 .left-panel-q4 {
   gap: 20px;
+  /* let the inline feedback box overflow the panel instead of being clipped
+     (the content-card is overflow:visible and the box stays within the canvas) */
+  overflow: visible;
 }
 
 /* ─── Frame 4 (Screen 3) — New layout: question content on right side ─
@@ -776,7 +779,7 @@ html, body {
   position: absolute;
   left: 885px;
   top: 144px;
-  width: 851px;
+  width: 920px;
   height: 785px;
   box-sizing: border-box;
   padding: 80px;
@@ -785,7 +788,7 @@ html, body {
   gap: 20px;
   direction: rtl;
   z-index: 5;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* ─── Timer rows (Screen 4) ─────────────────────────────── */
@@ -830,7 +833,7 @@ html, body {
 }
 
 .timer-label {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   white-space: nowrap;
@@ -849,7 +852,7 @@ html, body {
   border-radius: 8px;
   font-family: 'Assistant', sans-serif;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 34px;
   color: #030303;
   text-align: center;
   line-height: normal;          /* ensures browser centers single-line value vertically */
@@ -922,14 +925,14 @@ html, body {
 
 .hint-title {
   font-family: 'Assistant', sans-serif;
-  font-size: 26px;
+  font-size: 34px;
   font-weight: 800;
   color: #2b369b;
 }
 
 .hint-bulb {
-  width: 36px;
-  height: 36px;
+  width: 41.4px;
+  height: 41.4px;
   flex-shrink: 0;
 }
 
@@ -942,7 +945,7 @@ html, body {
 
 .hint-text {
   font-family: 'Assistant', sans-serif;
-  font-size: 22px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   line-height: 1.45;
@@ -1028,7 +1031,7 @@ html, body {
 /* ─── Try-Again inline message (after 1st wrong attempt) ─── */
 .try-again-msg {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   line-height: 1.55;
   text-align: right;
   direction: rtl;
@@ -1045,6 +1048,31 @@ html, body {
 .try-again-msg p:not(.try-again-err) {
   font-weight: 400;
   color: #030303;
+}
+
+/* Screens 11 & 13: the blue graph-note now sits lower (bottom-aligned with the
+   graph), so lift the try-again message up so the two don't overlap.
+   transform only — keeps the "צדקתי?" button and flex layout in place. */
+[data-screen="11"] .try-again-msg {
+  transform: translateY(-160px);
+}
+[data-screen="13"] .try-again-msg {
+  transform: translateY(-230px);
+}
+
+/* Screen 9 (Q4): lift the try-again message so it clears the hint card text,
+   and nudge it left for nicer breathing room from the hint card. */
+[data-screen="9"] .try-again-msg {
+  transform: translate(-50px, -240px);
+}
+
+/* Screen 12 (Q5B): the blue note sits higher here (graph has no context text
+   above it), so the try-again message + "צדקתי?" button collide with the note's
+   bottom. Move the whole submit-row DOWN (breathing room below the note) and a
+   bit LEFT so the message's right edge lines up with the question text. */
+[data-screen="12"] .submit-row {
+  left: 217px;
+  top: 780px;
 }
 
 /* ─── Right Panel (TimeManagementWidget Container) ──────────
@@ -1072,12 +1100,12 @@ html, body {
    ──────────────────────────────────────────────────────── */
 .feedback-panel {
   position: absolute;
-  left: 151px;
-  top: 144px;
-  width: 720px;
-  height: 818px;
+  left: 80px;
+  top: 106px;
+  width: 773px;
+  height: 885px;
   background: #171717;
-  border-radius: 45px;
+  border-radius: 100px;
   overflow: hidden;
   z-index: 20;
   animation: feedbackIn 0.35s ease forwards;
@@ -1092,8 +1120,8 @@ html, body {
 /* טקסט הפידבק — Figma: pt:80 pr:80 pb:271 pl:50, items-end, direction:rtl */
 .feedback-text {
   position: absolute;
-  inset: 0;
-  padding: 80px 80px 271px 50px;
+  inset: 12px 0 0 0;
+  padding: 106px 56px 271px 40px;
   text-align: right;
   direction: rtl;
   z-index: 1;
@@ -1105,7 +1133,7 @@ html, body {
 
 /* כל שורת טקסט — Assistant SemiBold 28px, whitespace-pre, leading-normal */
 .feedback-text p {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
   line-height: normal;
@@ -1122,7 +1150,7 @@ html, body {
 /* כותרת פידבק — ExtraBold כמו בפיגמה */
 .feedback-title {
   font-weight: 800 !important;
-  font-size: 30px !important;
+  font-size: 34px !important;
 }
 
 .correct-title   { color: #1a7f37 !important; }   /* ירוק — "צדקת!" */
@@ -1155,7 +1183,7 @@ html, body {
 }
 
 .s4-context-text {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   text-align: right;
@@ -1183,7 +1211,7 @@ html, body {
 }
 
 .s4-tv-title {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #030303;
   text-align: right;
@@ -1219,7 +1247,7 @@ html, body {
   position: absolute;
   top: 154px;
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #030303;
   white-space: nowrap;
@@ -1253,7 +1281,7 @@ html, body {
 
 .s4-feedback-title {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #fcfafa;
   text-align: right;
@@ -1264,7 +1292,7 @@ html, body {
 
 .s4-feedback-body {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
   text-align: right;
@@ -1272,6 +1300,11 @@ html, body {
   width: 100%;
   margin: 0;
 }
+
+/* Screen 4: nudge the whole left panel left so its text doesn't overlap the
+   right context panel. Width stays at the base 878px (content right ≈ 798)
+   to keep clear of the context panel at left:980. */
+[data-screen="4"] .left-panel-q4 { left: -40px; }
 
 /* ─── Frame 6 (Screen 5): WhatsApp chat — Ofri ──────────── */
 @keyframes floatIn {
@@ -1282,8 +1315,8 @@ html, body {
 /* Textbox at top — container window at (542,0), full-canvas image clipped inside */
 .f6-textbox1 {
   position: absolute;
-  left: 542px; top: 0;
-  width: 1378px; height: 209px;
+  left: 400.75px; top: 0;
+  width: 1519.25px; height: 230.42px;
   overflow: hidden;
   z-index: 5;
   pointer-events: none; user-select: none;
@@ -1291,7 +1324,7 @@ html, body {
 .f6-textbox1 img {
   position: absolute;
   width: 1920px; height: 1080px;
-  left: -542px; top: 0;
+  left: -400.75px; top: 0;
 }
 
 /* Header text — Figma 120:448: right:0, top:0 within header (= canvas right edge),
@@ -1314,7 +1347,7 @@ html, body {
 .f6-header-text p {
   font-family: 'Assistant', sans-serif;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 34px;
   line-height: 1.4;
   color: #030303;
   margin: 0;
@@ -1377,7 +1410,7 @@ html, body {
   pointer-events: none;
   user-select: none;
 }
-.ofri-text { font-weight: 400; font-size: 30px; color: #2d2c2c; }
+.ofri-text { font-weight: 400; font-size: 34px; color: #2d2c2c; }
 /* timestamp reads left-to-right ("4:30 PM"), still flush to the bubble's right edge */
 .ofri-time { font-weight: 600; font-size: 14px; color: #6b6b6b; direction: ltr; }
 
@@ -1386,7 +1419,7 @@ html, body {
 .ofri-time-m1 { right: 71.47px; top: 86.95px; }
 .ofri-text-m2 { right: 47.61px; top: 27.64px; }
 .ofri-time-m2 { right: 56.99px; top: 69.07px; }
-.ofri-text-m3 { right: 47.61px; top: 42.39px; }
+.ofri-text-m3 { right: 47.61px; top: 28px; }
 .ofri-time-m3 { right: 72.36px; top: 164.69px; }
 .ofri-text-m4 { right: 47.61px; top: 27.44px; }
 .ofri-time-m4 { right: 57.88px; top: 66.27px; }
@@ -1397,6 +1430,8 @@ html, body {
   width: 876px;
   /* RTL: flex-start = physical right — aligns all children to the same right edge */
   align-items: flex-start;
+  /* let the inline feedback box overflow instead of being clipped (screens 6, 7) */
+  overflow: visible;
 }
 
 /* ─── Radio buttons (Screens 6, 7, 9) ───────────────────── */
@@ -1430,7 +1465,7 @@ html, body {
 
 .radio-label {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 400;
   color: #030303;
   text-align: right;
@@ -1512,7 +1547,7 @@ html, body {
 }
 
 .q3-context-text {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   text-align: right;
@@ -1542,7 +1577,7 @@ html, body {
 }
 
 .q3-tv-title {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #030303;
   text-align: right;
@@ -1605,8 +1640,8 @@ html, body {
 /* Textbox1 header — canvas pos (1047,0), size 872.707×192 */
 .f9-textbox1 {
   position: absolute;
-  left: 1047px; top: 0;
-  width: 872.707px; height: 192px;
+  left: 957.84px; top: 0;
+  width: 962.16px; height: 211.68px;
   overflow: hidden;
   z-index: 5;
   pointer-events: none; user-select: none;
@@ -1614,7 +1649,7 @@ html, body {
 .f9-textbox1 img {
   position: absolute;
   width: 1920px; height: 1080px;
-  left: -1047px; top: 0;
+  left: -957.84px; top: 0;
 }
 
 /* Phone — canvas pos (200,209), size 600.227×871 */
@@ -1652,7 +1687,7 @@ html, body {
    top = 137.983/2 − 37 = 32px */
 .f9-m1-text {
   position: absolute;
-  right: 70.527px;
+  right: 48px;
   top: 32px;
   text-align: right;
   direction: rtl;
@@ -1661,7 +1696,7 @@ html, body {
 }
 .f9-m1-title {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #030303;
   margin: 0;
@@ -1669,7 +1704,7 @@ html, body {
 }
 .f9-m1-body {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   margin: 0;
@@ -1689,11 +1724,16 @@ html, body {
   gap: 15px;
   /* RTL: flex-start = physical right — aligns all children to the right */
   align-items: flex-start;
+  /* let the inline feedback box overflow instead of being clipped (screens 9, 15, 17) */
+  overflow: visible;
 }
 
 /* Screen 9 has no character image — reduce unused bottom padding to make room for hint card */
 [data-screen="9"] .left-panel-f10 {
   padding-bottom: 30px;
+  /* the absolute feedback box (top:600) extends past the 795px panel; allow it to
+     show fully (the content-card is 858px tall and already overflow:visible). */
+  overflow: visible;
 }
 
 /* Screen 9 hint card: hug the text width instead of stretching full-panel */
@@ -1781,7 +1821,7 @@ html, body {
   border: 3px solid #2b369b;   /* כחול — Figma: border-[#2b369b] */
   border-radius: 8px;
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: #030303;
   text-align: center;
@@ -1797,7 +1837,7 @@ html, body {
 
 .s11-unit {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 400;
   color: #030303;
   white-space: nowrap;
@@ -1821,6 +1861,11 @@ html, body {
 
 [data-screen="13"] .s11s12-feedback-pos {
   top: 500px;
+}
+
+/* Screen 11 only — push the feedback box down a touch. */
+[data-screen="11"] .s11s12-feedback-pos {
+  top: 560px;
 }
 
 /* ── OLD overlay feedback (kept for reference, no longer used on screens 11/12) ── */
@@ -1860,7 +1905,7 @@ html, body {
 
 .s11-feedback-text p {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
   line-height: normal;
@@ -1904,7 +1949,7 @@ html, body {
 }
 .s11-context-text p {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   line-height: 1.45;
@@ -2094,7 +2139,7 @@ html, body {
 .s11-dot-bullet {
   position: absolute;
   left: 1075px;
-  top: 552px;
+  top: 752px;
   width: 15px;
   height: 15px;
   z-index: 5;
@@ -2104,7 +2149,7 @@ html, body {
 .s11-graph-note {
   position: absolute;
   left: 380px;
-  top: 540px;
+  top: 740px;
   width: 680px;
   direction: rtl;
   text-align: right;
@@ -2117,6 +2162,12 @@ html, body {
   color: #2b369b;
   line-height: 1.45;
 }
+
+/* Screen 12 (Q5B) has no context text above the graph, so the graph sits
+   ~150px higher than on screen 11. Align the restored note + dot to the
+   bottom of that higher graph. */
+[data-screen="12"] .s11-graph-note { top: 585px; }
+[data-screen="12"] .s11-dot-bullet { top: 597px; }
 
 /* ═══ Graph Zoom Modal — #graph-card עובר בDOM לכאן ═══════
    הכרטיסייה (589×513) מוגדלת ×1.7 בתוך graph-zoom-host (1001×872).
@@ -2192,7 +2243,7 @@ html, body {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  align-items: center;
+  align-items: flex-end;   /* align the note to the BOTTOM of the graph */
   justify-content: flex-end;   /* pushed to the right (ltr: right end) */
   direction: ltr;
   width: 100%;
@@ -2271,7 +2322,7 @@ html, body {
 
 .q8-feedback-box p {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
   margin: 0;
@@ -2282,6 +2333,16 @@ html, body {
 }
 
 /* Screen 13 feedback now uses .s11s12-feedback-pos (same as screens 11/12) */
+
+/* Screen 15 (Q6): match the Figma feedback box (node 139:2001) — box 812px wide
+   with a 780px text column and 32px right padding, so the lines wrap exactly like
+   the design instead of breaking earlier in the narrower 709px box. */
+[data-screen="15"] #feedback-s15-correct,
+[data-screen="15"] #feedback-s15-incorrect {
+  width: 812px;
+  padding-left: 0;
+  padding-right: 32px;
+}
 
 /* Screen 15 (Q6) — feedback is inline in left-panel-f10 (no extra CSS) */
 
@@ -2315,6 +2376,27 @@ html, body {
   padding-bottom: 40px;
 }
 
+/* Screen 17: the panel is dense (question + 2 dropdowns + Noa bottom-left), so the
+   long feedback paragraph has no room. Place it bottom-right BELOW the dropdowns
+   (top:600 in-panel ≈ canvas 744, clearing the dropdowns ~712) and clear of Noa
+   (width keeps the left edge right of x≈694). Font is reduced to 28px here so the
+   box fits within the canvas without overlapping anything. */
+[data-screen="17"] #feedback-s17-correct,
+[data-screen="17"] #feedback-s17-incorrect {
+  position: absolute;
+  left: auto;
+  right: 73px;
+  top: 600px;
+  bottom: auto;
+  width: 860px;
+  z-index: 20;
+}
+[data-screen="17"] #feedback-s17-correct p,
+[data-screen="17"] #feedback-s17-incorrect p {
+  font-size: 28px;
+  line-height: 1.4;
+}
+
 /* תיבת fill-in כוללת */
 .s17-fillin-box {
   display: flex;
@@ -2326,7 +2408,7 @@ html, body {
 
 .s17-fillin-line {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   line-height: 1.45;
@@ -2346,7 +2428,7 @@ html, body {
 
 .s17-fillin-text {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   white-space: nowrap;
@@ -2361,14 +2443,14 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
-  min-width: 180px;
-  height: 52px;
-  padding: 0 16px;
+  min-width: 230px;
+  height: 62px;
+  padding: 0 18px;
   background: #fff;
   border: 3px solid #2b369b;
   border-radius: 8px;
   font-family: 'Assistant', sans-serif;
-  font-size: 26px;
+  font-size: 34px;
   font-weight: 600;
   color: #2b369b;
   cursor: pointer;
@@ -2399,8 +2481,8 @@ html, body {
 }
 
 .s17-dd-chevron {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
 }
 
@@ -2419,9 +2501,9 @@ html, body {
 }
 
 .s17-dropdown-list li {
-  padding: 10px 16px;
+  padding: 12px 18px;
   font-family: 'Assistant', sans-serif;
-  font-size: 26px;
+  font-size: 34px;
   font-weight: 600;
   color: #030303;
   cursor: pointer;

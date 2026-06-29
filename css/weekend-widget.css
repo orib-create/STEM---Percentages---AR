@@ -58,28 +58,26 @@
   50%       { transform: scale(1.06); }
 }
 
-/* Single toggle button — same Figma "Zoom In / Zoom Out" style as the
-   Time Management Widget (node 227:1832): 50×55 dark rounded frame with the
-   white magnifier icon. Positioned as a container-level overlay at the
-   top-right corner (visual right in the dir="ltr" outer wrapper), so it
-   reads as a separate UI control — not an input inside the widget form. */
+/* Single toggle button — circular icon positioned half outside the top-right
+   corner of the right-panel host (sibling of the container). The yellow glow
+   ring matches the circular icon shape. */
 .ww-zoom-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;                                  /* visual right edge of container (LTR) */
-  width: 50px;
-  height: 55px;
+  top: -35px;
+  right: -10px;
+  width: 70px;
+  height: 70px;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.75);        /* dark semi-transparent frame */
-  background-image: url('../assets/images/btn-zoom-in.png');
+  background-color: transparent;
+  background-image: url('../assets/images/zoom-in1.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 230%;   /* PNG has wide transparent margins; scale up so the icon's circle fills the glow ring */
   border: none;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.55), 0 0 14px rgba(241, 196, 15, 0.35);
+  z-index: 40;   /* must stay above the zoomed container (z:30) so it's never covered */
+  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.8), 0 0 20px rgba(241, 196, 15, 0.6);
   animation: ww-zoom-pulse 2s ease-in-out infinite;
 }
 
@@ -89,10 +87,15 @@
   transition: none;
 }
 
-.ww-container.ww-zoomed .ww-zoom-btn {
-  background-image: url('../assets/images/btn-zoom-out.png');
-  box-shadow: none;
-  animation: none;
+.content-card.ww-zoom-open .ww-zoom-btn {
+  background-image: url('../assets/images/zoom-out.png');
+  animation: none;   /* stop pulse once open; keep the yellow glow ring */
+  /* widget grows up-and-right when zoomed — move the button to the new
+     top-right corner of the enlarged widget (WW shifts ~23px higher than TMW) */
+  transform: translate(126px, -108px);
+}
+.content-card.ww-zoom-open .ww-zoom-btn:hover {
+  transform: translate(126px, -108px) scale(1.1);
 }
 
 .ww-inner {
