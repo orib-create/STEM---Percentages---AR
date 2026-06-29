@@ -2379,8 +2379,8 @@ html, body {
 /* Screen 17: the panel is dense (question + 2 dropdowns + Noa bottom-left), so the
    long feedback paragraph has no room. Place it bottom-right BELOW the dropdowns
    (top:600 in-panel ≈ canvas 744, clearing the dropdowns ~712) and clear of Noa
-   (width keeps the left edge right of x≈694). Font is reduced to 28px here so the
-   box fits within the canvas without overlapping anything. */
+   (width keeps the left edge right of x≈694). Font stays at the standard 34px
+   (inherited from .q8-feedback-box p) to match every other screen's feedback. */
 [data-screen="17"] #feedback-s17-correct,
 [data-screen="17"] #feedback-s17-incorrect {
   position: absolute;
@@ -2391,10 +2391,23 @@ html, body {
   width: 860px;
   z-index: 20;
 }
-[data-screen="17"] #feedback-s17-correct p,
-[data-screen="17"] #feedback-s17-incorrect p {
-  font-size: 28px;
-  line-height: 1.4;
+
+/* Screen 17: the 1st-wrong-attempt message was stacked BELOW the "צדקתי?"
+   button, which pushed its 3rd line ("כדי לקבל רמז") past the card's rounded
+   bottom edge (msg bottom 993 vs card bottom 992) where it got clipped.
+   Place it to the LEFT of the button instead — the submit-row layout used on
+   every other screen. Absolute within the panel (panel = positioned ancestor
+   at card 0,0; right:0 == panel right edge, matching the feedback box's
+   right:73). Vertically centered with the button (top 670 ≈ button center
+   750-80). Clears the fill-in box above (bottom 667), the button to its right
+   (left 1475 > msg right 1455), and Noa bottom-left (right edge 694). */
+[data-screen="17"] #try-again-msg-s17 {
+  position: absolute;
+  top: 536px;
+  right: 299px;
+  bottom: auto;
+  left: auto;
+  z-index: 16;
 }
 
 /* תיבת fill-in כוללת */
