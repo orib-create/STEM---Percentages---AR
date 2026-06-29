@@ -117,11 +117,17 @@ function resetScreenState() {
     if (nextBtn0) nextBtn0.classList.remove('hidden');
     if (playBtn0) playBtn0.style.display = 'none';
   } else {
-    // טרם צפתה — מאפס הכל למצב התחלתי
+    // טרם צפתה — מסתיר Play ומתחיל עיכוב קריאה מחדש
     if (phoneDiv) phoneDiv.classList.add('hidden');
     if (notif2)   notif2.classList.add('hidden');
     if (nextBtn0) nextBtn0.classList.add('hidden');
-    if (playBtn0) playBtn0.style.display = '';
+    clearTimeout(playBtn0DelayTimer);
+    if (playBtn0) { playBtn0.style.display = 'none'; playBtn0.classList.remove('play-btn-appear'); }
+    if (currentScreen === 0) {
+      playBtn0DelayTimer = setTimeout(() => {
+        if (playBtn0) { playBtn0.style.display = ''; playBtn0.classList.add('play-btn-appear'); }
+      }, 4000);
+    }
   }
   if (noaVid) { noaVid.pause(); noaVid.currentTime = 0; }
 
@@ -274,12 +280,25 @@ function resetScreenState() {
       document.getElementById(id)?.classList.add('hidden'));
   }
 
-  // עצור גם את וידאו אלכס ואפס כפתור Play שלו + כיתוב Sub
+  // עצור גם את וידאו אלכס ואפס כפתור Play שלו
   const alexVid  = document.getElementById('alex-video');
   const playBtn1 = document.getElementById('play-btn');
   const nextS1   = document.getElementById('next-s1');
   if (alexVid)  { alexVid.pause(); alexVid.currentTime = 0; }
-  if (playBtn1) playBtn1.style.display = '';
+
+  // כפתור Play: בכניסה למסך 1 — עיכוב של 4 שניות לקריאה לפני שמופיע
+  clearTimeout(playBtnDelayTimer);
+  if (currentScreen === 1) {
+    if (playBtn1) { playBtn1.style.display = 'none'; playBtn1.classList.remove('play-btn-appear'); }
+    if (alexVid)  { alexVid.removeAttribute('controls'); }
+    playBtnDelayTimer = setTimeout(() => {
+      if (playBtn1) { playBtn1.style.display = ''; playBtn1.classList.add('play-btn-appear'); }
+      if (alexVid)  { alexVid.setAttribute('controls', ''); }
+    }, 4000);
+  } else {
+    if (alexVid && !alexVid.hasAttribute('controls')) alexVid.setAttribute('controls', '');
+  }
+
   // אם כבר צפתה בסרטון — החץ נשאר גלוי; אחרת נסתר עד סיום
   if (nextS1) {
     if (alexVideoWatched) {
@@ -312,6 +331,11 @@ function initNoaVideo() {
   const playBtn  = document.getElementById('play-btn-s0');
 
   if (!noaVideo) return;
+
+  // עיכוב קריאה בטעינה ראשונית — Play מופיע אחרי 4 שניות
+  playBtn0DelayTimer = setTimeout(() => {
+    if (playBtn) { playBtn.style.display = ''; playBtn.classList.add('play-btn-appear'); }
+  }, 4000);
 
   function revealPhone() {
     const phoneDiv = document.getElementById('frame1-phone');
@@ -356,8 +380,10 @@ function initNoaVideo() {
    פעם ראשונה: חץ "הבא" מופיע רק אחרי שהסרטון נגמר.
    פעמים הבאות: חץ "הבא" מופיע מיד (alexVideoWatched = true).
 */
-let alexVideoWatched = false;
-let noaVideoWatched  = false;
+let alexVideoWatched  = false;
+let noaVideoWatched   = false;
+let playBtnDelayTimer  = null;
+let playBtn0DelayTimer = null;
 let frame6Seen       = false;
 let frame9Seen       = false;
 
