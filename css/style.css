@@ -899,6 +899,57 @@ html, body {
   -webkit-text-fill-color: inherit; /* Safari */
 }
 
+/* ─── Hint Card "חשוב לדעת" (Screen 3) ─────────────────── */
+.hint-card {
+  width: 100%;
+  background: #edf2fb;
+  border: 2px solid #2b369b;
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  direction: rtl;
+  flex-shrink: 0;
+}
+
+.hint-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.hint-title {
+  font-family: 'Assistant', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #2b369b;
+}
+
+.hint-bulb {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.hint-divider {
+  border: none;
+  border-top: 1.5px dashed #2b369b;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.hint-text {
+  font-family: 'Assistant', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #030303;
+  line-height: 1.45;
+  text-align: right;
+  margin: 0;
+}
+
 /* ─── Submit Button "צדקתי?" ─────────────────────────────── */
 /* הכפתור יושב בתוך .submit-row (absolute על המסך)          */
 /* רקע: sprite מ-Figma (1920×1080, שקיפות אמיתית בפינות)   */
@@ -2032,7 +2083,7 @@ html, body {
    (original: left:1063.82, translateX(-100%), w:590.81) */
 .s11-graph-note {
   position: absolute;
-  left: 473px;
+  left: 384px;
   top: 593px;
   width: 680px;
   direction: rtl;
@@ -2128,14 +2179,14 @@ html, body {
   flex: 1;
 }
 
-/* wrapper כולל dot bullet + note text (Figma frame 41: w:621, h:111) */
+/* wrapper כולל dot bullet + note text — טקסט שמאל, נקודה ימין (כמו מסך 11) */
 .s13-note-wrapper {
   position: relative;
-  width: 621px;
+  width: 705px; /* 680 (text) + 10 (gap) + 15 (dot) */
   flex-shrink: 0;
 }
 
-/* Ellipse 3 — Figma: left:606, top:12 בתוך frame 621px → right:0, top:12 */
+/* Ellipse 3 — נקודה בצד ימין של ה-wrapper */
 .s13-dot-bullet {
   position: absolute;
   right: 0;
@@ -2145,9 +2196,9 @@ html, body {
   z-index: 5;
 }
 
-/* טקסט הסבר כחול */
+/* טקסט הסבר כחול — רוחב הוגדל מ-591 ל-680 כדי שכל פסקה תתפוס שורה אחת ב-30px */
 .s13-note-text {
-  width: 591px;
+  width: 680px;
   direction: rtl;
   text-align: right;
 }
