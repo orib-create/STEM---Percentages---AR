@@ -2089,20 +2089,18 @@ html, body {
 /* Figma: left:1079, top:605, size:15×15 */
 .s11-dot-bullet {
   position: absolute;
-  left: 1079px;
-  top: 605px;
+  left: 1075px;
+  top: 552px;
   width: 15px;
   height: 15px;
   z-index: 5;
 }
 
 /* ─── Graph annotation note (screen-level, outside panels) ─ */
-/* Figma: visual-left≈473, top:593, w:591
-   (original: left:1063.82, translateX(-100%), w:590.81) */
 .s11-graph-note {
   position: absolute;
-  left: 384px;
-  top: 593px;
+  left: 380px;
+  top: 540px;
   width: 680px;
   direction: rtl;
   text-align: right;
@@ -2110,7 +2108,7 @@ html, body {
 }
 .s11-graph-note p {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 500;
   color: #2b369b;
   line-height: 1.45;
@@ -2214,7 +2212,7 @@ html, body {
   z-index: 5;
 }
 
-/* טקסט הסבר כחול — רוחב הוגדל מ-591 ל-680 כדי שכל פסקה תתפוס שורה אחת ב-30px */
+/* טקסט הסבר כחול */
 .s13-note-text {
   width: 680px;
   direction: rtl;
@@ -2222,7 +2220,7 @@ html, body {
 }
 .s13-note-text p {
   font-family: 'Assistant', sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
   color: #2b369b;
   line-height: 1.45;
