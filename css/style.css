@@ -1814,9 +1814,13 @@ html, body {
 .s11s12-feedback-pos {
   position: absolute;
   left: 220px;
-  top: 580px;
+  top: 535px;
   width: 740px;
   z-index: 20;
+}
+
+[data-screen="13"] .s11s12-feedback-pos {
+  top: 500px;
 }
 
 /* ── OLD overlay feedback (kept for reference, no longer used on screens 11/12) ── */
