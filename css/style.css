@@ -928,8 +928,8 @@ html, body {
 }
 
 .hint-bulb {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
 }
 
@@ -1691,6 +1691,23 @@ html, body {
   align-items: flex-start;
 }
 
+/* Screen 9 has no character image — reduce unused bottom padding to make room for hint card */
+[data-screen="9"] .left-panel-f10 {
+  padding-bottom: 30px;
+}
+
+/* Screen 9 hint card: hug the text width instead of stretching full-panel */
+[data-screen="9"] .hint-card {
+  width: fit-content;
+}
+
+/* Screen 9 feedback: pull out of flex flow and anchor to physical left of panel */
+[data-screen="9"] .s9-feedback-box {
+  position: absolute;
+  left: 50px;
+  top: 600px;
+}
+
 /*
   Feedback box for Q4 — same style as .s4-feedback-box but shorter (193px vs 275px).
   Figma: w:672, h:193, bg:#111, border-radius:45, padding-right:32
@@ -1952,7 +1969,7 @@ html, body {
 .graph-lbl-bottom {
   position: absolute;
   left: 378px;
-  top: 450px;
+  top: 390px;
   width: 178px;
   background: #2b369b;
   border-radius: 5px;
