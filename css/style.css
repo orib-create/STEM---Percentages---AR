@@ -864,6 +864,61 @@ html, body {
   font-weight: 400;
 }
 
+/* ─── Term tooltips (Screen 1.ב) — Figma 465:1766 / 465:1770 ──
+   התנהגות זהה לרפרנס mass-measure: מילה עוגנת אייקון i קטן
+   מעליה, וריחוף/פוקוס על האייקון פותח בועת מידע מעליו. */
+.tooltip-word {
+  position: relative;
+  display: inline-block;
+}
+
+/* המונח עצמו — צבוע וקו תחתון לפי הפיגמה */
+.term-underline {
+  color: #2b369b;
+  text-decoration: underline;
+}
+
+/* אייקון i — ממוקם מעל הקצה השמאלי של המונח (RTL: סוף המילה) */
+.term-info {
+  position: absolute;
+  top: -9px; left: 2px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 15px; height: 15px;
+  background: #2b369b; border-radius: 50%;
+  cursor: help;
+}
+/* Figma spec: Merriweather Bold Italic (bundled). The translate nudge
+   optically centers the italic "i" ink inside the 15px circle. */
+.term-info-i {
+  font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 12px; font-weight: 700; color: #fff; line-height: 1;
+  transform: translate(-0.15px, 1.2px);
+}
+
+/* בועת המידע — נפתחת מעל האייקון, ממורכזת עליו.
+   Figma: 275px עם טקסט 18px; הוגדל ל-26px לבקשת הלקוח,
+   והרוחב הוגדל פרופורציונלית כדי לשמור על אותה פריסת שורות. */
+.term-tooltip {
+  position: absolute; bottom: calc(100% + 6px);
+  left: 50%; transform: translateX(-50%);
+  width: 397px;
+  box-sizing: border-box;
+  background: #fff; border: 1px solid #aeaeae; border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  padding: 12px 15px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 26px; font-weight: 400; color: #222;
+  white-space: normal;
+  text-align: right; direction: rtl; line-height: normal;
+  display: none; z-index: 40;
+}
+.term-info:hover .term-tooltip,
+.term-info:focus .term-tooltip,
+.term-info:focus-within .term-tooltip { display: block; }
+
 .timer-input {
   width: 101px;
   height: 52px;
