@@ -60,6 +60,15 @@
   font-display: swap;
 }
 
+/* Merriweather Bold Italic — used only for the tooltip info-icon "i" (Figma spec) */
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../assets/fonts/Merriweather-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Open Sans';
   src: url('../assets/fonts/OpenSans-Light.ttf') format('truetype');
@@ -419,9 +428,20 @@ html, body {
   gap: 2px;
 }
 
-/* Screen 2 textbox starts at same position */
+/* Screen 3 textbox starts at same position */
 .textbox1-s2 {
   left: 542px;
+}
+
+/* Screen 2 (Transition) — 4 שורות טקסט: התיבה מוגבהת (209→250px) כדי שהרקע
+   הלבן יקיף את כל הטקסט ברווח; ה-PNG נמתח יחסית לגובה ה-wrap. */
+.textbox1-transition {
+  height: 250px;
+}
+.textbox1-transition .textbox1-content {
+  height: auto;
+  min-height: 163px;
+  line-height: 1.3;
 }
 
 /* ─── SCREEN 1 — Phone wrap ─────────────────────────────── */
@@ -563,7 +583,7 @@ html, body {
 }
 
 
-/* ─── Help Button (Screens 3 & 4) ──────────────────────── */
+/* ─── Help Button (Screens 4 & 5) ──────────────────────── */
 /*
   4 מצבים מפיגמה — Open Close Popup Btn:
   Open  + Normal → btn-help-open-normal.png
@@ -632,7 +652,7 @@ html, body {
   display: none;
 }
 
-/* ─── Help Popup (Screens 3 & 4) ───────────────────────────
+/* ─── Help Popup (Screens 4 & 5) ───────────────────────────
    הפופ-אפ יושב מחוץ לכל .screen ישירות ב-#app.
    top: 175px = מתחת לכפתור (top:20 + height:150 + 5px gap)
    ─────────────────────────────────────────────────────── */
@@ -665,7 +685,7 @@ html, body {
   white-space: normal;           /* טקסט עוטף שורות כמו בפיגמה */
 }
 
-/* ─── Content Area (Screens 3 & 4) ─────────────────────── */
+/* ─── Content Area (Screens 4 & 5) ─────────────────────── */
 .content-area {
   position: absolute;
   left: 136px;
@@ -770,7 +790,7 @@ html, body {
   overflow: visible;
 }
 
-/* ─── Frame 4 (Screen 3) — New layout: question content on right side ─
+/* ─── Frame 4 (Screen 4) — New layout: question content on right side ─
    הפיגמה (עדכני): left:885, top:144, w:851, h:785, padding:80px.
    ה-iframe וה-left-panel הוסרו; השאלה + טיימרים עוברים לצד ימין.
    inner width = 851 - 160 = 691px (מספיק לשורות הטיימר ‎771px עם clip)
@@ -791,7 +811,7 @@ html, body {
   overflow: visible;
 }
 
-/* ─── Timer rows (Screen 4) ─────────────────────────────── */
+/* ─── Timer rows (Screen 5) ─────────────────────────────── */
 .timers-list {
   display: flex;
   flex-direction: column;
@@ -902,7 +922,7 @@ html, body {
   -webkit-text-fill-color: inherit; /* Safari */
 }
 
-/* ─── Hint Card "חשוב לדעת" (Screen 3) ─────────────────── */
+/* ─── Hint Card "חשוב לדעת" (Screen 4) ─────────────────── */
 .hint-card {
   width: 100%;
   background: #edf2fb;
@@ -1050,27 +1070,27 @@ html, body {
   color: #030303;
 }
 
-/* Screens 11 & 13: the blue graph-note now sits lower (bottom-aligned with the
+/* Screens 12 & 14: the blue graph-note now sits lower (bottom-aligned with the
    graph), so lift the try-again message up so the two don't overlap.
    transform only — keeps the "צדקתי?" button and flex layout in place. */
-[data-screen="11"] .try-again-msg {
+[data-screen="12"] .try-again-msg {
   transform: translateY(-160px);
 }
-[data-screen="13"] .try-again-msg {
+[data-screen="14"] .try-again-msg {
   transform: translateY(-230px);
 }
 
-/* Screen 9 (Q4): lift the try-again message so it clears the hint card text,
+/* Screen 10 (Q4): lift the try-again message so it clears the hint card text,
    and nudge it left for nicer breathing room from the hint card. */
-[data-screen="9"] .try-again-msg {
+[data-screen="10"] .try-again-msg {
   transform: translate(-50px, -240px);
 }
 
-/* Screen 12 (Q5B): the blue note sits higher here (graph has no context text
+/* Screen 13 (Q5B): the blue note sits higher here (graph has no context text
    above it), so the try-again message + "צדקתי?" button collide with the note's
    bottom. Move the whole submit-row DOWN (breathing room below the note) and a
    bit LEFT so the message's right edge lines up with the question text. */
-[data-screen="12"] .submit-row {
+[data-screen="13"] .submit-row {
   left: 217px;
   top: 780px;
 }
@@ -1093,7 +1113,7 @@ html, body {
   /* inherits left/top/width/height from .right-panel — no overrides */
 }
 
-/* ─── Feedback Panels (Screen 3 / Q1B — screen-level absolute) ────
+/* ─── Feedback Panels (Screen 4 / Q1B — screen-level absolute) ────
    פאנל המשוב — שאלה 1 (Figma 51:320 / 296:1439)
    QA r1 fix B: width צומצם מ-809 ל-745 כדי שהפאנל לא יכסה את שורות
    הטיימרים של השאלה (קצה ימני 896 < תוכן השאלה השמאלי 913). הטקסט נשמר.
@@ -1162,7 +1182,7 @@ html, body {
 /* ─── (Time Management Widget iframe zoom modal removed —
        widget is now a local in-page widget; no zoom UI required.) ─── */
 
-/* ─── Screen 4 (Frame 5): Context Panel ─────────────────────
+/* ─── Screen 5 (Frame 5): Context Panel ─────────────────────
    פאנל הקשר הסטטי בצד ימין — ברמת מסך, תמיד גלוי.
    Figma: left:980, top:144, width:789, height:795
    padding: pt:80 pr:73 pb:271 pl:50
@@ -1258,7 +1278,7 @@ html, body {
 /* "השאר" — קצה ימני ב-x≈178 בתוך מיכל 490.653px */
 .s4-tv-rest { right: 313px; }
 
-/* ─── Screen 4 (Frame 5): Feedback box (inside left panel) ──
+/* ─── Screen 5 (Frame 5): Feedback box (inside left panel) ──
    מופיע בתוך הפאנל השמאלי אחרי הגשת תשובה (לא overlay).
    Figma: width:672, height:275, bg:#111, border-radius:45
    ─────────────────────────────────────────────────────── */
@@ -1301,12 +1321,12 @@ html, body {
   margin: 0;
 }
 
-/* Screen 4: nudge the whole left panel left so its text doesn't overlap the
+/* Screen 5: nudge the whole left panel left so its text doesn't overlap the
    right context panel. Width stays at the base 878px (content right ≈ 798)
    to keep clear of the context panel at left:980. */
-[data-screen="4"] .left-panel-q4 { left: -40px; }
+[data-screen="5"] .left-panel-q4 { left: -40px; }
 
-/* ─── Frame 6 (Screen 5): WhatsApp chat — Ofri ──────────── */
+/* ─── Frame 6 (Screen 6): WhatsApp chat — Ofri ──────────── */
 @keyframes floatIn {
   from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1430,11 +1450,11 @@ html, body {
   width: 876px;
   /* RTL: flex-start = physical right — aligns all children to the same right edge */
   align-items: flex-start;
-  /* let the inline feedback box overflow instead of being clipped (screens 6, 7) */
+  /* let the inline feedback box overflow instead of being clipped (screens 7, 8) */
   overflow: visible;
 }
 
-/* ─── Radio buttons (Screens 6, 7, 9) ───────────────────── */
+/* ─── Radio buttons (Screens 7, 8, 10) ───────────────────── */
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -1526,7 +1546,7 @@ html, body {
   object-fit: contain;
 }
 
-/* ─── Q3 Context Panel (Screens 6 & 7) ──────────────────── */
+/* ─── Q3 Context Panel (Screens 7 & 8) ──────────────────── */
 /*
   Same position as s4-context-panel (left:980, top:144)
   but taller TV-box and different content.
@@ -1635,7 +1655,7 @@ html, body {
 .q3-tv-rest-bot { right: 282px; top: 328px; color: #030303; }
 .q3-tv-40       { right: 121px; top: 328px; color: #030303; }
 
-/* ─── Frame 9 (Screen 8): Calendar notification ──────────── */
+/* ─── Frame 9 (Screen 9): Calendar notification ──────────── */
 
 /* Textbox1 header — canvas pos (1047,0), size 872.707×192 */
 .f9-textbox1 {
@@ -1711,7 +1731,7 @@ html, body {
   line-height: normal;
 }
 
-/* ─── Frame 10 (Screen 9): Q4 — full-width card ─────────── */
+/* ─── Frame 10 (Screen 10): Q4 — full-width card ─────────── */
 /*
   No right context panel — the content card spans the full width.
   Figma: left:151px, top:144px, width:1618px, height:795px
@@ -1724,25 +1744,25 @@ html, body {
   gap: 15px;
   /* RTL: flex-start = physical right — aligns all children to the right */
   align-items: flex-start;
-  /* let the inline feedback box overflow instead of being clipped (screens 9, 15, 17) */
+  /* let the inline feedback box overflow instead of being clipped (screens 10, 16, 18) */
   overflow: visible;
 }
 
-/* Screen 9 has no character image — reduce unused bottom padding to make room for hint card */
-[data-screen="9"] .left-panel-f10 {
+/* Screen 10 has no character image — reduce unused bottom padding to make room for hint card */
+[data-screen="10"] .left-panel-f10 {
   padding-bottom: 30px;
   /* the absolute feedback box (top:600) extends past the 795px panel; allow it to
      show fully (the content-card is 858px tall and already overflow:visible). */
   overflow: visible;
 }
 
-/* Screen 9 hint card: hug the text width instead of stretching full-panel */
-[data-screen="9"] .hint-card {
+/* Screen 10 hint card: hug the text width instead of stretching full-panel */
+[data-screen="10"] .hint-card {
   width: fit-content;
 }
 
-/* Screen 9 feedback: pull out of flex flow and anchor to physical left of panel */
-[data-screen="9"] .s9-feedback-box {
+/* Screen 10 feedback: pull out of flex flow and anchor to physical left of panel */
+[data-screen="10"] .s9-feedback-box {
   position: absolute;
   left: 50px;
   top: 600px;
@@ -1773,7 +1793,7 @@ html, body {
   direction: rtl;
 }
 
-/* ─── Frame 11 (Screen 10): narrative — uses Frame 6 header CSS ──
+/* ─── Frame 11 (Screen 11): narrative — uses Frame 6 header CSS ──
    .f6-textbox1 and .f6-header-text are already defined above.
    No additional rules needed.
    ─────────────────────────────────────────────────────────── */
@@ -1784,7 +1804,7 @@ html, body {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SCREEN 11 — Frame 12: Q5A — input + graph
+   SCREEN 12 — Frame 12: Q5A — input + graph
    ═══════════════════════════════════════════════════════════ */
 
 /* ─── Left panel variant for Q5A ─────────────────────────── */
@@ -1843,11 +1863,11 @@ html, body {
   white-space: nowrap;
 }
 
-/* ─── Feedback panels — Screen 11 (Q5A) ─────────────────────
+/* ─── Feedback panels — Screen 12 (Q5A) ─────────────────────
    Figma: left:980, top:144, w:789, h:795
    רקע: תמונת 1920×1080 מלאה, נחתכת ע"י overflow:hidden לגבולות הפאנל
    ──────────────────────────────────────────────────────────── */
-/* ─── Screens 11/12 (Q5A, Q5B): new small-box feedback position ──
+/* ─── Screens 12/12 (Q5A, Q5B): new small-box feedback position ──
    Replaces s11-feedback-panel (full right-panel overlay) with q8-feedback-box style.
    Canvas: left-panel starts at canvas(136,134); feedback at +56,+500 within it.
    Figma ref: 287:1359 inside 132:1401 (left:56, top:500, w:740, h:254)   ────────────────────────────────────────────────────────────── */
@@ -1859,16 +1879,16 @@ html, body {
   z-index: 20;
 }
 
-[data-screen="13"] .s11s12-feedback-pos {
+[data-screen="14"] .s11s12-feedback-pos {
   top: 500px;
 }
 
-/* Screen 11 only — push the feedback box down a touch. */
-[data-screen="11"] .s11s12-feedback-pos {
+/* Screen 12 only — push the feedback box down a touch. */
+[data-screen="12"] .s11s12-feedback-pos {
   top: 560px;
 }
 
-/* ── OLD overlay feedback (kept for reference, no longer used on screens 11/12) ── */
+/* ── OLD overlay feedback (kept for reference, no longer used on screens 12/12) ── */
 .s11-feedback-panel {
   position: absolute;
   left: 980px;
@@ -2163,11 +2183,11 @@ html, body {
   line-height: 1.45;
 }
 
-/* Screen 12 (Q5B) has no context text above the graph, so the graph sits
-   ~150px higher than on screen 11. Align the restored note + dot to the
+/* Screen 13 (Q5B) has no context text above the graph, so the graph sits
+   ~150px higher than on screen 12. Align the restored note + dot to the
    bottom of that higher graph. */
-[data-screen="12"] .s11-graph-note { top: 585px; }
-[data-screen="12"] .s11-dot-bullet { top: 597px; }
+[data-screen="13"] .s11-graph-note { top: 585px; }
+[data-screen="13"] .s11-dot-bullet { top: 597px; }
 
 /* ═══ Graph Zoom Modal — #graph-card עובר בDOM לכאן ═══════
    הכרטיסייה (589×513) מוגדלת ×1.7 בתוך graph-zoom-host (1001×872).
@@ -2213,7 +2233,7 @@ html, body {
    SCREENS 13–18 — New CSS
    ═══════════════════════════════════════════════════════════ */
 
-/* ─── Screen 13 (Q5C): textbox-content container ────────────
+/* ─── Screen 14 (Q5C): textbox-content container ────────────
    Figma: absolute left:161, top:144, w:1608, h:795
    pt:80 pr:73 pb:271 pl:50 — flex column, items-end (RTL: flex-start = physical right)
    ──────────────────────────────────────────────────────────── */
@@ -2250,7 +2270,7 @@ html, body {
   flex: 1;
 }
 
-/* wrapper כולל dot bullet + note text — טקסט שמאל, נקודה ימין (כמו מסך 11) */
+/* wrapper כולל dot bullet + note text — טקסט שמאל, נקודה ימין (כמו מסך 12) */
 .s13-note-wrapper {
   position: relative;
   width: 705px; /* 680 (text) + 10 (gap) + 15 (dot) */
@@ -2295,14 +2315,14 @@ html, body {
   animation: feedbackIn 0.35s ease forwards;
 }
 
-/* ─── Screen 14 (narrative) — uses existing .f6-textbox1 + .f6-header-text ─ */
+/* ─── Screen 15 (narrative) — uses existing .f6-textbox1 + .f6-header-text ─ */
 /* No new CSS needed — reuses existing header patterns */
 
-/* ─── Q8-style inline feedback box (screens 13, 15, 17) ──────────────────
-   Figma ref: "feedback" frame node 259:1447 on "Screen 13 - Question 5B"
+/* ─── Q8-style inline feedback box (screens 14, 16, 18) ──────────────────
+   Figma ref: "feedback" frame node 259:1447 on "Screen 14 - Question 5B"
    w:709, h:239, bg:#111, rounded-45, drop-shadow, pr:32
    Replaces s11-feedback-panel overlay on screens that also show a diagram.
-   Identical pattern to s9-feedback-box (already proven on screen 9).       ── */
+   Identical pattern to s9-feedback-box (already proven on screen 10).       ── */
 .q8-feedback-box {
   width: 709px;
   min-height: 239px;
@@ -2332,57 +2352,69 @@ html, body {
   width: 100%;  /* fill container width so text-align:right takes effect visually */
 }
 
-/* Screen 13 feedback now uses .s11s12-feedback-pos (same as screens 11/12) */
+/* Screen 14 feedback now uses .s11s12-feedback-pos (same as screens 12/12) */
 
-/* Screen 15 (Q6): match the Figma feedback box (node 139:2001) — box 812px wide
+/* Screen 16 (Q6): match the Figma feedback box (node 139:2001) — box 812px wide
    with a 780px text column and 32px right padding, so the lines wrap exactly like
    the design instead of breaking earlier in the narrower 709px box. */
-[data-screen="15"] #feedback-s15-correct,
-[data-screen="15"] #feedback-s15-incorrect {
+[data-screen="16"] #feedback-s15-correct,
+[data-screen="16"] #feedback-s15-incorrect {
   width: 812px;
   padding-left: 0;
   padding-right: 32px;
 }
 
-/* Screen 15 (Q6) — feedback is inline in left-panel-f10 (no extra CSS) */
+/* Screen 16 (Q6) — feedback is inline in left-panel-f10 (no extra CSS) */
 
-/* ─── Screen 16 (Q7) — Weekend Widget host inside content-card ──
+/* ─── Screen 17 (Q7) — Weekend Widget host inside content-card ──
    #ww-host-s16 = .right-panel (same dimensions: left:923, top:25, w:605, h:754).
    The Weekend Widget is independent from the Time Management Widget
    (separate DOM/CSS/JS) and lives statically here — no DOM-move.
    ──────────────────────────────────────────────────────────── */
 /* No additional CSS needed — #ww-host-s16 inherits .right-panel styles */
 
-/* QA r1: screen 16 only — let the question card not crop the Weekend Widget's
-   white card when it grows downward to contain feedback. Scoped to screen 16
+/* QA r1: screen 17 only — let the question card not crop the Weekend Widget's
+   white card when it grows downward to contain feedback. Scoped to screen 17
    so no other screen's .content-card clipping changes. */
-[data-screen="16"] .content-card { overflow: visible; }
-
-/* QA r1: screen 2 only — same as above for the Time Management Widget so its
-   grown white card isn't cropped by the question card. Scoped to screen 2. */
-[data-screen="2"] .content-card { overflow: visible; }
-
-/* QA r2: screen 17 — feedback box overflows the panel/card boundary; allow it
-   to render below on the dark background (same pattern as screens 2 and 16). */
 [data-screen="17"] .content-card { overflow: visible; }
-[data-screen="17"] .left-panel   { overflow: visible; }
 
-/* ─── Screen 17 (Q8) — dropdown fill-in ──────────────────────── */
+/* QA r1: screen 3 only — same as above for the Time Management Widget so its
+   grown white card isn't cropped by the question card. Scoped to screen 3. */
+[data-screen="3"] .content-card { overflow: visible; }
 
-/* Override bottom padding for screen 17 — Noa char is screen-level (not inside panel),
+/* ─── Screens 3 + 17: mirrored layout — widget on the LEFT, question text
+   on the RIGHT (client request). Positions are the exact mirror of the
+   defaults inside the 1646px card:
+     text panel:  left 0    → 1646−878        = 768
+     widget host: left 923  → 1646−(923+605)  = 118
+   The zoomed-widget transforms are mirrored in time-management-widget.css /
+   weekend-widget.css (transform-origin flipped to the left edge). ── */
+[data-screen="3"]  .left-panel,
+[data-screen="17"] .left-panel  { left: 768px; }
+[data-screen="3"]  .right-panel,
+[data-screen="17"] .right-panel { left: 118px; }
+
+/* QA r2: screen 18 — feedback box overflows the panel/card boundary; allow it
+   to render below on the dark background (same pattern as screens 3 and 17). */
+[data-screen="18"] .content-card { overflow: visible; }
+[data-screen="18"] .left-panel   { overflow: visible; }
+
+/* ─── Screen 18 (Q8) — dropdown fill-in ──────────────────────── */
+
+/* Override bottom padding for screen 18 — Noa char is screen-level (not inside panel),
    so the 271px reserved for the character in .left-panel-f10 is not needed here.
    Without this, content-card's overflow:hidden clips the feedback box. */
 .s17-left-panel {
   padding-bottom: 40px;
 }
 
-/* Screen 17: the panel is dense (question + 2 dropdowns + Noa bottom-left), so the
+/* Screen 18: the panel is dense (question + 2 dropdowns + Noa bottom-left), so the
    long feedback paragraph has no room. Place it bottom-right BELOW the dropdowns
    (top:600 in-panel ≈ canvas 744, clearing the dropdowns ~712) and clear of Noa
    (width keeps the left edge right of x≈694). Font stays at the standard 34px
    (inherited from .q8-feedback-box p) to match every other screen's feedback. */
-[data-screen="17"] #feedback-s17-correct,
-[data-screen="17"] #feedback-s17-incorrect {
+[data-screen="18"] #feedback-s17-correct,
+[data-screen="18"] #feedback-s17-incorrect {
   position: absolute;
   left: auto;
   right: 73px;
@@ -2392,7 +2424,7 @@ html, body {
   z-index: 20;
 }
 
-/* Screen 17: the 1st-wrong-attempt message was stacked BELOW the "צדקתי?"
+/* Screen 18: the 1st-wrong-attempt message was stacked BELOW the "צדקתי?"
    button, which pushed its 3rd line ("כדי לקבל רמז") past the card's rounded
    bottom edge (msg bottom 993 vs card bottom 992) where it got clipped.
    Place it to the LEFT of the button instead — the submit-row layout used on
@@ -2401,7 +2433,7 @@ html, body {
    right:73). Vertically centered with the button (top 670 ≈ button center
    750-80). Clears the fill-in box above (bottom 667), the button to its right
    (left 1475 > msg right 1455), and Noa bottom-left (right edge 694). */
-[data-screen="17"] #try-again-msg-s17 {
+[data-screen="18"] #try-again-msg-s17 {
   position: absolute;
   top: 536px;
   right: 299px;
@@ -2550,7 +2582,7 @@ html, body {
   user-select: none;
 }
 
-/* ─── Screen 17 — future widget placeholder ─────────────────
+/* ─── Screen 18 — future widget placeholder ─────────────────
    Hidden until widget HTML/logic is provided.
    When the widget is ready:
      - Set display to block (or flex) and size as defined by Figma
@@ -2560,8 +2592,8 @@ html, body {
   display: none; /* PLACEHOLDER — activate when widget is ready */
 }
 
-/* ─── Screen 18 (closing) — completion modal ─────────────────
-   modal פופ-אפ מרכזי — מוצג על screen 18 בלחיצה על "סיימתי"
+/* ─── Screen 19 (closing) — completion modal ─────────────────
+   modal פופ-אפ מרכזי — מוצג על screen 19 בלחיצה על "סיימתי"
    ──────────────────────────────────────────────────────────── */
 
 /* ─── כפתור "סיימתי" ─────────────────────────────────────────

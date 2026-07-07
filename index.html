@@ -109,16 +109,39 @@
     </button>
 
     <button class="nav-btn prev-btn" onclick="goTo(0)" aria-label="חזרה"></button>
-    <!-- חץ "הבא" — מוסתר עד לסיום הוידאו של אלכס -->
+    <!-- חץ "הבא" — מוסתר עד לסיום הוידאו של אלכס; מוביל למסך המעבר -->
     <button id="next-s1" class="nav-btn next-btn hidden" onclick="goTo(2)" aria-label="המשך"></button>
 
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 2 — Frame 3: Question 1A
-       רקע + שאלה + יישומון מקומי (TimeManagementWidget Container) + עזרה
+       SCREEN 2 — Transition Screen (Figma 465:1483)
+       מסך מעבר: רקע + overlay + textbox1 "חשוב לדעת"
   ════════════════════════════════════════════════ -->
   <section class="screen" data-screen="2">
+    <img class="screen-bg" src="assets/images/bg-transition.jpg" alt="">
+    <div class="dark-overlay"></div>
+
+    <!-- תיבת טקסט עליונה — אותו מיקום כמו במסכי הווידאו (left:542, top:0) -->
+    <div class="textbox1-wrap textbox1-transition">
+      <img class="textbox1-bg" src="assets/images/textbox1.png" alt="">
+      <div class="textbox1-content">
+        <p><b>חשוב לדעת</b></p>
+        <p>גם נועה, כמו אלכס, הולכת ברגל לחדר הכושר וחוזרת ממנו.</p>
+        <p>לכן, <b>זמן חדר הכושר ברוטו</b> כולל תמיד גם 20 דקות של הליכה (הלוך וחזור).</p>
+        <p><b>זמן האימון</b> מתייחס רק לזמן שבו היא באמת מתאמנת, ללא זמן ההליכה.</p>
+      </div>
+    </div>
+
+    <button class="nav-btn prev-btn" onclick="goTo(1)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(3)" aria-label="המשך"></button>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SCREEN 3 — Frame 3: Question 1A
+       רקע + שאלה + יישומון מקומי (TimeManagementWidget Container) + עזרה
+  ════════════════════════════════════════════════ -->
+  <section class="screen" data-screen="3">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -143,7 +166,7 @@
       <div class="content-card">
         <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
-        <!-- פאנל שמאל: טקסט השאלה -->
+        <!-- פאנל הטקסט (מוצג בצד ימין — הצדדים הוחלפו לבקשת הלקוח) -->
         <div class="left-panel">
           <p class="q-text">1. א. נועה מחליטה לבנות לעצמה יישומון פשוט לניהול הזמן.פתחו את היישומון ועזרו לנועה לחשב את הזמנים שלה במצבים שונים.</p>
           <br>
@@ -152,7 +175,8 @@
           כאשר יש לה 200 דקות וכאשר יש לה 260 דקות של זמן פנוי. בדקו איך זה משפיע על התכנון שלה.</p>
         </div>
 
-        <!-- פאנל ימין: TimeManagementWidget Container — יישומון מקומי (ללא iframe).
+        <!-- פאנל היישומון (מוצג בצד שמאל — הצדדים הוחלפו לבקשת הלקוח):
+             TimeManagementWidget Container — יישומון מקומי (ללא iframe).
              היישומון חי כאן בלבד (שאלה 1א). שאלה 7 משתמשת ב-Weekend Widget נפרד. -->
         <div class="right-panel" id="tmw-host-s2">
           <button id="tmw-zoom-btn" class="tmw-zoom-btn" type="button"
@@ -205,15 +229,15 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(1)" aria-label="חזרה"></button>
-    <button id="next-s2" class="nav-btn next-btn hidden" onclick="goTo(3)" aria-label="הבא"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(2)" aria-label="חזרה"></button>
+    <button id="next-s2" class="nav-btn next-btn hidden" onclick="goTo(4)" aria-label="הבא"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 3 — Frame 4: Question 1B
+       SCREEN 4 — Frame 4: Question 1B
        רקע + שדות קלט + iframe + פידבק
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="3">
+  <section class="screen" data-screen="4">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -251,7 +275,7 @@
         <div class="timer-row">
           <img class="clock-icon" src="assets/images/clock-icon.png" alt="">
           <div class="timer-fields">
-            <span class="timer-label"><strong>זמן חדר הכושר ברוטו</strong> <span class="lbl-normal">(20% מתוך 300)</span> =</span>
+            <span class="timer-label"><span class="tooltip-word"><strong class="term-underline">זמן חדר הכושר ברוטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן חדר הכושר ברוטו כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול)."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן חדר הכושר ברוטו</strong> כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול).</span></span></span> <span class="lbl-normal">(20% מתוך 300)</span> =</span>
             <input type="number" id="timer1" class="timer-input" min="0" max="999" placeholder="?">
             <span class="unit-label">דקות</span>
           </div>
@@ -260,7 +284,7 @@
         <div class="timer-row">
           <img class="clock-icon" src="assets/images/clock-icon.png" alt="">
           <div class="timer-fields">
-            <span class="timer-label"><strong>זמן האימון נטו</strong> <span class="lbl-normal">(לאחר הפחתת 20 דקות הליכה)</span> =</span>
+            <span class="timer-label"><span class="tooltip-word"><strong class="term-underline">זמן האימון נטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן האימון מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן האימון</strong> מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה.</span></span></span> <span class="lbl-normal">(לאחר הפחתת 20 דקות הליכה)</span> =</span>
             <input type="number" id="timer2" class="timer-input" min="0" max="999" placeholder="?">
             <span class="unit-label">דקות</span>
           </div>
@@ -341,17 +365,17 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(2)" aria-label="חזרה"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(3)" aria-label="חזרה"></button>
     <!-- חץ "הבא" — מוסתר עד לסיום השאלה (תשובה נכונה או 2 ניסיונות) -->
-    <button id="next-s3" class="nav-btn next-btn hidden" onclick="goTo(4)" aria-label="המשך לשאלה הבאה"></button>
+    <button id="next-s3" class="nav-btn next-btn hidden" onclick="goTo(5)" aria-label="המשך לשאלה הבאה"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 4 — Frame 5: Question 2
+       SCREEN 5 — Frame 5: Question 2
        שאלה + פאנל הקשר סטטי בימין + פידבק בתוך הפאנל השמאלי
        (אין iframe — פאנל ימין תמיד גלוי ברמת מסך)
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="4">
+  <section class="screen" data-screen="5">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -444,27 +468,27 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(3)" aria-label="חזרה"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(4)" aria-label="חזרה"></button>
     <!-- חץ הבא — מוסתר עד לסיום השאלה -->
-    <button id="next-s4" class="nav-btn next-btn hidden" onclick="goTo(5)" aria-label="המשך"></button>
+    <button id="next-s4" class="nav-btn next-btn hidden" onclick="goTo(6)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══ Popup עזרה — מחוץ לכל .screen כדי שלא יושפע מ-display:none ═══ -->
 
-  <!-- Popup שאלה 1 (מסכים 2 ו-3) -->
+  <!-- Popup שאלה 1 (מסכים 3 ו-4) -->
   <div id="help-popup-s3" class="help-popup hidden" role="tooltip">
     <p>כדי לחשב אחוז,</p>
     <p>אפשר להפוך אותו</p>
     <p>לשבר עשרוני ולכפול בשלם.</p>
   </div>
 
-  <!-- Popup שאלה 2 (מסך 4) -->
+  <!-- Popup שאלה 2 (מסך 5) -->
   <div id="help-popup-s4" class="help-popup hidden" role="tooltip">
     <p>השלם החדש כאן הוא</p>
     <p>105 (זמן המסך).</p>
   </div>
 
-  <!-- Popup שאלה 3א (מסך 6) -->
+  <!-- Popup שאלה 3א (מסך 7) -->
   <div id="help-popup-s6" class="help-popup hidden" role="tooltip">
     <p>האחוז מתאר תמיד</p>
     <p>"חלק מתוך... ".</p>
@@ -472,49 +496,49 @@
     <p>הערך המספרי יהיה שונה.</p>
   </div>
 
-  <!-- Popup שאלה 3ב (מסך 7) -->
+  <!-- Popup שאלה 3ב (מסך 8) -->
   <div id="help-popup-s7" class="help-popup hidden" role="tooltip">
     <p>האם זמן המסך הוא כל הזמן הפנוי או רק חלק ממנו?</p>
   </div>
 
-  <!-- Popup שאלה 4 (מסך 9) -->
+  <!-- Popup שאלה 4 (מסך 10) -->
   <div id="help-popup-s9" class="help-popup hidden" role="tooltip">
     <p>החלק הוא 60,</p>
     <p>והשלם החדש הוא 210.</p>
   </div>
 
-  <!-- Popup שאלה 5א (מסך 11) — טקסט מ-Figma node 132-1761 -->
+  <!-- Popup שאלה 5א (מסך 12) — טקסט מ-Figma node 132-1761 -->
   <div id="help-popup-s11" class="help-popup hidden" role="tooltip">
     <p>הסתכלו על ציר ה-x</p><p>וזכרו שיש להפחית את זמן ההליכה אל חדר הכושר והחזרה ממנו.</p>
   </div>
 
-  <!-- Popup שאלה 5ב (מסך 12) -->
+  <!-- Popup שאלה 5ב (מסך 13) -->
   <div id="help-popup-s12" class="help-popup hidden" role="tooltip">
     <p>הסתכלו על ציר ה-y</p><p>וזכרו שיש להפחית את זמן ההליכה אל חדר הכושר והחזרה ממנו.</p>
   </div>
 
-  <!-- Popup שאלה 5ג (מסך 13) -->
+  <!-- Popup שאלה 5ג (מסך 14) -->
   <div id="help-popup-s13" class="help-popup hidden" role="tooltip">
     <p>חפשו מצב שבו זמן</p><p>האימון נטו הוא 0 דקות.</p>
   </div>
 
-  <!-- Popup שאלה 6 (מסך 15) -->
+  <!-- Popup שאלה 6 (מסך 16) -->
   <div id="help-popup-s15" class="help-popup hidden" role="tooltip">
     <p>כמה הם 20% מתוך</p><p>105 דקות?</p>
   </div>
 
-  <!-- Popup שאלה 7 (מסך 16) — הוסר (אין כפתור עזרה בשאלה זו) -->
+  <!-- Popup שאלה 7 (מסך 17) — הוסר (אין כפתור עזרה בשאלה זו) -->
 
-  <!-- Popup שאלה 8 (מסך 17) -->
+  <!-- Popup שאלה 8 (מסך 18) -->
   <div id="help-popup-s17" class="help-popup hidden" role="tooltip">
     <p>חשבו כמה אחוזים</p><p>הם 105 (דקות) מתוך 300, והשוו לשיעור באחוזים של 126 (דקות) מתוך 360.</p>
   </div>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 5 — Frame 6: WhatsApp chat (Ofri)
+       SCREEN 6 — Frame 6: WhatsApp chat (Ofri)
        הודעות WhatsApp של אופרי — float-in אחת אחת
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="5">
+  <section class="screen" data-screen="6">
     <img class="screen-bg" src="assets/images/bg-frame6.jpg" alt="">
 
     <!-- תיבת טקסט עליונה — full-canvas 1920×1080, overflow-clipped לאזור (542,0)–(1920,209) -->
@@ -560,16 +584,16 @@
     </div>
 
     <!-- שני כפתורי ניווט: next (שמאל) + prev (ימין) -->
-    <button class="nav-btn next-btn" onclick="goTo(6)" aria-label="המשך"></button>
-    <button class="nav-btn prev-btn" onclick="goTo(4)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(7)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(5)" aria-label="חזרה"></button>
   </section>
 
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 6 — Frame 7: Q3A — נכון/לא נכון
+       SCREEN 7 — Frame 7: Q3A — נכון/לא נכון
        שאלה 3א: האם "40% מתוך 35%" הוא חישוב נכון?
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="6">
+  <section class="screen" data-screen="7">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -659,15 +683,15 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(5)" aria-label="חזרה"></button>
-    <button id="next-s6" class="nav-btn next-btn hidden" onclick="goTo(7)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(6)" aria-label="חזרה"></button>
+    <button id="next-s6" class="nav-btn next-btn hidden" onclick="goTo(8)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 7 — Frame 8: Q3B — נכון/לא נכון
+       SCREEN 8 — Frame 8: Q3B — נכון/לא נכון
        שאלה 3ב: האם "40% מזמן המסך = 40% מהזמן הפנוי"?
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="7">
+  <section class="screen" data-screen="8">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -752,15 +776,15 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(6)" aria-label="חזרה"></button>
-    <button id="next-s7" class="nav-btn next-btn hidden" onclick="goTo(8)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(7)" aria-label="חזרה"></button>
+    <button id="next-s7" class="nav-btn next-btn hidden" onclick="goTo(9)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 8 — Frame 9: notification float-in
+       SCREEN 9 — Frame 9: notification float-in
        נועה כמעט שכחה — התראת לוח שנה מופיעה
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="8">
+  <section class="screen" data-screen="9">
     <img class="screen-bg" src="assets/images/bg-frame9.jpg" alt="">
 
     <div class="f9-textbox1">
@@ -786,15 +810,15 @@
       </div>
     </div>
 
-    <button class="nav-btn next-btn" onclick="goTo(9)" aria-label="המשך"></button>
-    <button class="nav-btn prev-btn" onclick="goTo(7)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(10)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(8)" aria-label="חזרה"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 9 — Frame 10: Q4 — full-width radio
+       SCREEN 10 — Frame 10: Q4 — full-width radio
        שאלה 4: חדר כושר (60 ד') = כמה % מ-210 ד' פנויות?
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="9">
+  <section class="screen" data-screen="10">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -872,15 +896,15 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(8)" aria-label="חזרה"></button>
-    <button id="next-s9" class="nav-btn next-btn hidden" onclick="goTo(10)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(9)" aria-label="חזרה"></button>
+    <button id="next-s9" class="nav-btn next-btn hidden" onclick="goTo(11)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 10 — Frame 11: narrative
+       SCREEN 11 — Frame 11: narrative
        נועה מתרגלת ומתכוננת למבחן
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="10">
+  <section class="screen" data-screen="11">
     <img class="screen-bg" src="assets/images/bg-frame11.jpg" alt="">
 
     <div class="f6-textbox1">
@@ -894,16 +918,16 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(9)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(11)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(10)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(12)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 11 — Frame 12: Q5A — input + graph
+       SCREEN 12 — Frame 12: Q5A — input + graph
        שאלה 5א: גרף לינארי — הזן את סה"כ הזמן הפנוי
        תשובה נכונה: 400 (60 נטו + 20 הליכה = 80 ברוטו = 20% × 400)
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="11">
+  <section class="screen" data-screen="12">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -1064,7 +1088,7 @@
       <p>ומהו הזמן הכולל שמתאים לכך.</p>
     </div>
 
-    <!-- ══ פידבק נכון — מסך 11 (Q5A) — q8-feedback-box style (Figma 287:1359) ══ -->
+    <!-- ══ פידבק נכון — מסך 12 (Q5A) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s11-correct" class="q8-feedback-box s11s12-feedback-pos hidden">
       <p class="s11-feedback-title correct-title">צדקת! </p>
       <p>נועה רוצה להתאמן 60 דקות נטו,</p>
@@ -1077,7 +1101,7 @@
       <p>כלומר, 400 דקות של זמן פנוי.</p>
     </div>
 
-    <!-- ══ פידבק שגוי — מסך 11 (Q5A) — q8-feedback-box style (Figma 287:1359) ══ -->
+    <!-- ══ פידבק שגוי — מסך 12 (Q5A) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s11-incorrect" class="q8-feedback-box s11s12-feedback-pos hidden">
       <p class="s11-feedback-title s11-feedback-incorrect-title">זו טעות</p>
       <p>נועה רוצה להתאמן 60 דקות נטו,</p>
@@ -1101,15 +1125,15 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(10)" aria-label="חזרה"></button>
-    <button id="next-s11" class="nav-btn next-btn hidden" onclick="goTo(12)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(11)" aria-label="חזרה"></button>
+    <button id="next-s11" class="nav-btn next-btn hidden" onclick="goTo(13)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SCREEN 12 — Frame 13: Q5B — input + graph (same as Q5A, answer = (70,350))
+       SCREEN 13 — Frame 13: Q5B — input + graph (same as Q5A, answer = (70,350))
        תשובה נכונה: 50 דקות נטו (70 ברוטו − 20 הליכה)
   ═══════════════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="12">
+  <section class="screen" data-screen="13">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -1261,14 +1285,14 @@
       <p>ומהו הזמן הכולל שמתאים לכך.</p>
     </div>
 
-    <!-- ══ פידבק נכון — מסך 12 (Q5B) — q8-feedback-box style (Figma 287:1359) ══ -->
+    <!-- ══ פידבק נכון — מסך 13 (Q5B) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s12-correct" class="q8-feedback-box s11s12-feedback-pos hidden">
       <p class="s11-feedback-title correct-title">צדקת! </p>
       <p>כדי לענות על השאלה, נאתר בגרף את 350 הדקות על הציר האנכי, נתקדם עד הקו האלכסוני, ומשם נרד לציר האופקי ונקבל 70 דקות של זמן חדר כושר ברוטו. נגיע לנקודה (350 ,70).</p>
       <p>מכיוון שזמן זה כולל גם 20 דקות הליכה, נחסר אותן ונקבל: 50 דקות זמן אימון נטו.</p>
     </div>
 
-    <!-- ══ פידבק שגוי — מסך 12 (Q5B) — q8-feedback-box style (Figma 287:1359) ══ -->
+    <!-- ══ פידבק שגוי — מסך 13 (Q5B) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s12-incorrect" class="q8-feedback-box s11s12-feedback-pos hidden">
       <p class="s11-feedback-title s11-feedback-incorrect-title">זו טעות</p>
       <p>כדי לענות על השאלה, נאתר בגרף את 350 הדקות על הציר האנכי, נתקדם עד הקו האלכסוני, ומשם נרד לציר האופקי ונקבל 70 דקות של זמן חדר כושר ברוטו. נגיע לנקודה (350 ,70).</p>
@@ -1286,16 +1310,16 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(11)" aria-label="חזרה"></button>
-    <button id="next-s12" class="nav-btn next-btn hidden" onclick="goTo(13)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(12)" aria-label="חזרה"></button>
+    <button id="next-s12" class="nav-btn next-btn hidden" onclick="goTo(14)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SCREEN 13 — Frame 14: Q5C — multi-select dots on graph
+       SCREEN 14 — Frame 14: Q5C — multi-select dots on graph
        שאלה 5ג: אילו נקודות מייצגות זמן אימון נטו = 0?
        תשובות נכונות: (10,50) ו-(20,100)
   ═══════════════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="13">
+  <section class="screen" data-screen="14">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -1448,7 +1472,7 @@
 
     </div><!-- /s13-textbox-content -->
 
-    <!-- ══ פידבק נכון / שגוי — ברמת מסך (כמו מסכים 11 ו-12), s11s12-feedback-pos ══ -->
+    <!-- ══ פידבק נכון / שגוי — ברמת מסך (כמו מסכים 12 ו-13), s11s12-feedback-pos ══ -->
     <div id="feedback-s13-correct" class="q8-feedback-box s11s12-feedback-pos hidden">
       <p class="s11-feedback-title">צדקת! </p>
       <p>כדי למצוא את הנקודה, נחשוב מה קורה כשאין זמן לאימון נטו: נשארות רק 20 דקות הליכה.</p>
@@ -1476,14 +1500,14 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(12)" aria-label="חזרה"></button>
-    <button id="next-s13" class="nav-btn next-btn hidden" onclick="goTo(14)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(13)" aria-label="חזרה"></button>
+    <button id="next-s13" class="nav-btn next-btn hidden" onclick="goTo(15)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 14 — Frame 15: narrative — נועה נחה אחרי המבחן
+       SCREEN 15 — Frame 15: narrative — נועה נחה אחרי המבחן
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="14">
+  <section class="screen" data-screen="15">
     <img class="screen-bg" src="assets/images/bg-frame14.jpg" alt="">
 
     <div class="f6-textbox1">
@@ -1496,16 +1520,16 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(13)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(15)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(14)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(16)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SCREEN 15 — Frame 16: Q6 — radio button
+       SCREEN 16 — Frame 16: Q6 — radio button
        שאלה 6: 105 × 1.2 = 126 דקות זמן מסך
        תשובה נכונה: c (126 דקות)
   ═══════════════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="15">
+  <section class="screen" data-screen="16">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -1587,16 +1611,16 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(14)" aria-label="חזרה"></button>
-    <button id="next-s15" class="nav-btn next-btn hidden" onclick="goTo(16)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(15)" aria-label="חזרה"></button>
+    <button id="next-s15" class="nav-btn next-btn hidden" onclick="goTo(17)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SCREEN 16 — Frame 17: Q7 — TMW widget (DOM-move)
+       SCREEN 17 — Frame 17: Q7 — TMW widget (DOM-move)
        שאלה 7: בדקו מה יקרה לזמן המסך אם הזמן הפנוי יגדל ב-80% וב-20%
        אין submit — שאלת חקירה חופשית
   ═══════════════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="16">
+  <section class="screen" data-screen="17">
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -1615,15 +1639,16 @@
       <div class="content-card">
         <img class="textbox2-bg" src="assets/images/textbox2.png" alt="">
 
-        <!-- פאנל שמאל: שאלה -->
+        <!-- פאנל הטקסט (מוצג בצד ימין — הצדדים הוחלפו לבקשת הלקוח) -->
         <div class="left-panel">
           <p class="q-text">7. הגיע סוף השבוע והזמן הפנוי של נועה גדל.</p>
           <p class="q-text">נועה התלבטה בכמה להגדיל את זמן המסך שלה, ולכן ערכה מספר חישובים ביישומון חדש שפיתחה לניהול הזמן בסוף השבוע.</p>
           <p class="q-text">&ZeroWidthSpace;</p>
-          <p class="q-bold">השתמשו ביישומון מימין פעמיים לפחות ועזרו לנועה לבדוק מה יקרה לזמן המסך שלה אם הזמן הפנוי שלה יגדל ב-80% וב-20%.</p>
+          <p class="q-bold">השתמשו ביישומון משמאל פעמיים לפחות ועזרו לנועה לבדוק מה יקרה לזמן המסך שלה אם הזמן הפנוי שלה יגדל ב-80% וב-20%.</p>
         </div>
 
-        <!-- פאנל ימין: Weekend Widget — יישומון עצמאי לשאלה 7 (מקומי, ללא iframe).
+        <!-- פאנל היישומון (מוצג בצד שמאל — הצדדים הוחלפו לבקשת הלקוח):
+             Weekend Widget — יישומון עצמאי לשאלה 7 (מקומי, ללא iframe).
              אינו חולק DOM/מצב/IDs עם ה-Time Management Widget של שאלה 1א. -->
         <div class="right-panel" id="ww-host-s16">
           <button id="ww-zoom-btn" class="ww-zoom-btn" type="button"
@@ -1675,16 +1700,16 @@
       </div><!-- /content-card -->
     </div><!-- /content-area -->
 
-    <button class="nav-btn prev-btn" onclick="goTo(15)" aria-label="חזרה"></button>
-    <button id="next-s16" class="nav-btn next-btn hidden" onclick="goTo(17)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(16)" aria-label="חזרה"></button>
+    <button id="next-s16" class="nav-btn next-btn hidden" onclick="goTo(18)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SCREEN 17 — Frame 18: Q8 — custom dropdown fill-in
+       SCREEN 18 — Frame 18: Q8 — custom dropdown fill-in
        שאלה 8: 126/360 = 35%, האחוז לא משתנה
        dropdown1: "35%", dropdown2: "לא משתנה"
   ═══════════════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="17">
+  <section class="screen" data-screen="18">
     <img class="screen-bg" src="assets/images/bg-frame17.jpg" alt="">
     <div class="dark-overlay"></div>
 
@@ -1813,15 +1838,15 @@
       <img class="s17-noa-img" src="assets/images/noa-character-s17.png" alt="נועה">
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(16)" aria-label="חזרה"></button>
-    <button id="next-s17" class="nav-btn next-btn hidden" onclick="goTo(18)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(17)" aria-label="חזרה"></button>
+    <button id="next-s17" class="nav-btn next-btn hidden" onclick="goTo(19)" aria-label="המשך"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SCREEN 18 — Frame 19: closing / completion
+       SCREEN 19 — Frame 19: closing / completion
        נועה מסיימת — סיכום ו-"סיימתי"
   ════════════════════════════════════════════════ -->
-  <section class="screen" data-screen="18">
+  <section class="screen" data-screen="19">
     <img class="screen-bg" src="assets/images/bg-frame18.jpg" alt="">
 
     <div class="f6-textbox1">
@@ -1863,8 +1888,8 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(17)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(18)" aria-label="המשך" style="visibility:hidden"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(18)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(19)" aria-label="המשך" style="visibility:hidden"></button>
   </section>
 
   <!-- ═══ Graph Zoom Modal — בתוך #app כדי לשמור על קנה מידה ═══

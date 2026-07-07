@@ -52,9 +52,9 @@ function goTo(n) {
   screens[currentScreen].classList.add('active');
 
   resetScreenState();
-  if (n === 5)  enterFrame6();
-  if (n === 8)  enterFrame9();
-  if (n === 13) initS13MultiSelect();
+  if (n === 6)  enterFrame6();
+  if (n === 9)  enterFrame9();
+  if (n === 14) initS13MultiSelect();
 }
 
 /** Reset transient UI state when changing screen */
@@ -62,7 +62,7 @@ function resetScreenState() {
   // סגור את כל הפופ-אפים ואפס כל כפתורי העזרה
   closeAllPopups();
 
-  // ── מסך 3 (Q1) — אפס רק אם השאלה טרם הושלמה ──────────
+  // ── מסך 4 (Q1) — אפס רק אם השאלה טרם הושלמה ──────────
   if (!screen3Done) {
     attemptCount = 0;
 
@@ -84,7 +84,7 @@ function resetScreenState() {
     });
   }
 
-  // ── מסך 4 (Q2, Frame 5) — אפס רק אם השאלה טרם הושלמה ─
+  // ── מסך 5 (Q2, Frame 5) — אפס רק אם השאלה טרם הושלמה ─
   if (!screen4Done) {
     attemptCountS4 = 0;
 
@@ -131,7 +131,7 @@ function resetScreenState() {
   }
   if (noaVid) { noaVid.pause(); noaVid.currentTime = 0; }
 
-  // ── מסך 6 (Q3A) — אפס רק אם השאלה טרם הושלמה ────────────
+  // ── מסך 7 (Q3A) — אפס רק אם השאלה טרם הושלמה ────────────
   if (!screen6Done) {
     attemptCountS6 = 0;
     s6Selection = null;
@@ -145,7 +145,7 @@ function resetScreenState() {
     document.getElementById('next-s6')?.classList.add('hidden');
   }
 
-  // ── מסך 7 (Q3B) — אפס רק אם השאלה טרם הושלמה ────────────
+  // ── מסך 8 (Q3B) — אפס רק אם השאלה טרם הושלמה ────────────
   if (!screen7Done) {
     attemptCountS7 = 0;
     s7Selection = null;
@@ -159,7 +159,7 @@ function resetScreenState() {
     document.getElementById('next-s7')?.classList.add('hidden');
   }
 
-  // ── מסך 9 (Q4) — אפס רק אם השאלה טרם הושלמה ────────────
+  // ── מסך 10 (Q4) — אפס רק אם השאלה טרם הושלמה ────────────
   if (!screen9Done) {
     attemptCountS9 = 0;
     s9Selection = null;
@@ -173,7 +173,7 @@ function resetScreenState() {
     document.getElementById('next-s9')?.classList.add('hidden');
   }
 
-  // ── מסך 11 (Q5A) — אפס רק אם השאלה טרם הושלמה ──────────
+  // ── מסך 12 (Q5A) — אפס רק אם השאלה טרם הושלמה ──────────
   if (!screen11Done) {
     attemptCountS11 = 0;
     const inp = document.getElementById('s11-input');
@@ -184,15 +184,15 @@ function resetScreenState() {
     document.getElementById('feedback-s11-correct')?.classList.add('hidden');
     document.getElementById('feedback-s11-incorrect')?.classList.add('hidden');
     // החזר dot + טקסט הסבר לתצוגה
-    document.querySelector('[data-screen="11"] .s11-dot-bullet')?.classList.remove('hidden');
-    document.querySelector('[data-screen="11"] .s11-graph-note')?.classList.remove('hidden');
+    document.querySelector('[data-screen="12"] .s11-dot-bullet')?.classList.remove('hidden');
+    document.querySelector('[data-screen="12"] .s11-graph-note')?.classList.remove('hidden');
     // אפס מצב נקודות גרף Q5A בלבד
     document.querySelectorAll('#graph-card .gp').forEach(gp =>
       gp.classList.remove('is-selected', 'is-correct', 'is-incorrect'));
     hideProjection();
   }
 
-  // ── מסך 12 (Q5B) — אפס רק אם השאלה טרם הושלמה ──────────
+  // ── מסך 13 (Q5B) — אפס רק אם השאלה טרם הושלמה ──────────
   if (!screen12Done) {
     attemptCountS12 = 0;
     const inpS12 = document.getElementById('s12-input');
@@ -203,14 +203,14 @@ function resetScreenState() {
     document.getElementById('feedback-s12-correct')?.classList.add('hidden');
     document.getElementById('feedback-s12-incorrect')?.classList.add('hidden');
     // החזר dot + טקסט הסבר לתצוגה
-    document.querySelector('[data-screen="12"] .s11-dot-bullet')?.classList.remove('hidden');
-    document.querySelector('[data-screen="12"] .s11-graph-note')?.classList.remove('hidden');
+    document.querySelector('[data-screen="13"] .s11-dot-bullet')?.classList.remove('hidden');
+    document.querySelector('[data-screen="13"] .s11-graph-note')?.classList.remove('hidden');
     // אפס מצב נקודות גרף Q5B בלבד
     document.querySelectorAll('#graph-card-s12 .gp').forEach(gp =>
       gp.classList.remove('is-selected', 'is-correct', 'is-incorrect'));
   }
 
-  // ── מסך 13 (Q5C) — אפס רק אם השאלה טרם הושלמה ──────────
+  // ── מסך 14 (Q5C) — אפס רק אם השאלה טרם הושלמה ──────────
   if (!screen13Done) {
     attemptCountS13 = 0;
     document.querySelectorAll('#graph-card-s13 .s13-gp').forEach(gp =>
@@ -224,7 +224,7 @@ function resetScreenState() {
     document.querySelector('.s13-note-wrapper')?.classList.remove('hidden');
   }
 
-  // ── מסך 15 (Q6) — אפס רק אם השאלה טרם הושלמה ──────────
+  // ── מסך 16 (Q6) — אפס רק אם השאלה טרם הושלמה ──────────
   if (!screen15Done) {
     attemptCountS15 = 0;
     s15Selection = null;
@@ -238,7 +238,7 @@ function resetScreenState() {
     document.getElementById('next-s15')?.classList.add('hidden');
   }
 
-  // ── מסך 17 (Q8) — אפס רק אם השאלה טרם הושלמה ──────────
+  // ── מסך 18 (Q8) — אפס רק אם השאלה טרם הושלמה ──────────
   if (!screen17Done) {
     attemptCountS17  = 0;
     s17dd1Selection  = null;
@@ -268,12 +268,12 @@ function resetScreenState() {
   closeGraphZoom();
   hideProjection(); // נקה קווי hover שנשארו ממעבר מהיר (ללא mouseleave)
 
-  // ── Screen 8 (Frame 9): notification ─────────────────────
+  // ── Screen 9 (Frame 9): notification ─────────────────────
   if (!frame9Seen) {
     document.getElementById('f9-m1')?.classList.add('hidden');
   }
 
-  // ── Screen 5 (Frame 6): WhatsApp messages ─────────────────
+  // ── Screen 6 (Frame 6): WhatsApp messages ─────────────────
   // אם עדיין לא נצפה — ודא שכל ההודעות מוסתרות
   if (!frame6Seen) {
     ['ofri-m1', 'ofri-m2', 'ofri-m3', 'ofri-m4'].forEach(id =>
@@ -314,8 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNoaVideo();        // Screen 0: Frame 1 fullscreen background video
   initAlexVideo();       // Screen 1: Alex influencer video
   initHelpButtons();     // כל המסכים: help popup toggle (data-popup attribute)
-  initSubmitButton();    // Screen 3: show submit only when all fields filled
-  initSubmitButtonS4();  // Screen 4: show submit only when field filled
+  initSubmitButton();    // Screen 4: show submit only when all fields filled
+  initSubmitButtonS4();  // Screen 5: show submit only when field filled
   initKeyboard();
 });
 
@@ -388,10 +388,10 @@ let frame9Seen       = false;
 /* Resume-state flags for question screens.
    Once true, resetScreenState() skips resetting that screen
    so the learner cannot re-answer after navigating forward. */
-let screen3Done = false;  // Screen 3 (Q1 — timer inputs)
-let screen4Done = false;  // Screen 4 (Q2 — single timer input)
-let screen6Done = false;  // Screen 6 (Q3A — radio button)
-let screen7Done = false;  // Screen 7 (Q3B — radio button)
+let screen3Done = false;  // Screen 4 (Q1 — timer inputs)
+let screen4Done = false;  // Screen 5 (Q2 — single timer input)
+let screen6Done = false;  // Screen 7 (Q3A — radio button)
+let screen7Done = false;  // Screen 8 (Q3B — radio button)
 
 /* Radio button selections for Q3 screens */
 let s6Selection = null;   // 'yes' | 'no'
@@ -414,31 +414,31 @@ const RADIO_OPTIONS = {
 };
 
 /* ─── Score flags — set to true when the user answers correctly (any attempt)
-   Q7 (screen 16) is not scored per the scoring rules.
+   Q7 (screen 17) is not scored per the scoring rules.
    ──────────────────────────────────────────────────────────────── */
 let scoreCorrect_q1b = false;  // Screen  3 — Q1 section B
 let scoreCorrect_q2  = false;  // Screen  4 — Q2
 let scoreCorrect_q3a = false;  // Screen  6 — Q3A
 let scoreCorrect_q3b = false;  // Screen  7 — Q3B
 let scoreCorrect_q4  = false;  // Screen  9 — Q4
-let scoreCorrect_q5a = false;  // Screen 11 — Q5A
-let scoreCorrect_q5b = false;  // Screen 12 — Q5B
-let scoreCorrect_q5c = false;  // Screen 13 — Q5C
-let scoreCorrect_q6  = false;  // Screen 15 — Q6
-let scoreCorrect_q8  = false;  // Screen 17 — Q8
+let scoreCorrect_q5a = false;  // Screen 12 — Q5A
+let scoreCorrect_q5b = false;  // Screen 13 — Q5B
+let scoreCorrect_q5c = false;  // Screen 14 — Q5C
+let scoreCorrect_q6  = false;  // Screen 16 — Q6
+let scoreCorrect_q8  = false;  // Screen 18 — Q8
 
-/* ─── Screen 13 (Q5C) — multi-select state ──────────────── */
+/* ─── Screen 14 (Q5C) — multi-select state ──────────────── */
 let screen13Done    = false;
 let attemptCountS13 = 0;
 let s13MultiSelectInited = false;  // prevents re-binding click handlers
 
-/* ─── Screen 15 (Q6) — radio state ─────────────────────── */
+/* ─── Screen 16 (Q6) — radio state ─────────────────────── */
 let screen15Done    = false;
 let attemptCountS15 = 0;
 let s15Selection    = null;
 const CORRECT_ANSWER_S15 = 'c';  // 126 דקות
 
-/* ─── Screen 17 (Q8) — dropdown state ───────────────────── */
+/* ─── Screen 18 (Q8) — dropdown state ───────────────────── */
 let screen17Done     = false;
 let attemptCountS17  = 0;
 let s17dd1Selection  = null;  // dropdown 1
@@ -446,7 +446,7 @@ let s17dd2Selection  = null;  // dropdown 2
 const CORRECT_DD1    = '35%';
 const CORRECT_DD2    = 'לא משתנה';
 
-/* Resume-state flag / selection / attempts for Q4 (Screen 9) */
+/* Resume-state flag / selection / attempts for Q4 (Screen 10) */
 let screen9Done = false;
 let s9Selection = null;
 let attemptCountS9 = 0;
@@ -522,7 +522,7 @@ function closeAllPopups() {
   document.querySelectorAll('.help-btn').forEach(b => b.classList.remove('is-open'));
 }
 
-/* ─── Screen 3: Submit button — גלוי רק כשכל השדות מלאים ── */
+/* ─── Screen 4: Submit button — גלוי רק כשכל השדות מלאים ── */
 function initSubmitButton() {
   ['timer1', 'timer2', 'timer3'].forEach(id => {
     const el = document.getElementById(id);
@@ -540,7 +540,7 @@ function updateSubmitVisibility() {
   btn.classList.toggle('hidden', !allFilled);
 }
 
-/* ─── Screen 3: Answer Validation — 2 ניסיונות ────────────
+/* ─── Screen 4: Answer Validation — 2 ניסיונות ────────────
    ניסיון 1 + שגוי  → הודעת "נסו שוב" inline בלבד
    ניסיון 2 + שגוי  → feedback-incorrect + מילוי תשובות נכונות
    נכון (כל ניסיון) → feedback-correct
@@ -603,7 +603,7 @@ function checkAnswers() {
 }
 
 function disableSubmit() {
-  screen3Done = true;  // נועל את מסך 3 — לא יאופס בחזרה
+  screen3Done = true;  // נועל את מסך 4 — לא יאופס בחזרה
   const btn = document.getElementById('submit-btn');
   if (btn) {
     btn.disabled = true;
@@ -688,9 +688,9 @@ function initKeyboard() {
   });
 }
 
-/* ─── Screen 4 (Frame 5): Answer Validation ────────────────
+/* ─── Screen 5 (Frame 5): Answer Validation ────────────────
    שאלה יחידה: פרק בסדרה = 40% × 105 = 42 דקות.
-   מנגנון זהה לScreen 3 אך עם שדה יחיד ופידבק בפאנל שמאל.
+   מנגנון זהה לScreen 4 אך עם שדה יחיד ופידבק בפאנל שמאל.
 ─────────────────────────────────────────────────────── */
 const CORRECT_ANSWER_S4 = 42;
 let attemptCountS4 = 0;
@@ -752,7 +752,7 @@ function showFeedbackS4(type) {
 }
 
 function disableSubmitS4() {
-  screen4Done = true;  // נועל את מסך 4 — לא יאופס בחזרה
+  screen4Done = true;  // נועל את מסך 5 — לא יאופס בחזרה
   const btn = document.getElementById('submit-btn-s4');
   if (btn) { btn.disabled = true; btn.classList.add('hidden'); }
   // נועל את שדה הקלט — לא ניתן לערוך אחרי חשיפת התשובה
@@ -762,7 +762,7 @@ function disableSubmitS4() {
   if (nextBtn) nextBtn.classList.remove('hidden');
 }
 
-/* ─── Screen 5 (Frame 6): Ofri WhatsApp animation ───────────
+/* ─── Screen 6 (Frame 6): Ofri WhatsApp animation ───────────
    ביקור ראשון: כל הודעה מופיעה בתורה עם float-in + צליל.
    ביקור חוזר:  כל ההודעות מופיעות מיד, ללא אנימציה.
 ─────────────────────────────────────────────────────── */
@@ -785,7 +785,7 @@ function enterFrame6() {
 
   msgIds.forEach((id, i) => {
     setTimeout(() => {
-      if (currentScreen !== 5) return; // המשתמש עזב את המסך
+      if (currentScreen !== 6) return; // המשתמש עזב את המסך
       const el = document.getElementById(id);
       if (!el) return;
       el.classList.remove('hidden');
@@ -801,7 +801,7 @@ function enterFrame6() {
   frame6Seen = true;
 }
 
-/* ─── Screen 8 (Frame 9): Calendar notification ─────────── */
+/* ─── Screen 9 (Frame 9): Calendar notification ─────────── */
 function enterFrame9() {
   const el = document.getElementById('f9-m1');
 
@@ -815,7 +815,7 @@ function enterFrame9() {
   if (el) el.classList.add('hidden');
 
   setTimeout(() => {
-    if (currentScreen !== 8) return;
+    if (currentScreen !== 9) return;
     if (!el) return;
     el.classList.remove('hidden');
     el.style.animation = 'none';
@@ -827,7 +827,7 @@ function enterFrame9() {
   frame9Seen = true;
 }
 
-/* ─── Radio buttons — Screens 6 & 7 (Q3A / Q3B) ─────────── */
+/* ─── Radio buttons — Screens 7 & 8 (Q3A / Q3B) ─────────── */
 
 /** Update radio button icon and label color */
 function setRadioVisual(screen, optId, state) {
@@ -960,7 +960,7 @@ function disableSubmitS7() {
   document.getElementById('next-s7')?.classList.remove('hidden');
 }
 
-/* ─── Screen 9 (Frame 10): Q4 — full-width radio ────────── */
+/* ─── Screen 10 (Frame 10): Q4 — full-width radio ────────── */
 
 function checkAnswersS9() {
   if (attemptCountS9 >= MAX_ATTEMPTS) return;
@@ -1034,7 +1034,7 @@ if (window.parent !== window) {
 })();
 
 /* ═══════════════════════════════════════════════════════════
-   SCREEN 11 (Frame 12): Q5A — input + graph
+   SCREEN 12 (Frame 12): Q5A — input + graph
    תשובה נכונה: 400 (60 נטו + 20 הליכה = 80 ברוטו = 20% × 400)
    ═══════════════════════════════════════════════════════════ */
 
@@ -1089,11 +1089,11 @@ function disableSubmitS11(feedbackType) {
   document.getElementById('next-s11')?.classList.remove('hidden');
 
   // QA r1 fix D: Q5A הוא שאלת קלט — הגרף אינפורמטיבי בלבד.
-  // אין סימון מצב נקודה (is-correct/is-incorrect) על הגרף. (רק ב-Q5C/מסך 13.)
+  // אין סימון מצב נקודה (is-correct/is-incorrect) על הגרף. (רק ב-Q5C/מסך 14.)
 
   // הסתר dot (Ellipse 3) + טקסט הסבר כשמופיע פידבק
-  document.querySelector('[data-screen="11"] .s11-dot-bullet')?.classList.add('hidden');
-  document.querySelector('[data-screen="11"] .s11-graph-note')?.classList.add('hidden');
+  document.querySelector('[data-screen="12"] .s11-dot-bullet')?.classList.add('hidden');
+  document.querySelector('[data-screen="12"] .s11-graph-note')?.classList.add('hidden');
 
   // מציג פאנל פידבק מתאים
   const panelCorrect   = document.getElementById('feedback-s11-correct');
@@ -1106,7 +1106,7 @@ function disableSubmitS11(feedbackType) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SCREEN 12 (Frame 13): Q5B — input + graph
+   SCREEN 13 (Frame 13): Q5B — input + graph
    תשובה נכונה: 50 דקות נטו (70 ברוטו − 20 הליכה)
    ═══════════════════════════════════════════════════════════ */
 
@@ -1160,11 +1160,11 @@ function disableSubmitS12(feedbackType) {
   document.getElementById('next-s12')?.classList.remove('hidden');
 
   // QA r1 fix D: Q5B הוא שאלת קלט — הגרף אינפורמטיבי בלבד.
-  // אין סימון מצב נקודה (is-correct/is-incorrect) על הגרף. (רק ב-Q5C/מסך 13.)
+  // אין סימון מצב נקודה (is-correct/is-incorrect) על הגרף. (רק ב-Q5C/מסך 14.)
 
   // הסתר dot (Ellipse 3) + טקסט הסבר כשמופיע פידבק
-  document.querySelector('[data-screen="12"] .s11-dot-bullet')?.classList.add('hidden');
-  document.querySelector('[data-screen="12"] .s11-graph-note')?.classList.add('hidden');
+  document.querySelector('[data-screen="13"] .s11-dot-bullet')?.classList.add('hidden');
+  document.querySelector('[data-screen="13"] .s11-graph-note')?.classList.add('hidden');
 
   // מציג פאנל פידבק מתאים
   document.getElementById(`feedback-s12-${feedbackType}`)?.classList.remove('hidden');
@@ -1265,7 +1265,7 @@ document.addEventListener('keydown', e => {
 initGraphPoints();
 
 /* ═══════════════════════════════════════════════════════════
-   SCREEN 13 (Q5C) — multi-select: select exactly (20,100) and (10,50)
+   SCREEN 14 (Q5C) — multi-select: select exactly (20,100) and (10,50)
    ═══════════════════════════════════════════════════════════ */
 
 function initS13MultiSelect() {
@@ -1348,7 +1348,7 @@ function disableSubmitS13(feedbackType) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SCREEN 15 (Q6) — radio: correct = 'c' (126 דקות)
+   SCREEN 16 (Q6) — radio: correct = 'c' (126 דקות)
    ═══════════════════════════════════════════════════════════ */
 
 function checkAnswersS15() {
@@ -1391,7 +1391,7 @@ function disableSubmitS15() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SCREEN 17 (Q8) — custom dropdowns
+   SCREEN 18 (Q8) — custom dropdowns
    dropdown1: correct = '35%'
    dropdown2: correct = 'לא משתנה'
    ═══════════════════════════════════════════════════════════ */
@@ -1533,7 +1533,7 @@ function displayGrade() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SCREEN 18 — completion modal
+   SCREEN 19 — completion modal
    ═══════════════════════════════════════════════════════════ */
 
 function completeMission() {

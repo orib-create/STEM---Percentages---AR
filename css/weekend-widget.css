@@ -35,19 +35,21 @@
    edge clear of the prev-nav button given .right-panel sits at x=923. */
 /* QA r1 (item 11): enlarge significantly without an internal scrollbar.
    Same technique as the Time Management Widget — scale the whole widget
-   (anchored at the host's right edge, vertically centred) so it grows into
+   (anchored at the host's left edge, vertically centred) so it grows into
    the canvas and fits within 1920×1080, with overflow visible (no scroll).
    The parent .content-card clip is relaxed via .ww-zoom-open while zoomed. */
 .ww-container.ww-zoomed {
-  /* QA r1 fix A: shift right (translateX) so the enlarged widget clears the
-     question text (right edge ≈ x:934); may overlap progress numbers/nav arrow.
+  /* Sides swapped (widget now on the LEFT, host x=118 in the card): mirror of
+     the original right-side zoom — anchor the LEFT edge and shift LEFT
+     (translateX) so the enlarged widget clears the question text now on the
+     right; may overlap the nav arrow.
      QA r1 (white-card grow): translateY(-23px) re-centres the now-growable card
      vertically so per-attempt feedback stays centred in the 1920×1080 canvas
      (all content visible). The rare end-of-5 "finished" message is taller than
      the canvas at this zoom and may reach the edge — acceptable, no layout break.
      Scale unchanged (1.35). */
-  transform: translateX(150px) translateY(-23px) scale(1.35);
-  transform-origin: right center;
+  transform: translateX(-150px) translateY(-23px) scale(1.35);
+  transform-origin: left center;
   overflow: visible;
   z-index: 30;
 }
@@ -90,12 +92,13 @@
 .content-card.ww-zoom-open .ww-zoom-btn {
   background-image: url('../assets/images/zoom-out.png');
   animation: none;   /* stop pulse once open; keep the yellow glow ring */
-  /* widget grows up-and-right when zoomed — move the button to the new
-     top-right corner of the enlarged widget (WW shifts ~23px higher than TMW) */
-  transform: translate(126px, -108px);
+  /* widget grows up when zoomed and its right edge shifts only slightly
+     (left-anchored scale +212px minus translateX −150px ≈ +62px) — move the
+     button to the new top-right corner (WW shifts ~23px higher than TMW) */
+  transform: translate(38px, -108px);
 }
 .content-card.ww-zoom-open .ww-zoom-btn:hover {
-  transform: translate(126px, -108px) scale(1.1);
+  transform: translate(38px, -108px) scale(1.1);
 }
 
 .ww-inner {

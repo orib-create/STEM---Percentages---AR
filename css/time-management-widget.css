@@ -25,19 +25,20 @@
 }
 
 /* QA r1 (item 1): zoom must be much bigger and is allowed to cover the
-   breadcrumb numbers and the back arrow. The widget already fills its
+   breadcrumb numbers and the nav arrow. The widget already fills its
    605×754 host, so a real enlargement must break out of the host. We scale
-   the whole widget with transform: scale() (anchored at the host's right
-   edge, vertically centred) so it grows left + up/down and fits the
+   the whole widget with transform: scale() (anchored at the host's left
+   edge, vertically centred) so it grows right + up/down and fits the
    1920×1080 canvas without any internal scrollbar (the content already fits
    the box at 1×, so scaling adds no scroll). The clip on the parent
    .content-card is relaxed via .tmw-zoom-open while zoomed. */
 .tmw-container.tmw-zoomed {
-  /* QA r1 fix A: shift further right (translateX) so the enlarged widget no
-     longer covers the question text (right edge ≈ x:934); it may still overlap
-     the progress numbers and nav arrow. Size unchanged (scale 1.4). */
-  transform: translateX(150px) scale(1.35);
-  transform-origin: right center;
+  /* Sides swapped (widget now on the LEFT, host x=118 in the card): mirror of
+     the original right-side zoom — anchor the LEFT edge and shift LEFT
+     (translateX) so the enlarged widget clears the question text now on the
+     right; it may still overlap the nav arrow. Size unchanged (scale 1.35). */
+  transform: translateX(-150px) scale(1.35);
+  transform-origin: left center;
   overflow: visible;
   z-index: 30;
 }
@@ -95,12 +96,13 @@
 .content-card.tmw-zoom-open .tmw-zoom-btn {
   background-image: url('../assets/images/zoom-out.png');
   animation: none;   /* stop pulse once open; keep the yellow glow ring */
-  /* widget grows up-and-right when zoomed — move the button to the new
-     top-right corner of the enlarged widget */
-  transform: translate(126px, -85px);
+  /* widget grows up when zoomed and its right edge shifts only slightly
+     (left-anchored scale +212px minus translateX −150px ≈ +62px) — move the
+     button to the new top-right corner of the enlarged widget */
+  transform: translate(38px, -85px);
 }
 .content-card.tmw-zoom-open .tmw-zoom-btn:hover {
-  transform: translate(126px, -85px) scale(1.1);
+  transform: translate(38px, -85px) scale(1.1);
 }
 
 .tmw-scoreboard {
