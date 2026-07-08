@@ -872,16 +872,19 @@ html, body {
   display: inline-block;
 }
 
-/* המונח עצמו — צבוע וקו תחתון לפי הפיגמה */
+/* המונח עצמו — צבוע וקו תחתון לפי הפיגמה.
+   skip-ink:none — בלי זה הדפדפן קוטע את הקו מתחת לאותיות
+   יורדות (ן, ך וכו') ונוצרים "חורים" לבנים בקו. */
 .term-underline {
   color: #2b369b;
   text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 /* אייקון i — ממוקם מעל הקצה השמאלי של המונח (RTL: סוף המילה) */
 .term-info {
   position: absolute;
-  top: -9px; left: 2px;
+  top: -6px; left: 2px;
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center; justify-content: center;
@@ -918,6 +921,19 @@ html, body {
 .term-info:hover .term-tooltip,
 .term-info:focus .term-tooltip,
 .term-info:focus-within .term-tooltip { display: block; }
+
+/* בריחוף — האייקון (והבועה שבתוכו) עולים לשכבה העליונה ביותר,
+   כדי שהבועה לא תיחתך ע"י אלמנטים שכנים (S13 ודומיו) */
+.term-info:hover,
+.term-info:focus,
+.term-info:focus-within { z-index: 999; }
+
+/* במסכים 12-13 השאלה (עם הטולטיפים) יושבת בתוך .left-panel,
+   שה-overflow:hidden שלו חותך את הבועה בקצה העליון של הכרטיס.
+   משחררים את החיתוך רק במסכים האלה — אין בהם תוכן אחר שנשען
+   על החיתוך (אותה תבנית כמו מסכים 3/17/18 לעיל). */
+[data-screen="12"] .left-panel,
+[data-screen="13"] .left-panel { overflow: visible; }
 
 .timer-input {
   width: 101px;
