@@ -5,7 +5,9 @@
 'use strict';
 
 /* ─── Globals ───────────────────────────────────────────── */
-const TOTAL_SCREENS = 19;
+/* נגזר מה-DOM כדי שהוספת/הסרת מסך לא תדרוש עדכון ידני
+   (main.js נטען בסוף ה-body, אחרי כל ה-sections) */
+const TOTAL_SCREENS = document.querySelectorAll('.screen').length;
 let currentScreen = 0;
 
 const CORRECT_ANSWERS = { timer1: 60, timer2: 40, timer3: 105 };
@@ -416,11 +418,11 @@ const RADIO_OPTIONS = {
 /* ─── Score flags — set to true when the user answers correctly (any attempt)
    Q7 (screen 17) is not scored per the scoring rules.
    ──────────────────────────────────────────────────────────────── */
-let scoreCorrect_q1b = false;  // Screen  3 — Q1 section B
-let scoreCorrect_q2  = false;  // Screen  4 — Q2
-let scoreCorrect_q3a = false;  // Screen  6 — Q3A
-let scoreCorrect_q3b = false;  // Screen  7 — Q3B
-let scoreCorrect_q4  = false;  // Screen  9 — Q4
+let scoreCorrect_q1b = false;  // Screen  4 — Q1 section B
+let scoreCorrect_q2  = false;  // Screen  5 — Q2
+let scoreCorrect_q3a = false;  // Screen  7 — Q3A
+let scoreCorrect_q3b = false;  // Screen  8 — Q3B
+let scoreCorrect_q4  = false;  // Screen 10 — Q4
 let scoreCorrect_q5a = false;  // Screen 12 — Q5A
 let scoreCorrect_q5b = false;  // Screen 13 — Q5B
 let scoreCorrect_q5c = false;  // Screen 14 — Q5C
