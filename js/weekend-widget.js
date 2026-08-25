@@ -59,7 +59,7 @@
     // Relax the question-card clip so the enlarged widget can break out (QA r1 item 11).
     const card = elRoot.closest('.content-card');
     if (card) card.classList.toggle('ww-zoom-open', zoomed);
-    const label  = zoomed ? 'הקטן יישומון' : 'הגדל יישומון';
+    const label  = zoomed ? 'تصغير التطبيق' : 'تكبير التطبيق';
     zoomBtn.setAttribute('aria-label', label);
     zoomBtn.setAttribute('title', label);
   }
@@ -88,7 +88,7 @@
 
     // החזרת כפתור הבדיקה למצב פעיל
     checkBtn.disabled = false;
-    checkBtn.innerText = 'בדקו את תשובותיכם';
+    checkBtn.innerText = 'افحَصوا إجاباتِكُم';
     feedbackBox.style.display = 'none';
   }
 
@@ -98,7 +98,7 @@
     const userFinalPerc = parseInt(finalPercInput.value, 10);
 
     if (isNaN(userFinalPerc)) {
-      feedbackBox.innerText = 'נא להקליד את האחוז החדש לפני הבדיקה.';
+      feedbackBox.innerText = 'الرجاء كتابة النسبة المئويّة الجديدة قبل الفحص.';
       feedbackBox.className = 'ww-feedback ww-error';
       feedbackBox.style.display = 'block';
       return;
@@ -119,10 +119,10 @@
     if (userFinalPerc === EXPECTED_FINAL_PERC) {
       successes++;
       successesDisplay.innerText = successes;
-      feedbackBox.innerHTML = 'כל הכבוד! תשובה נכונה ומדויקת.';
+      feedbackBox.innerHTML = 'كلّ الاحترام! الإجابة صحيحة ودقيقة.';
       feedbackBox.className = 'ww-feedback ww-success';
     } else {
-      feedbackBox.innerHTML = 'טעיתם בחישוב האחוז - נסו שוב.';
+      feedbackBox.innerHTML = 'أخطأْتُم في حِساب النسبة المئويّة - حاوِلوا مرة أخرى.';
       feedbackBox.className = 'ww-feedback ww-error';
     }
 
@@ -134,12 +134,12 @@
       restartBtn.style.display = 'block';
 
       feedbackBox.innerHTML +=
-        '<br><br><span style="font-size:22px;">סיימתם את המשימה!</span>' +
-        '<br>הצלחתם ' + successes + ' פעמים מתוך 5.';
+        '<br><br><span style="font-size:22px;">أنهَيْتُم المهمّة!</span>' +
+        '<br>نجَحْتُم ' + successes + ' مرّات من 5.';
       feedbackBox.className = 'ww-feedback ww-finished';
     } else {
       checkBtn.disabled = true;
-      checkBtn.innerText = 'הזיזו את הסליידר לבחירת אחוז חדש ->';
+      checkBtn.innerText = 'حرِّكوا الشريط لاختيار نسبة مئويّة جديدة ->';
     }
   }
 

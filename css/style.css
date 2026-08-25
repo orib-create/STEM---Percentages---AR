@@ -505,8 +505,8 @@ html, body {
 .notif-text-wrap {
   position: absolute;
   top: 27px;
-  left: 144px;
-  width: 369px;
+  left: 94px;
+  width: 480px;
   height: 133px;
   display: flex;
   align-items: center;
@@ -631,6 +631,7 @@ html, body {
    ─────────────────────────────────────────────────────────── */
 .help-btn-label {
   position: absolute;
+  padding-left: 4px;
   /* Open-state image (1920×1080) is offset by background-position:-47px -30px.
      Circle bounds in button space: x=[0..132] y=[0..133] → center=(66,67).
      50%/50% would be (75,75) — 9px right and 8px below the true circle center. */
@@ -638,7 +639,7 @@ html, body {
   left: 66px;
   transform: translate(-50%, -50%);
   font-family: 'Assistant', sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;           /* Bold — Figma: font-['Assistant:Bold'] */
   color: #fcfafa;             /* Figma: text-[#fcfafa] */
   white-space: nowrap;
@@ -683,6 +684,27 @@ html, body {
   text-align: right;
   line-height: normal;
   white-space: normal;           /* טקסט עוטף שורות כמו בפיגמה */
+}
+
+#help-popup-s3 {
+  width: 450px;
+}
+
+#help-popup-s6 {
+  height: 420px;
+}
+
+#help-popup-s17 {
+  height: 300px;
+}
+
+#help-popup-s7 {
+  width: 470px;
+}
+
+#help-popup-s13 {
+  width: 521px;
+  height: 220px;
 }
 
 /* ─── Content Area (Screens 4 & 5) ─────────────────────── */
@@ -1193,8 +1215,8 @@ html, body {
   position: absolute;
   left: 80px;
   top: 106px;
-  width: 773px;
-  height: 885px;
+  width: 815px;
+  height: 770px;
   background: #171717;
   border-radius: 100px;
   overflow: hidden;
@@ -1211,8 +1233,8 @@ html, body {
 /* טקסט הפידבק — Figma: pt:80 pr:80 pb:271 pl:50, items-end, direction:rtl */
 .feedback-text {
   position: absolute;
-  inset: 12px 0 0 0;
-  padding: 106px 56px 271px 40px;
+  inset: 0px 0 0 0;
+  padding: 40px 56px 271px 40px;
   text-align: right;
   direction: rtl;
   z-index: 1;
@@ -1354,7 +1376,7 @@ html, body {
    Figma: width:672, height:275, bg:#111, border-radius:45
    ─────────────────────────────────────────────────────── */
 .s4-feedback-box {
-  width: 710px;
+  width: 766px;
   min-height: 275px;
   background: #111;
   border-radius: 45px;
@@ -1445,6 +1467,19 @@ html, body {
   white-space: nowrap;
 }
 
+/* Screens 11 & 15 — Arabic narrative line runs longer than the Hebrew original
+   and overflows the nowrap box; let it wrap instead so it stays inside the bar. */
+[data-screen="11"] .f6-header-text p,
+[data-screen="15"] .f6-header-text p {
+  white-space: normal;
+}
+
+/* Screen 11 only — widen the box to give the wrapped line more room. */
+[data-screen="11"] .f6-header-text {
+  right: -32px;
+  width: 1426px;
+}
+
 /* Ofri's phone — container window at (139,225), full-canvas image clipped inside */
 .f6-phone {
   position: absolute;
@@ -1479,7 +1514,7 @@ html, body {
 .ofri-m2 { left: 198px; top: 538px; width: 483.311px; height: 110.419px; }
 .ofri-m2 img { left: -198px; top: -538px; }
 
-.ofri-m3 { left: 198px; top: 648px; width: 483.311px; height: 206.786px; }
+.ofri-m3 { left: 198px; top: 648px; width: 500px; height: 206.786px; }
 .ofri-m3 img { left: -198px; top: -648px; }
 
 .ofri-m4 { left: 198px; top: 855px; width: 483.311px; height: 112.215px; }
@@ -1778,8 +1813,8 @@ html, body {
    top = 137.983/2 − 37 = 32px */
 .f9-m1-text {
   position: absolute;
-  right: 48px;
-  top: 32px;
+  right: 29px;
+  top: 30px;
   text-align: right;
   direction: rtl;
   white-space: nowrap;
@@ -1795,7 +1830,7 @@ html, body {
 }
 .f9-m1-body {
   font-family: 'Assistant', sans-serif;
-  font-size: 34px;
+  font-size: 29px;
   font-weight: 600;
   color: #030303;
   margin: 0;
@@ -1952,11 +1987,14 @@ html, body {
 
 [data-screen="14"] .s11s12-feedback-pos {
   top: 500px;
+  width: 800px;
 }
 
 /* Screen 12 only — push the feedback box down a touch. */
 [data-screen="12"] .s11s12-feedback-pos {
   top: 560px;
+  left: 127px;
+  width: 1110px;
 }
 
 /* ── OLD overlay feedback (kept for reference, no longer used on screens 12/12) ── */
@@ -2491,7 +2529,7 @@ html, body {
   right: 73px;
   top: 600px;
   bottom: auto;
-  width: 860px;
+  width: 1100px;
   z-index: 20;
 }
 
@@ -2636,7 +2674,7 @@ html, body {
 .s17-noa-wrap {
   position: absolute;
   bottom: 0;
-  left: 250px;   /* moved left to clear question text; Figma origin was 471px */
+  left: 12px;
   width: 444px;
   height: 715px;
   overflow: hidden;

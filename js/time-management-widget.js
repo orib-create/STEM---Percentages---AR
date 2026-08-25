@@ -59,7 +59,7 @@
     // Relax the question-card clip so the enlarged widget can break out (QA r1 item 1).
     const card = elRoot.closest('.content-card');
     if (card) card.classList.toggle('tmw-zoom-open', zoomed);
-    const label  = zoomed ? 'הקטן יישומון' : 'הגדל יישומון';
+    const label  = zoomed ? 'تصغير التطبيق' : 'تكبير التطبيق';
     zoomBtn.setAttribute('aria-label', label);
     zoomBtn.setAttribute('title', label);
   }
@@ -78,7 +78,7 @@
     screenTimeInput.value    = '';
 
     checkBtn.disabled  = false;
-    checkBtn.innerText = 'בדקו את התשובות';
+    checkBtn.innerText = 'افحَصوا الإجابات';
 
     feedbackBox.style.display  = 'none';
     chartSection.style.display = 'none';
@@ -101,7 +101,7 @@
     const userScreen   = parseInt(screenTimeInput.value, 10);
 
     if (isNaN(userGymTotal) || isNaN(userGymNet) || isNaN(userScreen)) {
-      feedbackBox.innerText = 'נא למלא את כל השדות לפני הבדיקה.';
+      feedbackBox.innerText = 'يُرجى تعبئة كلّ الخانات قبل الفحص.';
       feedbackBox.className = 'tmw-feedback tmw-error';
       feedbackBox.style.display = 'block';
       return;
@@ -127,17 +127,17 @@
     if (isCorrect) {
       successes++;
       successesDisplay.innerText = successes;
-      feedbackBox.innerHTML = 'כל הכבוד! חישבתם במדויק.';
+      feedbackBox.innerHTML = 'كلّ الاحترام! حساباتٌكم دقيقة.';
       feedbackBox.className = 'tmw-feedback tmw-success';
       showChart();
     } else {
       feedbackBox.innerHTML =
-        'יש לכם טעות בחישוב.' +
+        'لديكُم خطأ في الحساب.' +
         '<div class="tmw-correct-answers-box">' +
-          '<b>התשובות הנכונות עבור ' + currentTotalTime + ' דקות:</b><br>' +
-          'כושר סך הכל (20%): ' + expectedGymTotal + ' דקות.<br>' +
-          'אימון נטו (-20): ' + expectedGymNet + ' דקות.<br>' +
-          'זמן מסך (35%): ' + expectedScreen + ' דקות.' +
+          '<b>الإجابات الصحيحة لـ ' + currentTotalTime + ' دقائق:</b><br>' +
+          'الوقت الإجماليّ للنادي الرياضيّ (20%): ' + expectedGymTotal + ' دقائق.<br>' +
+          'الوقت الصافي للتدريب (-20): ' + expectedGymNet + ' دقائق.<br>' +
+          'وقت الشاشة (35%): ' + expectedScreen + ' دقائق.' +
         '</div>';
       feedbackBox.className = 'tmw-feedback tmw-error';
     }
@@ -150,12 +150,12 @@
       restartBtn.style.display = 'block';
 
       feedbackBox.innerHTML +=
-        '<br><br><span style="font-size:22px;">סיימתם את המשימה!</span>' +
-        '<br>הצלחתם ' + successes + ' פעמים מתוך 5.';
+        '<br><br><span style="font-size:22px;">أنهَيْتُم المهمّة!</span>' +
+        '<br>نجَحْتُم ' + successes + ' مرّات من 5.';
       feedbackBox.className = 'tmw-feedback tmw-finished';
     } else {
       checkBtn.disabled  = true;
-      checkBtn.innerText = 'הזיזו את הסליידר לבחירת זמן חדש ->';
+      checkBtn.innerText = 'حرِّكوا الشريط لاختيار وقت جديد ->';
     }
   }
 

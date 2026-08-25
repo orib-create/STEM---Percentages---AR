@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>לומדה – ניהול זמן | STEM מתמטיקה</title>
+  <title>برنامج تعليميّ – إدارة الوقت | STEM رياضيّات</title>
   <!-- Fonts: local @font-face declarations live in css/style.css (offline-friendly). -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/time-management-widget.css">
@@ -30,16 +30,15 @@
     <div class="textbox1-wrap" id="textbox-s0">
       <img class="textbox1-bg" src="assets/images/textbox1.png" alt="">
       <div class="textbox1-content">
-        <p>נועה לומדת בכיתה ח׳ בבית הספר.</p>
-        <p>בכל יום חול, אחרי שהיא חוזרת הביתה, יש לה בערך 5 שעות פנויות (שהן 300 דקות),</p>
-        <p>והיא מנצלת אותן בעיקר לפעילות אחת ספציפית…</p>
+        <p>أمل هي طالبة في الصفّ الثامن.</p>
+        <p>في كلّ يوم خلال الأسبوع، بعد عودَتِها إلى المنزل، يكون لديها 5 ساعات تقريبًا من وقت الفراغ <br>(أيّ 300 دقيقة)، وهي تستغلّ هذا الوقت بالأساس لنشاط محدَّد...</p>
       </div>
     </div>
 
     <!-- Play overlay מלא-מסך 1920×1080 (PlayBrn_Big מפיגמה) — נעלם בלחיצה -->
     <!-- מוסתר מראש; מופיע אחרי עיכוב קריאה (initNoaVideo / resetScreenState) -->
-    <button id="play-btn-s0" class="play-btn-big" style="display:none" aria-label="התחל לומדה">
-      <img src="assets/images/play-btn-big.png" alt="הפעל">
+    <button id="play-btn-s0" class="play-btn-big" style="display:none" aria-label="بدء البرنامج التعليميّ">
+      <img src="assets/images/play-btn-big.png" alt="تشغيل">
     </button>
 
     <!-- טלפון + הודעה — מופיע אחרי סיום הוידאו -->
@@ -54,19 +53,19 @@
         <div id="notif-2"
              class="phone-notif-img notif-slide"
              role="img"
-             aria-label="4 שעות ו-21 דקות ביום">
+             aria-label="4 ساعات وَ 21 دقيقة يوميًّا">
           <img class="notif-icon-bg" src="assets/images/notification-icon.png" alt="">
           <div class="notif-text-wrap">
             <div class="notif-text-inner">
-              <p class="notif-line1">השבוע זמן המסך הממוצע שלך עמד על</p>
-              <p class="notif-line2">4 שעות ו-21 דקות ביום.</p>
+              <p class="notif-line1">هذا الأسبوع، كان معدّل وقت <br>استخدامك للشاشة</p>
+              <p class="notif-line2">4 ساعات وَ 21 دقيقة يوميًّا.</p>
             </div>
           </div>
         </div>
 
       </div>
       <!-- חץ "הבא" — מופיע יחד עם הטלפון -->
-      <button id="next-s0" class="nav-btn next-btn hidden" onclick="goTo(1)" aria-label="המשך"></button>
+      <button id="next-s0" class="nav-btn next-btn hidden" onclick="goTo(1)" aria-label="التالي"></button>
     </div>
 
   </section>
@@ -96,21 +95,21 @@
     <div class="textbox1-wrap textbox1-s2">
       <img class="textbox1-bg" src="assets/images/textbox1.png" alt="">
       <div class="textbox1-content">
-        <p>רגע לפני שסגרה את הטלפון, היא נתקלה בסרטון חדש של אלכס, יוצרת התוכן האהובה עליה.</p>
-        <p>אלכס היא תלמידת תיכון שמשתפת סרטונים מהחיים שלה.</p>
-        <p>לחצו על הסרטון כדי לצפות בו.</p>
+        <p>قبل أنْ تغلق هاتفها، صادفَتْ مقطع فيديو جديدًا ليارا، صانعة المحتوى المفضّلة لديها.</p>
+        <p>يارا هي طالبة ثانويّة، تُشارِك فيديوهات من حياتها اليوميّة.</p>
+        <p>اُنقُروا على الفيديو لمُشاهَدتِهِ.</p>
       </div>
     </div>
 
     <!-- כפתור Play — left:316, top:585, w:198, h:202 (פיגמה מדויק) -->
     <!-- מוסתר מראש; מופיע אחרי עיכוב קריאה דרך resetScreenState() -->
-    <button id="play-btn" class="play-btn" style="display:none" aria-label="הפעל סרטון">
-      <img src="assets/images/btn-play.png" alt="הפעל">
+    <button id="play-btn" class="play-btn" style="display:none" aria-label="تشغيل الفيديو">
+      <img src="assets/images/btn-play.png" alt="تشغيل">
     </button>
 
-    <button class="nav-btn prev-btn" onclick="goTo(0)" aria-label="חזרה"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(0)" aria-label="العودة"></button>
     <!-- חץ "הבא" — מוסתר עד לסיום הוידאו של אלכס; מוביל למסך המעבר -->
-    <button id="next-s1" class="nav-btn next-btn hidden" onclick="goTo(2)" aria-label="המשך"></button>
+    <button id="next-s1" class="nav-btn next-btn hidden" onclick="goTo(2)" aria-label="التالي"></button>
 
   </section>
 
@@ -126,15 +125,15 @@
     <div class="textbox1-wrap textbox1-transition">
       <img class="textbox1-bg" src="assets/images/textbox1.png" alt="">
       <div class="textbox1-content">
-        <p><b>חשוב לדעת</b></p>
-        <p>גם נועה, כמו אלכס, הולכת ברגל לחדר הכושר וחוזרת ממנו.</p>
-        <p>לכן, <b>זמן חדר הכושר ברוטו</b> כולל תמיד גם 20 דקות של הליכה (הלוך וחזור).</p>
-        <p><b>זמן האימון</b> מתייחס רק לזמן שבו היא באמת מתאמנת, ללא זמן ההליכה.</p>
+        <p><b>معلومة مهمّة</b></p>
+        <p>أمل أيضًا، مثل يارا، تذهب إلى النادي الرياضيّ وتعود منهُ مشيًا على الأقدام.</p>
+        <p>لذلك، <b>وقت النادي الرياضيّ الإجماليّ</b> يشمل أيضًا 20 دقيقة مِن المَشي (ذهابًا وإيابًا).</p>
+        <p><b>بينما وقت التدريب</b> يُشير فقط إلى الوقت الذي تتدرّب فيه فعليًّا، أيّ دون وقت المَشي.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(1)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(3)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(1)" aria-label="العودة"></button>
+    <button class="nav-btn next-btn" onclick="goTo(3)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -146,12 +145,12 @@
     <div class="dark-overlay"></div>
 
     <!-- כפתור עזרה — מצבים מנוהלים ע"י CSS + class is-open -->
-    <button id="help-btn-s3" class="help-btn" data-popup="help-popup-s3" aria-label="עזרה / סגור"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s3" class="help-btn" data-popup="help-popup-s3" aria-label="مساعَدة / إغلاق"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <!-- אזור תוכן ראשי -->
     <div class="content-area">
       <!-- Breadcrumb שאלות 1–8 -->
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -168,11 +167,11 @@
 
         <!-- פאנל הטקסט (מוצג בצד ימין — הצדדים הוחלפו לבקשת הלקוח) -->
         <div class="left-panel">
-          <p class="q-text">1. א. נועה מחליטה לבנות לעצמה יישומון פשוט לניהול הזמן. פתחו את היישומון ועזרו לנועה לחשב את הזמנים שלה במצבים שונים.</p>
+          <p class="q-text">1. أ. تقرّر أمل أنْ تبني لنفسِها تطبيقًا بسيطًا لإدارة الوقت. افتَحوا التطبيق وساعِدوا أمل على حِساب أوقاتِها في حالات مختلفة.</p>
           <br>
-          <p class="q-bold">התחילו בבדיקה של ימים שבהם יש לה פחות זמן פנוי,<br>
-          ונסו לפחות שני מצבים:<br>
-          כאשר יש לה 200 דקות וכאשר יש לה 260 דקות של זמן פנוי. בדקו איך זה משפיע על התכנון שלה.</p>
+          <p class="q-bold">ابدؤوا بفحص الأيّام التي يكون لدَيْها فيها وقت فراغ أقلّ،<br>
+          وجرِّبوا حالتَيْن على الأقلّ:<br>
+          عندما يكون لدَيْها 200 دقيقة، وعندما يكون لدَيْها 260 دقيقة فراغ. افحصوا كيف يؤثِّر ذلك على تخطيطها.</p>
         </div>
 
         <!-- פאנל היישומון (מוצג בצד שמאל — הצדדים הוחלפו לבקשת הלקוח):
@@ -180,47 +179,47 @@
              היישומון חי כאן בלבד (שאלה 1א). שאלה 7 משתמשת ב-Weekend Widget נפרד. -->
         <div class="right-panel" id="tmw-host-s2">
           <button id="tmw-zoom-btn" class="tmw-zoom-btn" type="button"
-                  aria-label="הגדל יישומון" title="הגדל יישומון"></button>
+                  aria-label="تكبير التطبيق" title="تكبير التطبيق"></button>
           <!-- Outer container is dir="ltr" so any vertical scrollbar lands on the visual right.
                Inner .tmw-inner restores dir="rtl" for the actual content. -->
           <div id="tmw-container" class="tmw-container">
 
             <div class="tmw-inner" dir="rtl">
-              <h1>כלי לניהול הזמן</h1>
+              <h1>أداة لإدارة الوقت</h1>
 
               <div class="tmw-scoreboard">
-                <div class="tmw-score-item">ניסיונות: <span id="tmw-attempts-val">0</span> מתוך 5</div>
-                <div class="tmw-score-item">הצלחות: <span id="tmw-successes-val">0</span></div>
+                <div class="tmw-score-item">المحاولات: <span id="tmw-attempts-val">0</span> من 5</div>
+                <div class="tmw-score-item">النجاحات:<span id="tmw-successes-val">0</span></div>
               </div>
 
               <div class="tmw-slider-container">
-                <label for="tmw-time-slider">המשימה: בדקו 5 זמנים שונים.</label>
+                <label for="tmw-time-slider">المهمّة: افحصوا 5 أوقات مختلفة.</label>
                 <input type="range" id="tmw-time-slider" class="tmw-range"
                        min="120" max="400" step="10" value="300">
-                <div class="tmw-time-display">זמן פנוי נבחר: <span id="tmw-time-display-val">300</span> דקות</div>
+                <div class="tmw-time-display">وقت الفراغ المحدَّد: <span id="tmw-time-display-val">300</span> دقيقة</div>
               </div>
 
               <div class="tmw-input-group">
-                <label for="tmw-gym-total-input">1. חדר כושר סך הכל (20%):</label>
-                <input type="number" id="tmw-gym-total-input" placeholder="הקלידו דקות">
+                <label for="tmw-gym-total-input">1. الوقت الإجماليّ للنادي الرياضيّ (%20):</label>
+                <input type="number" id="tmw-gym-total-input" placeholder="اكتُبوا عدد الدقائق">
 
-                <label for="tmw-gym-net-input" style="margin-top: 12px; color: #e67e22;">זמן אימון נטו (לאחר הפחתת 20 ד' הליכה):</label>
-                <input type="number" id="tmw-gym-net-input" placeholder="הקלידו דקות נטו">
+                <label for="tmw-gym-net-input" style="margin-top: 12px; color: #e67e22;">وقت التدريب الصافي (بعد خصم 20 دقيقة مَشي):</label>
+                <input type="number" id="tmw-gym-net-input" placeholder="اكتُبوا عدد الدقائق الصافي">
 
-                <label for="tmw-screen-input" style="margin-top: 12px;">2. זמן מסך מקסימלי (35%):</label>
-                <input type="number" id="tmw-screen-input" placeholder="הקלידו דקות">
+                <label for="tmw-screen-input" style="margin-top: 12px;">2. وقت الشاشة الأقصى (%35):</label>
+                <input type="number" id="tmw-screen-input" placeholder="اكتُبوا عدد الدقائق">
               </div>
 
-              <button id="tmw-check-btn"   class="tmw-btn-check"   type="button">בדקו את התשובות</button>
-              <button id="tmw-restart-btn" class="tmw-btn-restart" type="button">התחל משחק מחדש</button>
+              <button id="tmw-check-btn"   class="tmw-btn-check"   type="button">افحَصوا الإجابات</button>
+              <button id="tmw-restart-btn" class="tmw-btn-restart" type="button">بدء اللعبة من جديد</button>
 
               <div id="tmw-feedback" class="tmw-feedback"></div>
 
               <div id="tmw-chart-section" class="tmw-chart-container">
                 <div class="tmw-stacked-bar">
-                  <div id="tmw-chart-gym"    class="tmw-bar-segment tmw-gym-segment">כושר</div>
-                  <div id="tmw-chart-screen" class="tmw-bar-segment tmw-screen-segment">מסך</div>
-                  <div id="tmw-chart-other"  class="tmw-bar-segment tmw-other-segment">אחר</div>
+                  <div id="tmw-chart-gym"    class="tmw-bar-segment tmw-gym-segment">رياضة</div>
+                  <div id="tmw-chart-screen" class="tmw-bar-segment tmw-screen-segment">شاشة</div>
+                  <div id="tmw-chart-other"  class="tmw-bar-segment tmw-other-segment">آخر</div>
                 </div>
               </div>
             </div>
@@ -229,8 +228,8 @@
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(2)" aria-label="חזרה"></button>
-    <button id="next-s2" class="nav-btn next-btn hidden" onclick="goTo(4)" aria-label="הבא"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(2)" aria-label="العودة"></button>
+    <button id="next-s2" class="nav-btn next-btn hidden" onclick="goTo(4)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -242,12 +241,12 @@
     <div class="dark-overlay"></div>
 
     <!-- כפתור עזרה -->
-    <button id="help-btn-s4" class="help-btn" data-popup="help-popup-s3" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s4" class="help-btn" data-popup="help-popup-s3" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <!-- אזור תוכן — breadcrumb + רקע textbox2 בלבד -->
     <div class="content-area">
       <!-- Breadcrumb -->
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -266,36 +265,35 @@
 
     <!-- תוכן השאלה — ממוקם בצד ימין של הלוח (Figma: left:980, top:144) -->
     <div class="q4-content">
-      <p class="q-text">1. ב. ברוב הימים, לנועה יש 300 דקות פנויות ביום, והיא רוצה
-      לנצל אותן היטב. כדי לדייק בזמנים, היא מכוונת לה טיימרים.</p>
-      <p class="q-bold">הקלידו את מספר הדקות המתאים בכל טיימר:</p>
+      <p class="q-text">1. ب. في معظم الأيام، يكون لدى أمل 300 دقيقة فراغ يوميًّا، وهي تريد استغلال هذا الوقت بأفضل شكل مُمكن. ولكي تنظّم أوقاتها بدِقّة، تقوم بضبط مؤقِّتات.</p>
+      <p class="q-bold">أدخِلوا عدد الدقائق المناسب في كلّ مؤقِّت:</p>
 
       <div class="timers-list">
 
         <div class="timer-row">
           <img class="clock-icon" src="assets/images/clock-icon.png" alt="">
           <div class="timer-fields">
-            <span class="timer-label"><span class="tooltip-word"><strong class="term-underline">זמן חדר הכושר ברוטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן חדר הכושר ברוטו כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול)."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן חדר הכושר ברוטו</strong> כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול).</span></span></span> <span class="lbl-normal">(20% מתוך 300)</span> =</span>
+            <span class="timer-label"><span class="tooltip-word"><strong class="term-underline">الوقت الإجماليّ للنادي الرياضيّ</strong><span class="term-info" tabindex="0" role="button" aria-label="الوقت الإجماليّ للنادي الرياضيّ يشمل أيضًا وقت الذهاب إليه والعودة منْهُ (20 دقيقة بالمُجمل)."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>الوقت الإجماليّ للنادي الرياضيّ</strong> يشمل أيضًا وقت الذهاب إليه والعودة منْهُ (20 دقيقة بالمُجمل).</span></span></span> <span class="lbl-normal">(%20 من 300)</span> =</span>
             <input type="number" id="timer1" class="timer-input" min="0" max="999" placeholder="?">
-            <span class="unit-label">דקות</span>
+            <span class="unit-label">دقائق</span>
           </div>
         </div>
 
         <div class="timer-row">
           <img class="clock-icon" src="assets/images/clock-icon.png" alt="">
           <div class="timer-fields">
-            <span class="timer-label"><span class="tooltip-word"><strong class="term-underline">זמן האימון נטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן האימון מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן האימון</strong> מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה.</span></span></span> <span class="lbl-normal">(לאחר הפחתת 20 דקות הליכה)</span> =</span>
+            <span class="timer-label"><span class="tooltip-word"><strong class="term-underline">وقت التدريب الصافي</strong><span class="term-info" tabindex="0" role="button" aria-label="وقت التدريب يُشير فقط إلى الوقت الذي تتدرّب فيه أمل فعليًّا، أيّ دون وقت المَشي."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>وقت التدريب الصافي</strong> يُشير فقط إلى الوقت الذي تتدرّب فيه أمل فعليًّا، أيّ دون وقت المَشي.</span></span></span> <span class="lbl-normal">(بعد خَصْم 20 دقيقة مَشْ)</span> =</span>
             <input type="number" id="timer2" class="timer-input" min="0" max="999" placeholder="?">
-            <span class="unit-label">דקות</span>
+            <span class="unit-label">دقائق</span>
           </div>
         </div>
 
         <div class="timer-row">
           <img class="clock-icon" src="assets/images/clock-icon.png" alt="">
           <div class="timer-fields">
-            <span class="timer-label"><strong>מקסימום זמן מסך</strong> <span class="lbl-normal">(35% מתוך 300)</span> =</span>
+            <span class="timer-label"><strong>وقت الشاشة الأقصى</strong> <span class="lbl-normal">(%35 من 300)</span> =</span>
             <input type="number" id="timer3" class="timer-input" min="0" max="999" placeholder="?">
-            <span class="unit-label">דקות</span>
+            <span class="unit-label">دقائق</span>
           </div>
         </div>
 
@@ -307,11 +305,11 @@
          סדר DOM: הודעה ראשונה (שמאל), כפתור שני (ימין)
          direction:ltr על הcontainer כדי שflexbox לא יתהפך ברוב RTL -->
     <div class="submit-row">
-      <button id="submit-btn" class="submit-btn hidden" onclick="checkAnswers()" aria-label="בדוק תשובות"><span class="submit-label">צדקתי?</span></button>
+      <button id="submit-btn" class="submit-btn hidden" onclick="checkAnswers()" aria-label="فحص الإجابات"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
@@ -320,43 +318,43 @@
     <!-- פידבק: תשובה נכונה -->
     <div id="feedback-correct" class="feedback-panel hidden">
       <div class="feedback-text">
-        <p class="feedback-title correct-title">צדקת! </p>
-        <p>זמן חדר הכושר ברוטו הוא 20% מתוך 300 דקות.</p>
-        <p>נמיר אותו למספר עשרוני ונחשב: 60 = 0.2 · 300</p>
-        <p><strong>כלומר, זמן חדר הכושר ברוטו הוא 60 דקות.</strong></p>
+        <p class="feedback-title correct-title">إجابتك صحيحة! </p>
+        <p>الوقت الإجماليّ للنادي الرياضيّ هو %20 من 300 دقيقة.</p>
+        <p>نحوِّل النسبة المئويّة إلى عدد عشريّ ونحسب:<br>60 = 0.2 · 300</p>
+        <p><strong>أيّ أنّ الوقت الإجماليّ للنادي الرياضيّ هو 60 دقيقة.</strong></p>
         <p class="feedback-spacer">&#8203;</p>
-        <p>נוריד ממנו 20 דקות של הגעה וחזרה:</p>
+        <p>نخصم منهُ 20 دقيقة للذهاب والإياب:</p>
         <p>40 = 20 - 60</p>
-        <p><strong>כלומר, זמן האימון נטו הוא 40 דקות.</strong></p>
+        <p><strong>أيّ أنّ وقت التدريب الصافي هو 40 دقيقة.</strong></p>
         <p class="feedback-spacer">&#8203;</p>
-        <p>זמן המסך המקסימלי הוא 35% מתוך 300 דקות.</p>
-        <p>נמיר אותו למספר עשרוני ונחשב 105 = 0.35 · 300</p>
-        <p><strong>כלומר, זמן המסך המקסימלי הוא 105 דקות.</strong></p>
+        <p>الحدّ الأقصى لوقت الشاشة هو %35 من 300 دقيقة.</p>
+        <p>نحوِّل النسبة المئويّة إلى عدد عشريّ ونحسب:<br>105 = 0.35 · 300</p>
+        <p><strong>أيّ أنّ الحدّ الأقصى لوقت الشاشة هو 105 دقائق.</strong></p>
       </div>
     </div>
 
     <!-- פידבק: תשובה שגויה -->
     <div id="feedback-incorrect" class="feedback-panel hidden">
       <div class="feedback-text">
-        <p class="feedback-title incorrect-title">זו טעות</p>
-        <p class="feedback-note">התשובות הנכונות מופיעות כעת.</p>
-        <p>זמן חדר הכושר ברוטו הוא 20% מתוך 300 דקות.</p>
-        <p>נמיר אותו למספר עשרוני ונחשב: 60 = 0.2 · 300</p>
-        <p><strong>כלומר, זמן חדר הכושר ברוטו הוא 60 דקות.</strong></p>
+        <p class="feedback-title incorrect-title">هذا خطأ</p>
+        <p class="feedback-note">الإجابات الصحيحة تظهر حاليًّا.</p>
+        <p>الوقت الإجماليّ للنادي الرياضيّ هو %20 من 300 دقيقة.</p>
+        <p>نحوِّل النسبة المئويّة إلى عدد عشريّ ونحسب:<br>60 = 0.2 · 300</p>
+        <p><strong>أيّ أنّ الوقت الإجماليّ للنادي الرياضيّ هو 60 دقيقة.</strong></p>
         <p class="feedback-spacer">&#8203;</p>
-        <p>נוריד ממנו 20 דקות של הגעה וחזרה:</p>
+        <p>نخصم منهُ 20 دقيقة للذهاب والإياب:</p>
         <p>40 = 20 - 60</p>
-        <p><strong>כלומר, זמן האימון נטו הוא 40 דקות.</strong></p>
+        <p><strong>أيّ أنّ وقت التدريب الصافي هو 40 دقيقة.</strong></p>
         <p class="feedback-spacer">&#8203;</p>
-        <p>זמן המסך המקסימלי הוא 35% מתוך 300 דקות.</p>
-        <p>נמיר אותו למספר עשרוני ונחשב 105 = 0.35 · 300</p>
-        <p><strong>כלומר, זמן המסך המקסימלי הוא 105 דקות.</strong></p>
+        <p>الحدّ الأقصى لوقت الشاشة هو %35 من 300 دقيقة.</p>
+        <p>نحوِّل النسبة المئويّة إلى عدد عشريّ ونحسب:<br>105 = 0.35 · 300</p>
+        <p><strong>أيّ أنّ الحدّ الأقصى لوقت الشاشة هو 105 دقائق.</strong></p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(3)" aria-label="חזרה"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(3)" aria-label="العودة"></button>
     <!-- חץ "הבא" — מוסתר עד לסיום השאלה (תשובה נכונה או 2 ניסיונות) -->
-    <button id="next-s3" class="nav-btn next-btn hidden" onclick="goTo(5)" aria-label="המשך לשאלה הבאה"></button>
+    <button id="next-s3" class="nav-btn next-btn hidden" onclick="goTo(5)" aria-label="تابِعوا للسؤال التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -369,12 +367,12 @@
     <div class="dark-overlay"></div>
 
     <!-- כפתור עזרה — מחובר ל-popup נפרד לשאלה 2 -->
-    <button id="help-btn-s5" class="help-btn" data-popup="help-popup-s4" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s5" class="help-btn" data-popup="help-popup-s4" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <!-- אזור תוכן ראשי (פאנל שמאל בלבד — ימין ברמת מסך) -->
     <div class="content-area">
       <!-- Breadcrumb: שאלה 2 פעילה -->
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -392,8 +390,8 @@
         <!-- פאנל שמאל: שאלה + טיימר יחיד + פידבק (מוסתר עד תשובה) -->
         <div class="left-panel left-panel-q4">
           <div>
-            <p class="q-text">2. כמה דקות נמשך כל פרק בסדרה?</p>
-            <p class="q-bold">הקלידו את מספר הדקות המתאים בטיימר:</p>
+            <p class="q-text">2. كم دقيقة تستغرق كلّ حلقة من المسلسل؟</p>
+            <p class="q-bold">أدخِلوا عدد الدقائق المناسب في المؤقِّت:</p>
           </div>
 
           <!-- שדה טיימר יחיד -->
@@ -401,28 +399,28 @@
             <div class="timer-row">
               <img class="clock-icon" src="assets/images/clock-icon.png" alt="">
               <div class="timer-fields">
-                <span class="timer-label">פרק בסדרה =</span>
+                <span class="timer-label">حلقة من المسلسل =</span>
                 <input type="number" id="timer-s4" class="timer-input" min="0" max="999" placeholder="?">
-                <span class="unit-label">דקות</span>
+                <span class="unit-label">دقائق</span>
               </div>
             </div>
           </div>
 
           <!-- פידבק: תשובה נכונה — מופיע בתוך הפאנל השמאלי -->
           <div id="feedback-s4-correct" class="s4-feedback-box hidden">
-            <p class="s4-feedback-title correct-title">צדקת!</p>
-            <p class="s4-feedback-body">כשהשלם משתנה, גם ערכו של האחוז משתנה בהתאם. נחשב 40% מתוך זמן המסך בלבד, שהוא 105 דקות. נמיר 40% למספר עשרוני ונחשב:</p>
+            <p class="s4-feedback-title correct-title">إجابتك صحيحة!</p>
+            <p class="s4-feedback-body">عندما يتغيّر الصحيح، تتغيّر أيضًا قيمة النسبة المئويّة وفقًا لذلك. نحسُب %40 من وقت الشاشة فقط، وهو 105 دقائق. نحوِّل %40 إلى عدد عشريّ ونحسُب:</p>
             <p class="s4-feedback-body">42 = 0.4 · 105</p>
-            <p class="s4-feedback-body">כלומר, פרק בסדרה האהובה על נועה נמשך כ-42 דקות.</p>
+            <p class="s4-feedback-body">أيّ أنّ الحلقة الواحدة من مسلسل أمل المفضَّل تستغرق نحو 42 دقيقة.</p>
           </div>
 
           <!-- פידבק: תשובה שגויה — מופיע אחרי ניסיון שני -->
           <div id="feedback-s4-incorrect" class="s4-feedback-box hidden">
-            <p class="s4-feedback-title incorrect-title">זו טעות</p>
-            <p class="s4-feedback-body feedback-note">התשובה הנכונה מופיעה כעת.</p>
-            <p class="s4-feedback-body">כשהשלם משתנה, גם ערכו של האחוז משתנה בהתאם. נחשב 40% מתוך זמן המסך בלבד, שהוא 105 דקות. נמיר 40% למספר עשרוני ונחשב:</p>
+            <p class="s4-feedback-title incorrect-title">هذا خطأ</p>
+            <p class="s4-feedback-body feedback-note">الإجابة الصحيحة تظهَر الآن.</p>
+            <p class="s4-feedback-body">عندما يتغيّر الصحيح، تتغيّر أيضًا قيمة النسبة المئويّة وفقًا لذلك. نحسُب %40 من وقت الشاشة فقط، وهو 105 دقائق. نحوِّل %40 إلى عدد عشريّ ونحسُب:</p>
             <p class="s4-feedback-body">42 = 0.4 · 105</p>
-            <p class="s4-feedback-body">כלומר, פרק בסדרה האהובה על נועה נמשך כ-42 דקות.</p>
+            <p class="s4-feedback-body">أيّ أنّ الحلقة الواحدة من مسلسل أمل المفضَّل تستغرق نحو 42 دقيقة.</p>
           </div>
         </div>
 
@@ -433,94 +431,93 @@
          תמיד גלוי — מציג את מידע ה-40% וויזואליזציית הזמן -->
     <div class="s4-context-panel">
       <div class="s4-context-text">
-        <p>נועה החליטה לחלק את זמן המסך שלה בין צפייה</p>
-        <p>בסדרה האהובה עליה לבין גלישה חופשית באינטרנט.</p>
-        <p>כל פרק בסדרה אורך כ-40% מזמן המסך שלה.</p>
+        <p>قرّرَتْ أمل أنْ تقسّم وقت الشاشة بين مشاهدة</p>
+        <p>مسلسلها المفضَّل وتصفُّح الإنترنت بشكل حُرّ.</p>
+        <p>تستغرق كلّ حلقة من المسلسل نحو %40 من وقت الشاشة.</p>
       </div>
       <div class="s4-tv-box">
-        <p class="s4-tv-title">105 דקות של זמן מסך:</p>
+        <p class="s4-tv-title">105 دقائق من وقت الشاشة:</p>
         <div class="s4-tv-visual">
           <img class="s4-tv-img" src="assets/images/tv-time.png" alt="">
           <span class="s4-tv-label s4-tv-40">40%</span>
-          <span class="s4-tv-label s4-tv-rest">השאר</span>
+          <span class="s4-tv-label s4-tv-rest">الباقي</span>
         </div>
       </div>
     </div>
 
     <!-- ══ שורת "צדקתי" + "נסו שוב" ══ -->
     <div class="submit-row">
-      <button id="submit-btn-s4" class="submit-btn hidden" onclick="checkAnswersS4()" aria-label="בדוק תשובות"><span class="submit-label">צדקתי?</span></button>
+      <button id="submit-btn-s4" class="submit-btn hidden" onclick="checkAnswersS4()" aria-label="فحص الإجابات"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s4" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(4)" aria-label="חזרה"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(4)" aria-label="العودة"></button>
     <!-- חץ הבא — מוסתר עד לסיום השאלה -->
-    <button id="next-s4" class="nav-btn next-btn hidden" onclick="goTo(6)" aria-label="המשך"></button>
+    <button id="next-s4" class="nav-btn next-btn hidden" onclick="goTo(6)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══ Popup עזרה — מחוץ לכל .screen כדי שלא יושפע מ-display:none ═══ -->
 
   <!-- Popup שאלה 1 (מסכים 3 ו-4) -->
   <div id="help-popup-s3" class="help-popup hidden" role="tooltip">
-    <p>כדי לחשב אחוז,</p>
-    <p>אפשר להפוך אותו</p>
-    <p>לשבר עשרוני ולכפול בשלם.</p>
+    <p>لحِساب النسبة المئويّة،</p>
+    <p>يُمكن تحويلها</p>
+    <p>إلى كسر عشريّ وضربُها بالعدد الصحيح.</p>
   </div>
 
   <!-- Popup שאלה 2 (מסך 5) -->
   <div id="help-popup-s4" class="help-popup hidden" role="tooltip">
-    <p>השלם החדש כאן הוא</p>
-    <p>105 (זמן המסך).</p>
+    <p>العدد الصحيح الجديد هنا هو 105 (وقت الشاشة).</p>
   </div>
 
   <!-- Popup שאלה 3א (מסך 7) -->
   <div id="help-popup-s6" class="help-popup hidden" role="tooltip">
-    <p>האחוז מתאר תמיד</p>
-    <p>"חלק מתוך... ".</p>
-    <p>אם ה"מתוך" שונה,</p>
-    <p>הערך המספרי יהיה שונה.</p>
+    <p>النسبة المئويّة تَصِف دائمًا</p>
+    <p>"جُزءًا مِن ... ".</p>
+    <p>إذا كان الـ "مِن"، أيّ العدد الصحيح، مختلفًا،</p>
+    <p>ستكون القيمة العدديّة مختلفة أيضًا.</p>
   </div>
 
   <!-- Popup שאלה 3ב (מסך 8) -->
   <div id="help-popup-s7" class="help-popup hidden" role="tooltip">
-    <p>האם זמן המסך הוא כל הזמן הפנוי או רק חלק ממנו?</p>
+    <p>هل وقت الشاشة هو كلّ وقت الفراغ أم جُزء منهُ فقط؟</p>
   </div>
 
   <!-- Popup שאלה 4 (מסך 10) -->
   <div id="help-popup-s9" class="help-popup hidden" role="tooltip">
-    <p>החלק הוא 60,</p>
-    <p>והשלם החדש הוא 210.</p>
+    <p>الجزء هو 60،</p>
+    <p>والعدد الصحيح الجديد هو 210.</p>
   </div>
 
   <!-- Popup שאלה 5א (מסך 12) — טקסט מ-Figma node 132-1761 -->
   <div id="help-popup-s11" class="help-popup hidden" role="tooltip">
-    <p>הסתכלו על ציר ה-x</p><p>וזכרו שיש להפחית את זמן ההליכה אל חדר הכושר והחזרה ממנו.</p>
+    <p>انظُروا إلى محور x</p><p>وتذكَّروا أنّه يَجِب خصم وقت الذهاب إلى النادي الرياضيّ والعودة منهُ.</p>
   </div>
 
   <!-- Popup שאלה 5ב (מסך 13) -->
   <div id="help-popup-s12" class="help-popup hidden" role="tooltip">
-    <p>הסתכלו על ציר ה-y</p><p>וזכרו שיש להפחית את זמן ההליכה אל חדר הכושר והחזרה ממנו.</p>
+    <p>انظُروا إلى محور y</p><p>وتذكَّروا أنّه يَجِب خصم وقت الذهاب إلى النادي الرياضيّ والعودة منهُ.</p>
   </div>
 
   <!-- Popup שאלה 5ג (מסך 14) -->
   <div id="help-popup-s13" class="help-popup hidden" role="tooltip">
-    <p>חפשו מצב שבו זמן</p><p>האימון נטו הוא 0 דקות.</p>
+    <p>ابحَثوا عن حالة يكون فيها وقت</p><p>التدريب الصافي 0 دقيقة.</p>
   </div>
 
   <!-- Popup שאלה 6 (מסך 16) -->
   <div id="help-popup-s15" class="help-popup hidden" role="tooltip">
-    <p>כמה הם 20% מתוך</p><p>105 דקות?</p>
+    <p>كَم يُساوي %20 من</p><p>105 دقائق؟</p>
   </div>
 
   <!-- Popup שאלה 7 (מסך 17) — הוסר (אין כפתור עזרה בשאלה זו) -->
 
   <!-- Popup שאלה 8 (מסך 18) -->
   <div id="help-popup-s17" class="help-popup hidden" role="tooltip">
-    <p>חשבו כמה אחוזים</p><p>הם 105 (דקות) מתוך 300, והשוו לשיעור באחוזים של 126 (דקות) מתוך 360.</p>
+    <p>احسُبوا أيّ نسبة مئويّة</p><p>تشكّل 105 (دقائق) من 300، وقارِنوا مع النسبة التي تشكّلها 126 (دقيقة) من 360.</p>
   </div>
 
   <!-- ═══════════════════════════════════════════════
@@ -538,9 +535,9 @@
     <!-- טקסט header — Figma node 120:448-449: right:0, top:0, h:163px, px:50px -->
     <div class="f6-header-text">
       <div>
-        <p>נועה התלהבה מהשיטה!</p>
-        <p>ולמרות שזה קצת חורג מזמן המסך שלה היום (לא נורא נועה, קורה לטובים ביותר!),</p>
-        <p>היא הייתה חייבת לשתף את חברה שלה, עופרי.</p>
+        <p>أُعجِبَتْ أمل بالطريقة!</p>
+        <p>ورغم أنّ ذلك تجاوَزَ قليلًا وقت الشاشة المخصَّص لها اليوم (لا بأس يا أمل، قد يحدُث ذلك للجميع!)،</p>
+        <p>كان لا بدّ أنْ تشارِك صديقتَها روان.</p>
       </div>
     </div>
 
@@ -558,23 +555,23 @@
     </div>
     <div id="ofri-m2" class="ofri-msg ofri-m2 hidden">
       <img src="assets/images/ofri-m2.png" alt="">
-      <p class="ofri-text ofri-text-m2">מה קורההה?</p>
+      <p class="ofri-text ofri-text-m2">كيف الحاااال؟</p>
       <span class="ofri-time ofri-time-m2">4:30 PM</span>
     </div>
     <div id="ofri-m3" class="ofri-msg ofri-m3 hidden">
       <img src="assets/images/ofri-m3.png" alt="">
-      <p class="ofri-text ofri-text-m3">מצאתי שיטה לסדר את הזמן!<br>אני הולכת להגביל את עצמי<br>בטלפון וכזה…</p>
+      <p class="ofri-text ofri-text-m3">لقد وجدْتُ طريقة لتنظيم الوقت!<br>سأبدأ بتحديد وقت<br>لاستخدام الهاتف، وهكذا...</p>
       <span class="ofri-time ofri-time-m3">4:30 PM</span>
     </div>
     <div id="ofri-m4" class="ofri-msg ofri-m4 hidden">
       <img src="assets/images/ofri-m4.png" alt="">
-      <p class="ofri-text ofri-text-m4">את מגבילה את עצמך?!</p>
+      <p class="ofri-text ofri-text-m4">ألّا تفعلين ذلك أنتِ أيضًا؟! 🧐</p>
       <span class="ofri-time ofri-time-m4">4:30 PM</span>
     </div>
 
     <!-- שני כפתורי ניווט: next (שמאל) + prev (ימין) -->
-    <button class="nav-btn next-btn" onclick="goTo(7)" aria-label="המשך"></button>
-    <button class="nav-btn prev-btn" onclick="goTo(5)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(7)" aria-label="التالي"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(5)" aria-label="العودة"></button>
   </section>
 
 
@@ -586,10 +583,10 @@
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s6" class="help-btn" data-popup="help-popup-s6" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s6" class="help-btn" data-popup="help-popup-s6" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -605,38 +602,38 @@
 
         <div class="left-panel left-panel-q3">
           <div>
-            <p class="q-text">3. א. בהתחלה נועה כתבה לעופרי:</p>
-            <p class="q-bold">"כדי לדעת איזה אחוז מתוך הזמן הפנוי היומי (300 דקות) מוקדש לסדרה האהובה עליי, אפשר פשוט לחשב</p>
-            <p class="q-bold">כמה הם 40% מתוך 35% ."</p>
+            <p class="q-text">3. أ. في البداية كتبَتْ أمل لصديقتِها روان:</p>
+            <p class="q-bold">"لكَيْ أعرف أيّ نسبة مئويّة من وقت الفراغ اليوميّ (300 دقيقة) مخصَّصة لمُشاهَدة مسلسلي المفضَّل، يكفي أنْ أحسِب</p>
+            <p class="q-bold">كَم يُساوي %40 من %35".</p>
           </div>
-          <p class="q-bold">סמנו אם המשפט נכון או לא נכון:</p>
+          <p class="q-bold">حدِّدوا ما إذا كانَت الجملة صحيحة أم غير صحيحة:</p>
 
           <div class="radio-group">
             <div class="radio-option" id="s6-radio-yes" onclick="radioClick('s6','yes')">
-              <span class="radio-label" id="s6-label-yes">נכון</span>
+              <span class="radio-label" id="s6-label-yes">صحيحة</span>
               <div class="radio-icon-wrap"><img id="s6-icon-yes" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s6-radio-no" onclick="radioClick('s6','no')">
-              <span class="radio-label" id="s6-label-no">לא נכון</span>
+              <span class="radio-label" id="s6-label-no">غير صحيحة</span>
               <div class="radio-icon-wrap"><img id="s6-icon-no" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s6-radio-dontknow" onclick="radioClick('s6','dontknow')">
-              <span class="radio-label" id="s6-label-dontknow">לא ניתן לדעת</span>
+              <span class="radio-label" id="s6-label-dontknow">لا يُمكن المعرفة</span>
               <div class="radio-icon-wrap"><img id="s6-icon-dontknow" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
 
           <div id="feedback-s6-correct" class="s4-feedback-box hidden">
-            <p class="s4-feedback-title correct-title">צדקת!</p>
-            <p class="s4-feedback-body">משמעות המילה "מתוך" היא לקחת חלק מתוך משהו אחר.</p>
-            <p class="s4-feedback-body">במקרה הזה, הפרק הוא 40% מתוך זמן המסך,</p>
-            <p class="s4-feedback-body">וזמן המסך הוא 35% מתוך כל הזמן הפנוי.</p>
+            <p class="s4-feedback-title correct-title">إجابتك صحيحة!</p>
+            <p class="s4-feedback-body">القصد من كلمة "من" هو أنْ نأخذ جُزءًا مِن شيء آخر.</p>
+            <p class="s4-feedback-body">في هذه الحالة، الحلقة تشكّل %40 من وقت الشاشة،</p>
+            <p class="s4-feedback-body">ووقت الشاشة يشكّل %35 من وقت الفراغ الإجماليّ.</p>
           </div>
           <div id="feedback-s6-incorrect" class="s4-feedback-box hidden">
-            <p class="s4-feedback-title incorrect-title">זו טעות</p>
-            <p class="s4-feedback-body">משמעות המילה "מתוך" היא לקחת חלק מתוך משהו אחר.</p>
-            <p class="s4-feedback-body">במקרה הזה, הפרק הוא 40% מתוך זמן המסך,</p>
-            <p class="s4-feedback-body">וזמן המסך הוא 35% מתוך כל הזמן הפנוי.</p>
+            <p class="s4-feedback-title incorrect-title">هذا خطأ</p>
+            <p class="s4-feedback-body">القصد من كلمة "من" هو أنْ نأخذ جُزءًا مِن شيء آخر.</p>
+            <p class="s4-feedback-body">في هذه الحالة، الحلقة تشكّل %40 من وقت الشاشة،</p>
+            <p class="s4-feedback-body">ووقت الشاشة يشكّل %35 من وقت الفراغ الإجماليّ.</p>
           </div>
         </div>
       </div>
@@ -644,36 +641,36 @@
 
     <div class="q3-context-panel">
       <div class="q3-context-text">
-        <p>נועה הסבירה לעופרי איך עובדת השיטה.</p>
-        <p>אבל לא כל ההסבר היה מדויק...</p>
+        <p>شرحَتْ أمل لروان كيف تعمل هذه الطريقة.</p>
+        <p>لكن لم يكن كلّ شرحها دقيقًا...</p>
       </div>
       <div class="q3-tv-box">
-        <p class="q3-tv-title">300 דקות:</p>
+        <p class="q3-tv-title">300 دقيقة:</p>
         <div class="q3-tv-visual">
           <div class="q3-tv-img-wrap">
             <img class="q3-tv-img" src="assets/images/tv-time-q3-fix.png" alt="">
           </div>
-          <span class="q3-tv-label q3-tv-rest-top">השאר</span>
+          <span class="q3-tv-label q3-tv-rest-top">الباقي</span>
           <span class="q3-tv-label q3-tv-35">35%</span>
           <span class="q3-tv-label q3-tv-20">20%</span>
-          <span class="q3-tv-label q3-tv-105">35% (105 דקות)</span>
-          <span class="q3-tv-label q3-tv-rest-bot">הזמן שנותר</span>
+          <span class="q3-tv-label q3-tv-105">%35 (105 دقائق)</span>
+          <span class="q3-tv-label q3-tv-rest-bot">الوقت المتبقّي</span>
           <span class="q3-tv-label q3-tv-40">40%</span>
         </div>
       </div>
     </div>
 
     <div class="submit-row">
-      <button id="submit-btn-s6" class="submit-btn hidden" onclick="checkAnswersS6()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+      <button id="submit-btn-s6" class="submit-btn hidden" onclick="checkAnswersS6()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s6" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(6)" aria-label="חזרה"></button>
-    <button id="next-s6" class="nav-btn next-btn hidden" onclick="goTo(8)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(6)" aria-label="العودة"></button>
+    <button id="next-s6" class="nav-btn next-btn hidden" onclick="goTo(8)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -684,10 +681,10 @@
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s7" class="help-btn" data-popup="help-popup-s7" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s7" class="help-btn" data-popup="help-popup-s7" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -703,33 +700,33 @@
 
         <div class="left-panel left-panel-q3">
           <div>
-            <p class="q-text">3. ב. אח"כ נועה כתבה לעופרי:</p>
-            <p class="q-bold">"40% מתוך זמן המסך שלי שווים בדיוק 40% מכל הזמן הפנוי שלי."</p>
+            <p class="q-text">3. ب. بعد ذلك، كتبَتْ أمل لصديقتِها روان:</p>
+            <p class="q-bold">"%40 مِن وقت الشاشة الذي أخصّصهُ لنفسي يُساوي تمامًا %40 مِن وقت فراغي".</p>
           </div>
-          <p class="q-bold">סמנו אם המשפט נכון או לא נכון:</p>
+          <p class="q-bold">حدِّدوا ما إذا كانَت الجملة صحيحة أم غير صحيحة:</p>
 
           <div class="radio-group">
             <div class="radio-option" id="s7-radio-yes" onclick="radioClick('s7','yes')">
-              <span class="radio-label" id="s7-label-yes">נכון</span>
+              <span class="radio-label" id="s7-label-yes">صحيحة</span>
               <div class="radio-icon-wrap"><img id="s7-icon-yes" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s7-radio-no" onclick="radioClick('s7','no')">
-              <span class="radio-label" id="s7-label-no">לא נכון</span>
+              <span class="radio-label" id="s7-label-no">غير صحيحة</span>
               <div class="radio-icon-wrap"><img id="s7-icon-no" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s7-radio-dontknow" onclick="radioClick('s7','dontknow')">
-              <span class="radio-label" id="s7-label-dontknow">לא ניתן לדעת</span>
+              <span class="radio-label" id="s7-label-dontknow">لا يُمكن المعرفة</span>
               <div class="radio-icon-wrap"><img id="s7-icon-dontknow" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
 
           <div id="feedback-s7-correct" class="s4-feedback-box hidden">
-            <p class="s4-feedback-title correct-title">צדקת!</p>
-            <p class="s4-feedback-body">זמן המסך הוא רק 35% מתוך הזמן הפנוי (300 הדקות). כשמחשבים 40% מזמן המסך, לא מחשבים מתוך  כל 300 הדקות אלא רק מתוך ה-35% (שהם 105 דקות). לכן 40% מזמן המסך הם בעצם 40% מתוך 35% מהזמן הפנוי, ולא 40% מכל הזמן הפנוי . </p>
+            <p class="s4-feedback-title correct-title">إجابتك صحيحة!</p>
+            <p class="s4-feedback-body">وقت الشاشة يشكّل %35 فقط مِن وقت الفراغ (300 دقيقة). عندما نحسُب %40 مِن وقت الشاشة، فإنّنا لا نحسُبها من كلّ الـ 300 دقيقة، بل مِن الـ %35 فقط (أيّ من الـ 105 دقائق). لذلك، %40 من وقت الشاشة هي عمليًّا %40 من %35 من وقت الفراغ، وليسَتْ %40 من كلّ وقت الفراغ. </p>
           </div>
           <div id="feedback-s7-incorrect" class="s4-feedback-box hidden">
-            <p class="s4-feedback-title incorrect-title">זו טעות</p>
-            <p class="s4-feedback-body">זמן המסך הוא רק 35% מתוך הזמן הפנוי (300 הדקות). כשמחשבים 40% מזמן המסך, לא מחשבים מתוך  כל 300 הדקות אלא רק מתוך ה-35% (שהם 105 דקות). לכן 40% מזמן המסך הם בעצם 40% מתוך 35% מהזמן הפנוי, ולא 40% מכל הזמן הפנוי . </p>
+            <p class="s4-feedback-title incorrect-title">هذا خطأ</p>
+            <p class="s4-feedback-body">وقت الشاشة يشكّل %35 فقط مِن وقت الفراغ (300 دقيقة). عندما نحسُب %40 مِن وقت الشاشة، فإنّنا لا نحسُبها من كلّ الـ 300 دقيقة، بل مِن الـ %35 فقط (أيّ من الـ 105 دقائق). لذلك، %40 من وقت الشاشة هي عمليًّا %40 من %35 من وقت الفراغ، وليسَتْ %40 من كلّ وقت الفراغ. </p>
           </div>
         </div>
       </div>
@@ -737,36 +734,36 @@
 
     <div class="q3-context-panel">
       <div class="q3-context-text">
-        <p>נועה הסבירה לעופרי איך עובדת השיטה.</p>
-        <p>אבל לא כל ההסבר היה מדויק...</p>
+        <p>شرحَتْ أمل لروان كيف تعمل هذه الطريقة.</p>
+        <p>لكن لم يكن كلّ شرحها دقيقًا...</p>
       </div>
       <div class="q3-tv-box">
-        <p class="q3-tv-title">300 דקות:</p>
+        <p class="q3-tv-title">300 دقيقة:</p>
         <div class="q3-tv-visual">
           <div class="q3-tv-img-wrap">
             <img class="q3-tv-img" src="assets/images/tv-time-q3-fix.png" alt="">
           </div>
-          <span class="q3-tv-label q3-tv-rest-top">השאר</span>
+          <span class="q3-tv-label q3-tv-rest-top">الباقي</span>
           <span class="q3-tv-label q3-tv-35">35%</span>
           <span class="q3-tv-label q3-tv-20">20%</span>
-          <span class="q3-tv-label q3-tv-105">35% (105 דקות)</span>
-          <span class="q3-tv-label q3-tv-rest-bot">הזמן שנותר</span>
+          <span class="q3-tv-label q3-tv-105">%35 (105 دقائق)</span>
+          <span class="q3-tv-label q3-tv-rest-bot">الوقت المتبقّي</span>
           <span class="q3-tv-label q3-tv-40">40%</span>
         </div>
       </div>
     </div>
 
     <div class="submit-row">
-      <button id="submit-btn-s7" class="submit-btn hidden" onclick="checkAnswersS7()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+      <button id="submit-btn-s7" class="submit-btn hidden" onclick="checkAnswersS7()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s7" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(7)" aria-label="חזרה"></button>
-    <button id="next-s7" class="nav-btn next-btn hidden" onclick="goTo(9)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(7)" aria-label="العودة"></button>
+    <button id="next-s7" class="nav-btn next-btn hidden" onclick="goTo(9)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -782,8 +779,8 @@
 
     <div class="f6-header-text">
       <div>
-        <p>עברו כמה ימים והשיטה של נועה עבדה מעולה!</p>
-        <p>אבל אז הגיע יום חמישי, והיא כמעט שכחה…</p>
+        <p>مرَّتْ عدّة أيّام، ونجحَتْ طريقة أمل بشكل رائع!</p>
+        <p>لكن عندما جاء يوم الخميس، كادَتْ تنسى...</p>
       </div>
     </div>
 
@@ -794,13 +791,13 @@
     <div id="f9-m1" class="f9-m1 hidden">
       <img src="assets/images/m1-frame9.png" alt="">
       <div class="f9-m1-text">
-        <p class="f9-m1-title">לוח שנה</p>
-        <p class="f9-m1-body">תזכורת - תור לרופא שיניים!</p>
+        <p class="f9-m1-title">التقويم</p>
+        <p class="f9-m1-body">تذكير – موعد لدى طبيب الأسنان!</p>
       </div>
     </div>
 
-    <button class="nav-btn next-btn" onclick="goTo(10)" aria-label="המשך"></button>
-    <button class="nav-btn prev-btn" onclick="goTo(8)" aria-label="חזרה"></button>
+    <button class="nav-btn next-btn" onclick="goTo(10)" aria-label="التالي"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(8)" aria-label="العودة"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -811,10 +808,10 @@
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s9" class="help-btn" data-popup="help-popup-s9" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s9" class="help-btn" data-popup="help-popup-s9" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -830,27 +827,27 @@
 
         <div class="left-panel left-panel-f10">
           <div>
-            <p class="q-text">4. לתור אצל הרופא נועה הקדישה כשעה וחצי, ולכן נשארו לה רק 210 דקות פנויות.</p>
-            <p class="q-text">ובכל זאת, היא לא ויתרה על חדר הכושר.</p>
-            <p class="q-text">אם <span class="tooltip-word"><strong class="term-underline">זמן חדר הכושר ברוטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן חדר הכושר ברוטו כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול)."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן חדר הכושר ברוטו</strong> כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול).</span></span></span> היה 60 דקות, איזה אחוז בערך מהזמן הפנוי של נועה היה מוקדש לו?</p>
+            <p class="q-text">4. خصّصَتْ أمل ساعة ونصف تقريبًا لموعد طبيب الأسنان، لذلك لم يتبقَّ لها سوى 210 دقائق فراغ.</p>
+            <p class="q-text">ومع ذلك، لم تتنازَل عن الذهاب إلى النادي الرياضيّ.</p>
+            <p class="q-text">إذا كان <span class="tooltip-word"><strong class="term-underline">الوقت الإجماليّ للنادي الرياضيّ</strong><span class="term-info" tabindex="0" role="button" aria-label="الوقت الإجماليّ للنادي الرياضيّ يشمل أيضًا وقت الذهاب إليه والعودة منْهُ (20 دقيقة بالمُجمل)."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>الوقت الإجماليّ للنادي الرياضيّ</strong> يشمل أيضًا وقت الذهاب إليه والعودة منهُ (20 دقيقة بالمُجمَل).</span></span></span> 60 دقيقة، فأيّ نسبة مئويّة من وقت فراغ أمل تقريبًا كانت مخصَّصة له؟</p>
           </div>
-          <p class="q-bold">סמנו את התשובה הנכונה:</p>
+          <p class="q-bold">اختاروا الإجابة الصحيحة:</p>
 
           <div class="radio-group">
             <div class="radio-option" id="s9-radio-a" onclick="radioClick('s9','a')">
-              <span class="radio-label" id="s9-label-a">כ-15.5%</span>
+              <span class="radio-label" id="s9-label-a">تقريبًا %15.5</span>
               <div class="radio-icon-wrap"><img id="s9-icon-a" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s9-radio-b" onclick="radioClick('s9','b')">
-              <span class="radio-label" id="s9-label-b">כ-20.5%</span>
+              <span class="radio-label" id="s9-label-b">تقريبًا %20.5</span>
               <div class="radio-icon-wrap"><img id="s9-icon-b" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s9-radio-c" onclick="radioClick('s9','c')">
-              <span class="radio-label" id="s9-label-c">כ-28.5%</span>
+              <span class="radio-label" id="s9-label-c">تقريبًا %28.5</span>
               <div class="radio-icon-wrap"><img id="s9-icon-c" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s9-radio-d" onclick="radioClick('s9','d')">
-              <span class="radio-label" id="s9-label-d">כ-35.5%</span>
+              <span class="radio-label" id="s9-label-d">تقريبًا %35.5</span>
               <div class="radio-icon-wrap"><img id="s9-icon-d" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
@@ -859,34 +856,34 @@
           <div class="hint-card">
             <div class="hint-card-header">
               <img class="hint-bulb" src="assets/images/light-bulb-icon.png" alt="">
-              <span class="hint-title">חשוב לדעת</span>
+              <span class="hint-title">معلومة مهمّة</span>
             </div>
-            <p class="hint-text"><strong>זמן התור אצל הרופא</strong> כולל גם את זמן ההליכה לרופא וממנו.</p>
+            <p class="hint-text"><strong>وقت الموعد لدى الطبيب</strong> يشمل أيضًا وقت المَشي إلى العيادة والعودة منها.</p>
           </div>
 
           <div id="feedback-s9-correct" class="s9-feedback-box hidden">
-            <p class="s4-feedback-title correct-title">צדקת!</p>
-            <p class="s4-feedback-body">מכיוון שהזמן הפנוי הכולל התקצר, אותן 60 דקות מהוות עכשיו יותר מ-25% מהזמן של נועה.</p>
+            <p class="s4-feedback-title correct-title">إجابتك صحيحة!</p>
+            <p class="s4-feedback-body">بما أنّ وقت الفراغ الإجماليّ أصبح أقصر، فإنّ نفْس الـ 60 دقيقة أصبحَتْ تشكّل الآن أكثر مِن %25 من وقت أمل.</p>
           </div>
           <div id="feedback-s9-incorrect" class="s9-feedback-box hidden">
-            <p class="s4-feedback-title incorrect-title">זו טעות</p>
-            <p class="s4-feedback-body">מכיוון שהזמן הפנוי הכולל התקצר, אותן 60 דקות מהוות עכשיו יותר מ-25% מהזמן של נועה.</p>
+            <p class="s4-feedback-title incorrect-title">هذا خطأ</p>
+            <p class="s4-feedback-body">بما أنّ وقت الفراغ الإجماليّ أصبح أقصر، فإنّ نفْس الـ 60 دقيقة أصبحَتْ تشكّل الآن أكثر مِن %25 من وقت أمل.</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="submit-row">
-      <button id="submit-btn-s9" class="submit-btn hidden" onclick="checkAnswersS9()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+      <button id="submit-btn-s9" class="submit-btn hidden" onclick="checkAnswersS9()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s9" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(9)" aria-label="חזרה"></button>
-    <button id="next-s9" class="nav-btn next-btn hidden" onclick="goTo(11)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(9)" aria-label="العودة"></button>
+    <button id="next-s9" class="nav-btn next-btn hidden" onclick="goTo(11)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -902,13 +899,13 @@
 
     <div class="f6-header-text">
       <div>
-        <p>עוד יום עבר ונועה התחילה להתרגל לשיטה, גם אם היה צריך להתגמש פה ושם.</p>
-        <p>עכשיו היא מתכוננת לקראת מבחן גדול וחשוב.</p>
+        <p>مرَّ يوم آخر، وبدأَتْ أمل تعتاد على الطريقة، حتّى لو اضطرَّتْ للتنازُل وأنْ تكون مرِنة في بعض الأمور.</p>
+        <p>تستعدّ أمل الآن لامتحان كبير ومهمّ.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(10)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(12)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(10)" aria-label="العودة"></button>
+    <button class="nav-btn next-btn" onclick="goTo(12)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -920,11 +917,11 @@
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s11" class="help-btn" data-popup="help-popup-s11" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s11" class="help-btn" data-popup="help-popup-s11" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <!-- breadcrumb + textbox2 background + שאלה (פאנל שמאל) -->
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -943,16 +940,16 @@
 
           <!-- טקסט השאלה -->
           <div class="s11-question-wrap">
-            <p class="q-text">5. א. מה יהיה סה"כ הזמן הפנוי של נועה אם היא תקדיש 60 דקות ל<span class="tooltip-word"><strong class="term-underline">אימון נטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן האימון מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן האימון</strong> מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה.</span></span></span>, כש<span class="tooltip-word"><strong class="term-underline">זמן חדר הכושר ברוטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן חדר הכושר ברוטו כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול)."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן חדר הכושר ברוטו</strong> כולל גם את זמן ההליכה לחדר הכושר וממנו (20 דקות בסך הכול).</span></span></span> יישאר 20% מתוך הזמן הפנוי?</p>
+            <p class="q-text">5. أ. كم سيكون وقت فراغ أمل الإجماليّ إذا خصَّصَتْ 60 دقيقة<span class="tooltip-word"><strong class="term-underline">صافية للتدريب</strong><span class="term-info" tabindex="0" role="button" aria-label="وقت التدريب يُشير فقط إلى الوقت الذي تتدرّب فيه أمل فعليًّا، أيّ دون وقت المَشي."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>وقت التدريب</strong> يُشير فقط إلى الوقت الذي تتدرّب فيه فعليًّا، أيّ دون وقت المَشي.</span></span></span>، بينما<span class="tooltip-word"><strong class="term-underline">يبقى الوقت الإجماليّ للنادي الرياضيّ</strong><span class="term-info" tabindex="0" role="button" aria-label="الوقت الإجماليّ للنادي الرياضيّ يشمل أيضًا وقت الذهاب إليه والعودة منْهُ (20 دقيقة بالمُجمل)."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>الوقت الإجماليّ للنادي الرياضيّ</strong> يشمل أيضًا وقت الذهاب إليه والعودة منْهُ (20 دقيقة بالمُجمل).</span></span></span> %20 من وقت الفراغ؟</p>
             <p class="q-text">&ZeroWidthSpace;</p>
-            <p class="q-bold">היעזרו בגרף והקלידו את המספר החסר:</p>
+            <p class="q-bold">استعينوا بالخطّ البيانيّ واكتُبوا العدد الناقص:</p>
           </div>
 
           <!-- שורת קלט: input ראשון (ימין ב-RTL) → "דקות" שני (שמאל ב-RTL) -->
           <div class="s11-input-row">
             <input type="number" id="s11-input" class="s11-input-field"
                    min="0" max="9999" placeholder="">
-            <label class="s11-unit">דקות</label>
+            <label class="s11-unit">دقائق</label>
           </div>
 
         </div><!-- /left-panel-q5a -->
@@ -965,9 +962,9 @@
 
       <!-- טקסט הקשר -->
       <div class="s11-context-text">
-        <p>בגלל העומס בלימודים, נועה לא הספיקה להתאמן.</p>
-        <p>היא החליטה לבדוק מה יקרה ביום שבו היא תרצה להאריך</p>
-        <p>את האימון נטו לשעה שלמה (60 דקות).</p>
+        <p>بسبب ضغط الدراسة، لم تتمكّن أمل مِن مُمارسة التمارين <br>الرياضيّة.</p>
+        <p>قرَّرَتْ أنْ تفحص ماذا سيحدُث في يوم ترغب فيه بإطالة</p>
+        <p>وقت التمرين الصافي إلى ساعة كاملة (60 دقيقة).</p>
       </div>
 
       <!-- כרטיסיית גרף — כל הרכיבים יחידה אחת הניתנת להגדלה/הקטנה ע"י כפתור הזום -->
@@ -976,18 +973,18 @@
 
           <!-- תמונת הגרף (חיתוך מתוך 1920×1080) -->
           <div class="graph-img-container">
-            <img class="graph-full-img" src="assets/images/graph-q5.png" alt="גרף">
+            <img class="graph-full-img" src="assets/images/graph-q5.png" alt="خطّ بيانيّ">
           </div>
 
           <!-- תוויות ציר -->
-          <div class="graph-lbl-top">סה״כ זמן פנוי ביום</div>
+          <div class="graph-lbl-top">إجماليّ وقت الفراغ في اليوم</div>
           <div class="graph-lbl-bottom">
-            <p>זמן חדר הכושר ברוטו</p>
-            <p>(כולל הליכה הלוך חזור)</p>
+            <p>الوقت الإجماليّ للنادي الرياضيّ</p>
+            <p>(يشمل وقت المَشي ذهابًا وإيابًا)</p>
           </div>
 
           <!-- כפתור זום — חלק מהיחידה המוגדלת -->
-          <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card')" aria-label="הגדל/הקטן גרף">
+          <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card')" aria-label="تكبير/تصغير الخطّ البيانيّ">
             <img src="assets/images/btn-zoom-in.png" alt="">
           </button>
 
@@ -1071,51 +1068,51 @@
     <!-- ══ כדור כחול + טקסט הסבר (מחוץ לפאנלים — ברמת מסך) ══ -->
     <img class="s11-dot-bullet" src="assets/images/dot-blue-q5.svg" alt="">
     <div class="s11-graph-note">
-      <p>כל נקודה על הקו מייצגת זוג סדור</p>
-      <p>שמתאים לשיטה: כמה דקות מוקדשות</p>
-      <p>לחדר הכושר (כולל 20 דקות הליכה),</p>
-      <p>ומהו הזמן הכולל שמתאים לכך.</p>
+      <p>كلّ نقطة على الخطّ تمثّل زوجًا مرتبًا</p>
+      <p>ملائِمًا للطريقة: عدد الدقائق المخصَّصة</p>
+      <p>للنادي الرياضيّ (يشمل دقيقة مَشي)،</p>
+      <p>وإجماليّ الوقت الملائم لذلك.</p>
     </div>
 
     <!-- ══ פידבק נכון — מסך 12 (Q5A) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s11-correct" class="q8-feedback-box s11s12-feedback-pos hidden">
-      <p class="s11-feedback-title correct-title">צדקת! </p>
-      <p>נועה רוצה להתאמן 60 דקות נטו,</p>
-      <p>ובנוסף יש 20 דקות קבועות של הליכה (הלוך וחזור),</p>
-      <p>כך שבסך הכול מדובר ב-80 דקות.</p>
-      <p>נאתר את 80 על הציר האופקי בגרף,</p>
-      <p>נעלה ממנו כלפי מעלה עד שנפגוש את הנקודה,</p>
-      <p>ומשם נפנה שמאלה אל הציר האנכי - שם נקבל 400.</p>
-      <p>לכן הנקודה המתאימה היא (400 ,80).</p>
-      <p>כלומר, 400 דקות של זמן פנוי.</p>
+      <p class="s11-feedback-title correct-title">إجابتك صحيحة! </p>
+      <p>تريد أمل أنْ تتدرّب لمُدّة 60 دقيقة صافية،</p>
+      <p>بالإضافة إلى 20 دقيقة ثابتة للمَشي (ذهابًا وإيابًا)،</p>
+      <p>أيّ أنّ الوقت الإجماليّ سيكون 80 دقيقة.</p>
+      <p>نحدِّد العدد 80 على المحور الأفقيّ على الخطّ البيانيّ،</p>
+      <p>ثمّ نصعد منهُ إلى الأعلى حتّى نَصِل إلى النقطة،</p>
+      <p>ومِن هناك نتّجِه إلى اليسار نحو المحور العموديّ – حيث سنحصل هناك على 400.</p>
+      <p>لذلك، النقطة الملائِمة هي (80,400).</p>
+      <p>أيّ، 400 دقيقة مِن وقت الفراغ.</p>
     </div>
 
     <!-- ══ פידבק שגוי — מסך 12 (Q5A) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s11-incorrect" class="q8-feedback-box s11s12-feedback-pos hidden">
-      <p class="s11-feedback-title s11-feedback-incorrect-title">זו טעות</p>
-      <p>נועה רוצה להתאמן 60 דקות נטו,</p>
-      <p>ובנוסף יש 20 דקות קבועות של הליכה (הלוך וחזור),</p>
-      <p>כך שבסך הכול מדובר ב-80 דקות.</p>
-      <p>נאתר את 80 על הציר האופקי בגרף,</p>
-      <p>נעלה ממנו כלפי מעלה עד שנפגוש את הנקודה,</p>
-      <p>ומשם נפנה שמאלה אל הציר האנכי - שם נקבל 400.</p>
-      <p>לכן הנקודה המתאימה היא (400 ,80).</p>
-      <p>כלומר, 400 דקות של זמן פנוי.</p>
+      <p class="s11-feedback-title s11-feedback-incorrect-title">هذا خطأ</p>
+      <p>تريد أمل أنْ تتدرّب لمُدّة 60 دقيقة صافية،</p>
+      <p>بالإضافة إلى 20 دقيقة ثابتة للمَشي (ذهابًا وإيابًا)،</p>
+      <p>أيّ أنّ الوقت الإجماليّ سيكون 80 دقيقة.</p>
+      <p>نحدِّد العدد 80 على المحور الأفقيّ على الخطّ البيانيّ،</p>
+      <p>ثمّ نصعد منهُ إلى الأعلى حتّى نَصِل إلى النقطة،</p>
+      <p>ومِن هناك نتّجِه إلى اليسار نحو المحور العموديّ – حيث سنحصل هناك على 400.</p>
+      <p>لذلك، النقطة الملائِمة هي (80,400).</p>
+      <p>أيّ، 400 دقيقة مِن وقت الفراغ.</p>
     </div>
 
     <!-- ══ שורת "צדקתי" + הודעת ניסיון ראשון שגוי ══ -->
     <div class="submit-row">
       <button id="submit-btn-s11" class="submit-btn hidden"
-              onclick="checkAnswersS11()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+              onclick="checkAnswersS11()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s11" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(11)" aria-label="חזרה"></button>
-    <button id="next-s11" class="nav-btn next-btn hidden" onclick="goTo(13)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(11)" aria-label="العودة"></button>
+    <button id="next-s11" class="nav-btn next-btn hidden" onclick="goTo(13)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
@@ -1126,11 +1123,11 @@
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s12" class="help-btn" data-popup="help-popup-s12" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s12" class="help-btn" data-popup="help-popup-s12" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <!-- breadcrumb + textbox2 background + שאלה (פאנל שמאל) -->
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -1149,17 +1146,17 @@
 
           <!-- טקסט השאלה -->
           <div class="s11-question-wrap">
-            <p class="q-text">5. ב. מה יהיה <span class="tooltip-word"><strong class="term-underline">זמן האימון נטו</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן האימון מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן האימון</strong> מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה.</span></span></span> של נועה</p>
-            <p class="q-text">אם סה"כ הזמן הפנוי שיש לה הוא 350 דקות?</p>
+            <p class="q-text">5. ب. كم سيكون <span class="tooltip-word"><strong class="term-underline">وقت التدريب الصافي</strong><span class="term-info" tabindex="0" role="button" aria-label="وقت التدريب يُشير فقط إلى الوقت الذي تتدرّب فيه أمل فعليًّا، أيّ دون وقت المَشي."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>وقت التدريب</strong> يُشير فقط إلى الوقت الذي تتدرّب فيه أمل فعليًّا، أيّ دون وقت المَشي.</span></span></span> لدى أمل</p>
+            <p class="q-text">إذا كان إجماليّ وقت الفراغ المتاح لها 350 دقيقة؟</p>
             <p class="q-text">&ZeroWidthSpace;</p>
-            <p class="q-bold">היעזרו בגרף והקלידו את המספר החסר:</p>
+            <p class="q-bold">استعينوا بالخطّ البيانيّ واكتُبوا العدد الناقص:</p>
           </div>
 
           <!-- שורת קלט: input ראשון (ימין ב-RTL) → "דקות" שני (שמאל ב-RTL) -->
           <div class="s11-input-row">
             <input type="number" id="s12-input" class="s11-input-field"
                    min="0" max="9999" placeholder="">
-            <label class="s11-unit">דקות</label>
+            <label class="s11-unit">دقائق</label>
           </div>
 
         </div><!-- /left-panel-q5a -->
@@ -1175,18 +1172,18 @@
 
           <!-- תמונת הגרף -->
           <div class="graph-img-container">
-            <img class="graph-full-img" src="assets/images/graph-q5.png" alt="גרף">
+            <img class="graph-full-img" src="assets/images/graph-q5.png" alt="خطّ بيانيّ">
           </div>
 
           <!-- תוויות ציר -->
-          <div class="graph-lbl-top">סה״כ זמן פנוי ביום</div>
+          <div class="graph-lbl-top">إجماليّ وقت الفراغ في اليوم</div>
           <div class="graph-lbl-bottom">
-            <p>זמן חדר הכושר ברוטו</p>
-            <p>(כולל הליכה הלוך חזור)</p>
+            <p>الوقت الإجماليّ للنادي الرياضيّ</p>
+            <p>(يشمل وقت المَشي ذهابًا وإيابًا)</p>
           </div>
 
           <!-- כפתור זום -->
-          <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card-s12')" aria-label="הגדל/הקטן גרף">
+          <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card-s12')" aria-label="تكبير/تصغير الخطّ البيانيّ">
             <img src="assets/images/btn-zoom-in.png" alt="">
           </button>
 
@@ -1268,39 +1265,39 @@
     <!-- ══ כדור כחול + טקסט הסבר (מחוץ לפאנלים — ברמת מסך) — שוחזר ══ -->
     <img class="s11-dot-bullet" src="assets/images/dot-blue-q5.svg" alt="">
     <div class="s11-graph-note">
-      <p>כל נקודה על הקו מייצגת זוג סדור</p>
-      <p>שמתאים לשיטה: כמה דקות מוקדשות</p>
-      <p>לחדר הכושר (כולל 20 דקות הליכה),</p>
-      <p>ומהו הזמן הכולל שמתאים לכך.</p>
+      <p>كلّ نقطة على الخطّ تمثّل زوجًا مرتبًا</p>
+      <p>ملائِمًا للطريقة: عدد الدقائق المخصَّصة</p>
+      <p>للنادي الرياضيّ (يشمل دقيقة مَشي)،</p>
+      <p>وإجماليّ الوقت الملائم لذلك.</p>
     </div>
 
     <!-- ══ פידבק נכון — מסך 13 (Q5B) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s12-correct" class="q8-feedback-box s11s12-feedback-pos hidden">
-      <p class="s11-feedback-title correct-title">צדקת! </p>
-      <p>כדי לענות על השאלה, נאתר בגרף את 350 הדקות על הציר האנכי, נתקדם עד הקו האלכסוני, ומשם נרד לציר האופקי ונקבל 70 דקות של זמן חדר כושר ברוטו. נגיע לנקודה (350 ,70).</p>
-      <p>מכיוון שזמן זה כולל גם 20 דקות הליכה, נחסר אותן ונקבל: 50 דקות זמן אימון נטו.</p>
+      <p class="s11-feedback-title correct-title">إجابتك صحيحة! </p>
+      <p>للإجابة عن السؤال، نحدِّد 350 دقيقة على المحور العموديّ على الخطّ البيانيّ، ثمّ نتّجه إلى اليمين حتّى نَصِل إلى الخطّ المائل، ومِن هناك ننزل إلى المحور الأفقيّ فنحصل على 70 دقيقة من الوقت الإجماليّ للنادي الرياضيّ. نصل إلى النقطة (70,350).</p>
+      <p>بما أنّ هذا الوقت يشمل أيضًا 20 دقيقة مَشي، نطرحها ونحصل على: 50 دقيقة صافية للتدريب.</p>
     </div>
 
     <!-- ══ פידבק שגוי — מסך 13 (Q5B) — q8-feedback-box style (Figma 287:1359) ══ -->
     <div id="feedback-s12-incorrect" class="q8-feedback-box s11s12-feedback-pos hidden">
-      <p class="s11-feedback-title s11-feedback-incorrect-title">זו טעות</p>
-      <p>כדי לענות על השאלה, נאתר בגרף את 350 הדקות על הציר האנכי, נתקדם עד הקו האלכסוני, ומשם נרד לציר האופקי ונקבל 70 דקות של זמן חדר כושר ברוטו. נגיע לנקודה (350 ,70).</p>
-      <p>מכיוון שזמן זה כולל גם 20 דקות הליכה, נחסר אותן ונקבל: 50 דקות זמן אימון נטו.</p>
+      <p class="s11-feedback-title s11-feedback-incorrect-title">هذا خطأ</p>
+      <p>للإجابة عن السؤال، نحدِّد 350 دقيقة على المحور العموديّ على الخطّ البيانيّ، ثمّ نتّجه إلى اليمين حتّى نَصِل إلى الخطّ المائل، ومِن هناك ننزل إلى المحور الأفقيّ فنحصل على 70 دقيقة من الوقت الإجماليّ للنادي الرياضيّ. نصل إلى النقطة (70,350).</p>
+      <p>بما أنّ هذا الوقت يشمل أيضًا 20 دقيقة مَشي، نطرحها ونحصل على: 50 دقيقة صافية للتدريب.</p>
     </div>
 
     <!-- ══ שורת "צדקתי" + הודעת ניסיון ראשון שגוי ══ -->
     <div class="submit-row">
       <button id="submit-btn-s12" class="submit-btn hidden"
-              onclick="checkAnswersS12()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+              onclick="checkAnswersS12()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s12" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(12)" aria-label="חזרה"></button>
-    <button id="next-s12" class="nav-btn next-btn hidden" onclick="goTo(14)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(12)" aria-label="العودة"></button>
+    <button id="next-s12" class="nav-btn next-btn hidden" onclick="goTo(14)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
@@ -1312,11 +1309,11 @@
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s13" class="help-btn" data-popup="help-popup-s13" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s13" class="help-btn" data-popup="help-popup-s13" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <!-- breadcrumb + textbox2 background frame -->
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -1336,8 +1333,8 @@
 
       <!-- שאלה -->
       <div class="s13-question-wrap">
-        <p class="q-text">5. ג. אילו נקודות מייצגות זוגות סדורים שבהם לנועה יש סה"כ זמן פנוי שלא משאיר לה כלל <span class="tooltip-word"><strong class="term-underline">זמן לאימון</strong><span class="term-info" tabindex="0" role="button" aria-label="זמן האימון מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>זמן האימון</strong> מתייחס רק לזמן שבו נועה מתאמנת, ללא זמן ההליכה.</span></span></span>?</p>
-        <p class="q-bold">לחצו על הנקודות המתאימות בגרף.</p>
+        <p class="q-text">5. ت. أيّ نقاط تمثّل أزواجًا مرتّبة يتوفّر فيها لأمل وقت فراغ إجماليّ لا يترُك لها <span class="tooltip-word"><strong class="term-underline">وقتًا للتدريب</strong><span class="term-info" tabindex="0" role="button" aria-label="وقت التدريب يُشير فقط إلى الوقت الذي تتدرّب فيه أمل فعليًّا، أيّ دون وقت المَشي."><span class="term-info-i" aria-hidden="true">i</span><span class="term-tooltip" role="tooltip"><strong>وقت التدريب</strong> يُشير فقط إلى الوقت الذي تتدرّب فيه أمل فعليًّا، أيّ دون وقت المَشي.</span></span></span> إطلاقًا؟</p>
+        <p class="q-bold">انقُروا على النقاط الملائِمة في الخطّ البيانيّ.</p>
       </div>
 
       <!-- שורת הסבר + גרף: direction:ltr כדי שהגרף יהיה בסוף (ימין ב-RTL) -->
@@ -1348,10 +1345,10 @@
         <div class="s13-note-wrapper">
           <img class="s13-dot-bullet" src="assets/images/dot-blue-q5.svg" alt="">
           <div class="s13-note-text">
-            <p>כל נקודה על הקו מייצגת זוג סדור</p>
-            <p>שמתאים לשיטה: כמה דקות מוקדשות</p>
-            <p>לחדר הכושר (כולל 20 דקות הליכה),</p>
-            <p>ומהו הזמן הכולל שמתאים לכך.</p>
+            <p>كلّ نقطة على الخطّ تمثّل زوجًا مرتبًا</p>
+            <p>ملائِمًا للطريقة: عدد الدقائق المخصَّصة</p>
+            <p>للنادي الرياضيّ (يشمل دقيقة مَشي)،</p>
+            <p>وإجماليّ الوقت الملائم لذلك.</p>
           </div>
         </div>
 
@@ -1361,18 +1358,18 @@
 
             <!-- תמונת הגרף -->
             <div class="graph-img-container">
-              <img class="graph-full-img" src="assets/images/graph-q5.png" alt="גרף">
+              <img class="graph-full-img" src="assets/images/graph-q5.png" alt="خطّ بيانيّ">
             </div>
 
             <!-- תוויות ציר -->
-            <div class="graph-lbl-top">סה״כ זמן פנוי ביום</div>
+            <div class="graph-lbl-top">إجماليّ وقت الفراغ في اليوم</div>
             <div class="graph-lbl-bottom">
-              <p>זמן חדר הכושר ברוטו</p>
-              <p>(כולל הליכה הלוך חזור)</p>
+              <p>الوقت الإجماليّ للنادي الرياضيّ</p>
+              <p>(يشمل وقت المَشي ذهابًا وإيابًا)</p>
             </div>
 
             <!-- כפתור זום -->
-            <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card-s13')" aria-label="הגדל/הקטן גרף">
+            <button class="graph-zoom-btn" onclick="toggleGraphZoom('graph-card-s13')" aria-label="تكبير/تصغير الخطّ البيانيّ">
               <img src="assets/images/btn-zoom-in.png" alt="">
             </button>
 
@@ -1463,34 +1460,34 @@
 
     <!-- ══ פידבק נכון / שגוי — ברמת מסך (כמו מסכים 12 ו-13), s11s12-feedback-pos ══ -->
     <div id="feedback-s13-correct" class="q8-feedback-box s11s12-feedback-pos hidden">
-      <p class="s11-feedback-title">צדקת! </p>
-      <p>כדי למצוא את הנקודה, נחשוב מה קורה כשאין זמן לאימון נטו: נשארות רק 20 דקות הליכה.</p>
-      <p>כלומר זמן חדר הכושר ברוטו הוא 20 דקות.</p>
-      <p>לפי הגרף, זהו מצב שבו הנקודה היא (100 ,20).</p>
-      <p>שימו לב: גם הנקודה (50 ,10) לא מתאימה, כי היא מייצגת רק 10 דקות שמוקדשות לחדר הכושר, מה שמשאיר פחות מ-20 דקות הליכה. לכן לא יכול להישאר בכלל זמן לאימון.</p>
+      <p class="s11-feedback-title">إجابتك صحيحة! </p>
+      <p>لإيجاد النقطة، نفكِّر ماذا سيحدُث عندما لا يتوفّر وقت صافٍ للتدريب: تبقى 20 دقيقة فقط للمَشي.</p>
+      <p>أيّ أنّ الوقت الإجماليّ للنادي الرياضيّ هو 20 دقيقة.</p>
+      <p>بحسب الخطّ البيانيّ، هذه الحالة تتحقّق في النقطة (20,100).</p>
+      <p>انتبهوا: النقطة (10,50) غير ملائمة أيضًا، لأنّها تمثّل 10 دقائق فقط مخصَّصة للنادي الرياضيّ، أيّ أقلّ من 20 دقيقة مَشي. لذلك، لا يُمكن أنْ يتبقّى وقت للتدريب بتاتًا.</p>
     </div>
 
     <div id="feedback-s13-incorrect" class="q8-feedback-box s11s12-feedback-pos hidden">
-      <p class="s11-feedback-title s11-feedback-incorrect-title">זו טעות</p>
-      <p>כדי למצוא את הנקודה, נחשוב מה קורה כשאין זמן לאימון נטו: נשארות רק 20 דקות הליכה.</p>
-      <p>כלומר זמן חדר הכושר ברוטו הוא 20 דקות.</p>
-      <p>לפי הגרף, זהו מצב שבו הנקודה היא (100 ,20).</p>
-      <p>שימו לב: גם הנקודה (50 ,10) לא מתאימה, כי היא מייצגת רק 10 דקות שמוקדשות לחדר הכושר, מה שמשאיר פחות מ-20 דקות הליכה. לכן לא יכול להישאר בכלל זמן לאימון.</p>
+      <p class="s11-feedback-title s11-feedback-incorrect-title">هذا خطأ</p>
+      <p>لإيجاد النقطة، نفكِّر ماذا سيحدُث عندما لا يتوفّر وقت صافٍ للتدريب: تبقى 20 دقيقة فقط للمَشي.</p>
+      <p>أيّ أنّ الوقت الإجماليّ للنادي الرياضيّ هو 20 دقيقة.</p>
+      <p>بحسب الخطّ البيانيّ، هذه الحالة تتحقّق في النقطة (20,100).</p>
+      <p>انتبهوا: النقطة (10,50) غير ملائمة أيضًا، لأنّها تمثّل 10 دقائق فقط مخصَّصة للنادي الرياضيّ، أيّ أقلّ من 20 دقيقة مَشي. لذلك، لا يُمكن أنْ يتبقّى وقت للتدريب بتاتًا.</p>
     </div>
 
     <!-- ══ שורת "צדקתי?" + הודעת ניסיון ראשון שגוי ══ -->
     <div class="submit-row">
       <button id="submit-btn-s13" class="submit-btn hidden"
-              onclick="checkAnswersS13()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+              onclick="checkAnswersS13()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s13" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(13)" aria-label="חזרה"></button>
-    <button id="next-s13" class="nav-btn next-btn hidden" onclick="goTo(15)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(13)" aria-label="العودة"></button>
+    <button id="next-s13" class="nav-btn next-btn hidden" onclick="goTo(15)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -1500,17 +1497,17 @@
     <img class="screen-bg" src="assets/images/bg-frame14.jpg" alt="">
 
     <div class="f6-textbox1">
-      <img src="assets/images/textbox1-frame9.png" alt="">
+      <img src="assets/images/textbox1.png" alt="">
     </div>
 
     <div class="f6-header-text">
       <div>
-        <p>יום אחרי המבחן הגדול, נועה הרגישה שהיא צריכה קצת מנוחה.</p>
+        <p>في اليوم التالي للامتحان الكبير، شعرَتْ بأنّها بحاجة إلى بعض الراحة.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(14)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(16)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(14)" aria-label="العودة"></button>
+    <button class="nav-btn next-btn" onclick="goTo(16)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
@@ -1522,10 +1519,10 @@
     <img class="screen-bg" src="assets/images/bg-question-common.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s15" class="help-btn" data-popup="help-popup-s15" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s15" class="help-btn" data-popup="help-popup-s15" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb current" data-q="6">6</span>
@@ -1541,26 +1538,26 @@
 
         <div class="left-panel left-panel-f10">
           <div>
-            <p class="q-text">6. נועה החליטה להוסיף לעצמה עוד 20% זמן מסך מזמן המסך המקורי שלה, שהוא 105 דקות.</p>
-            <p class="q-text">כמה זמן מסך יהיה לנועה באותו יום?</p>
+            <p class="q-text">6. قرَّرَتْ أمل أنْ تضيف لنفسها %20 إضافيّة من وقت الشاشة الأصليّ، الذي كان 105 دقائق.</p>
+            <p class="q-text">كم سيكون وقت الشاشة لدى أمل في ذلك اليوم؟</p>
           </div>
-          <p class="q-bold">סמנו את התשובה הנכונה:</p>
+          <p class="q-bold">اختاروا الإجابة الصحيحة:</p>
 
           <div class="radio-group">
             <div class="radio-option" id="s15-radio-a" onclick="radioClick('s15','a')">
-              <span class="radio-label" id="s15-label-a">120 דקות</span>
+              <span class="radio-label" id="s15-label-a">120 دقيقة</span>
               <div class="radio-icon-wrap"><img id="s15-icon-a" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s15-radio-b" onclick="radioClick('s15','b')">
-              <span class="radio-label" id="s15-label-b">125 דקות</span>
+              <span class="radio-label" id="s15-label-b">125 دقيقة</span>
               <div class="radio-icon-wrap"><img id="s15-icon-b" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s15-radio-c" onclick="radioClick('s15','c')">
-              <span class="radio-label" id="s15-label-c">126 דקות</span>
+              <span class="radio-label" id="s15-label-c">126 دقيقة</span>
               <div class="radio-icon-wrap"><img id="s15-icon-c" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
             <div class="radio-option" id="s15-radio-d" onclick="radioClick('s15','d')">
-              <span class="radio-label" id="s15-label-d">230 דקות</span>
+              <span class="radio-label" id="s15-label-d">230 دقيقة</span>
               <div class="radio-icon-wrap"><img id="s15-icon-d" src="assets/images/radio-normal.svg" alt="" class="radio-icon-img"></div>
             </div>
           </div>
@@ -1568,21 +1565,21 @@
           <!-- ══ פידבק נכון / שגוי — inline בתוך left-panel (אחרי רשימת הרדיו)
                q8-feedback-box = dark rounded box, Figma ref node 259:1447 ══ -->
           <div id="feedback-s15-correct" class="q8-feedback-box hidden">
-            <p class="s11-feedback-title">צדקת! </p>
-            <p>כשמגדילים מספר באחוז מסוים, נוכל לחשב את התוספת ואז להוסיף אותה לערך המקורי.</p>
-            <p>זמן המסך המקורי של נועה הוא 105 דקות.</p>
-            <p>נחשב את התוספת של 20%:</p>
+            <p class="s11-feedback-title">إجابتك صحيحة! </p>
+            <p>عند زيادة عدد بنسبة مئويّة معيّنة، يُمكنُنا حِساب مِقدار الزيادة ثمّ إضافتُهُ إلى القيمة الأصليّة.</p>
+            <p>وقت الشاشة الأصليّ لدى أمل هو 105 دقائق.</p>
+            <p>نحسُب مقدار الزيادة بنسبة %20:</p>
             <p>126 = 1.2 · 105</p>
-            <p><strong>כלומר, זמן המסך של נועה באותו היום יהיה 126 דקות.</strong></p>
+            <p><strong>أيّ أنّ وقت الشاشة لدى أمل في ذلك اليوم سيكون 126 دقيقة.</strong></p>
           </div>
 
           <div id="feedback-s15-incorrect" class="q8-feedback-box hidden">
-            <p class="s11-feedback-title s11-feedback-incorrect-title">זו טעות</p>
-            <p>כשמגדילים מספר באחוז מסוים, נוכל לחשב את התוספת ואז להוסיף אותה לערך המקורי.</p>
-            <p>זמן המסך המקורי של נועה הוא 105 דקות.</p>
-            <p>נחשב את התוספת של 20%:</p>
+            <p class="s11-feedback-title s11-feedback-incorrect-title">هذا خطأ</p>
+            <p>عند زيادة عدد بنسبة مئويّة معيّنة، يُمكنُنا حِساب مِقدار الزيادة ثمّ إضافتُهُ إلى القيمة الأصليّة.</p>
+            <p>وقت الشاشة الأصليّ لدى أمل هو 105 دقائق.</p>
+            <p>نحسُب مقدار الزيادة بنسبة %20:</p>
             <p>126 = 1.2 · 105</p>
-            <p><strong>כלומר, זמן המסך של נועה באותו היום יהיה 126 דקות.</strong></p>
+            <p><strong>أيّ أنّ وقت الشاشة لدى أمل في ذلك اليوم سيكون 126 دقيقة.</strong></p>
           </div>
 
         </div><!-- /left-panel -->
@@ -1592,16 +1589,16 @@
     <!-- ══ שורת "צדקתי?" ══ -->
     <div class="submit-row">
       <button id="submit-btn-s15" class="submit-btn hidden"
-              onclick="checkAnswersS15()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+              onclick="checkAnswersS15()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
       <div id="try-again-msg-s15" class="try-again-msg hidden">
-        <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-        <p>תוכלו ללחוץ על כפתור העזרה</p>
-        <p>כדי לקבל רמז.</p>
+        <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+        <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+        <p>للحصول على تلميح.</p>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(15)" aria-label="חזרה"></button>
-    <button id="next-s15" class="nav-btn next-btn hidden" onclick="goTo(17)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(15)" aria-label="العودة"></button>
+    <button id="next-s15" class="nav-btn next-btn hidden" onclick="goTo(17)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
@@ -1614,7 +1611,7 @@
     <div class="dark-overlay"></div>
 
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb" data-q="8">8</span>
         <span class="crumb current" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -1630,10 +1627,10 @@
 
         <!-- פאנל הטקסט (מוצג בצד ימין — הצדדים הוחלפו לבקשת הלקוח) -->
         <div class="left-panel">
-          <p class="q-text">7. הגיע סוף השבוע והזמן הפנוי של נועה גדל.</p>
-          <p class="q-text">נועה התלבטה בכמה להגדיל את זמן המסך שלה, ולכן ערכה מספר חישובים ביישומון חדש שפיתחה לניהול הזמן בסוף השבוע.</p>
+          <p class="q-text">7. حلَّتْ نهاية الأسبوع، وازداد وقت الفراغ لدى أمل.</p>
+          <p class="q-text">تردَّدَتْ أمل بشأن الزيادة في وقت الشاشة، لذلك أجرَتْ بعض الحِسابات في تطبيق جديد طوَّرَتْهُ لإدارة الوقت خلال نهاية الأسبوع.</p>
           <p class="q-text">&ZeroWidthSpace;</p>
-          <p class="q-bold">השתמשו ביישומון משמאל פעמיים לפחות ועזרו לנועה לבדוק מה יקרה לזמן המסך שלה אם הזמן הפנוי שלה יגדל ב-80% וב-20%.</p>
+          <p class="q-bold">استخدِموا التطبيق الظاهر في جهة اليسار مرّتَيْن على الأقلّ، وساعِدوا أمل في فحص ما سيحدُث لوقت الشاشة إذا ازداد وقت فراغها بنسبة %80 وبنسبة %20.</p>
         </div>
 
         <!-- פאנל היישומון (מוצג בצד שמאל — הצדדים הוחלפו לבקשת הלקוח):
@@ -1641,45 +1638,45 @@
              אינו חולק DOM/מצב/IDs עם ה-Time Management Widget של שאלה 1א. -->
         <div class="right-panel" id="ww-host-s16">
           <button id="ww-zoom-btn" class="ww-zoom-btn" type="button"
-                  aria-label="הגדל יישומון" title="הגדל יישומון"></button>
+                  aria-label="تكبير التطبيق" title="تكبير التطبيق"></button>
           <!-- Outer container is dir="ltr" so any vertical scrollbar lands on the
                visual right. Inner .ww-inner restores dir="rtl" for the content. -->
           <div id="ww-container" class="ww-container">
 
             <div class="ww-inner" dir="rtl">
-              <h1>אתגר סוף השבוע</h1>
-              <div class="ww-subtitle">חוקיות ההגדלה וההקטנה</div>
+              <h1>تحدّي نهاية الأسبوع</h1>
+              <div class="ww-subtitle">قانونيّة التكبير والتصغير</div>
 
               <div class="ww-scoreboard">
-                <div class="ww-score-item">ניסיונות: <span id="ww-attempts-val">0</span> מתוך 5</div>
-                <div class="ww-score-item">הצלחות: <span id="ww-successes-val">0</span></div>
+                <div class="ww-score-item">المحاولات: <span id="ww-attempts-val">0</span> من 5</div>
+                <div class="ww-score-item">النجاحات:<span id="ww-successes-val">0</span></div>
               </div>
 
               <div class="ww-info-box">
-                <b>תזכורת:</b> ביום רגיל יש לנועה <b>300 דקות פנויות</b>, ומתוכן היא מקדישה <b>105 דקות למסכים</b> (שהם 35%). בסוף השבוע, גם הזמן הפנוי וגם זמן המסך שלה גדלים!
+                <b>تذكير:</b> في يوم عاديّ، تكون لدى أمل <b>300 دقيقة فراغ</b>، وتخصِّص منها <b>105 دقائق للشاشات</b> (أيّ %35). في نهاية الأسبوع، يزداد وقت الفراغ وكذلك وقت الشاشة أيضًا!
               </div>
 
               <div class="ww-slider-container">
-                <label for="ww-perc-slider">בחרו בכמה אחוזים תרצו להגדיל את הזמן הפנוי של נועה:</label>
+                <label for="ww-perc-slider">اختاروا النسبة المئويّة التي تريدون زيادة وقت فراغ أمل بها:</label>
                 <input type="range" id="ww-perc-slider" class="ww-range"
                        min="20" max="100" step="20" value="40">
-                <div class="ww-percent-display">הגדלה של: <span id="ww-perc-display-val">40</span>%</div>
+                <div class="ww-percent-display">زيادة بنسبة: <span id="ww-perc-display-val">40</span>%</div>
               </div>
 
               <div class="ww-input-group">
-                <label for="ww-new-total-input">1. הזמן הפנוי החדש (מחושב אוטומטית):</label>
+                <label for="ww-new-total-input">1. وقت الفراغ الجديد (يُحسَب تلقائيًّا):</label>
                 <input type="number" id="ww-new-total-input" disabled>
 
-                <label for="ww-new-screen-input" style="margin-top: 15px;">2. זמן המסך החדש (מחושב אוטומטית):</label>
+                <label for="ww-new-screen-input" style="margin-top: 15px;">2. وقت الشاشة الجديد (يُحسَب تلقائيًّا):</label>
                 <input type="number" id="ww-new-screen-input" disabled>
 
-                <label for="ww-final-perc-input" style="margin-top: 15px; color:#16a085;">3. האחוז החדש מהשלם:</label>
-                <div class="ww-input-hint">חשבו: איזה אחוז מהווה זמן המסך החדש מתוך הזמן הפנוי החדש?</div>
-                <input type="number" id="ww-final-perc-input" class="ww-highlight-input" placeholder="הקלידו אחוז סופי (%)">
+                <label for="ww-final-perc-input" style="margin-top: 15px; color:#16a085;">3. النسبة المئويّة الجديدة من العدد الصحيح:</label>
+                <div class="ww-input-hint">احسُبوا: أيّ نسبة مئويّة يشكّل وقت الشاشة الجديد من وقت الفراغ الجديد؟</div>
+                <input type="number" id="ww-final-perc-input" class="ww-highlight-input" placeholder="اكتُبوا النسبة المئويّة النهائيّة (%)">
               </div>
 
-              <button class="ww-btn-check" id="ww-check-btn" type="button">בדקו את תשובותיכם</button>
-              <button class="ww-btn-restart" id="ww-restart-btn" type="button">התחל משחק מחדש</button>
+              <button class="ww-btn-check" id="ww-check-btn" type="button">افحَصوا إجاباتِكُم</button>
+              <button class="ww-btn-restart" id="ww-restart-btn" type="button">بدء اللعبة من جديد</button>
 
               <div id="ww-feedback" class="ww-feedback"></div>
             </div>
@@ -1689,8 +1686,8 @@
       </div><!-- /content-card -->
     </div><!-- /content-area -->
 
-    <button class="nav-btn prev-btn" onclick="goTo(16)" aria-label="חזרה"></button>
-    <button id="next-s16" class="nav-btn next-btn hidden" onclick="goTo(18)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(16)" aria-label="العودة"></button>
+    <button id="next-s16" class="nav-btn next-btn hidden" onclick="goTo(18)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
@@ -1702,10 +1699,10 @@
     <img class="screen-bg" src="assets/images/bg-frame17.jpg" alt="">
     <div class="dark-overlay"></div>
 
-    <button id="help-btn-s17" class="help-btn" data-popup="help-popup-s17" aria-label="עזרה"><span class="help-btn-label" aria-hidden="true">עזרה</span></button>
+    <button id="help-btn-s17" class="help-btn" data-popup="help-popup-s17" aria-label="مساعَدة"><span class="help-btn-label" aria-hidden="true">مساعَدة</span></button>
 
     <div class="content-area">
-      <nav class="breadcrumb" dir="ltr" aria-label="ניווט שאלות">
+      <nav class="breadcrumb" dir="ltr" aria-label="التنقُّل بين الأسئلة">
         <span class="crumb current" data-q="8">8</span>
         <span class="crumb" data-q="7">7</span>
         <span class="crumb" data-q="6">6</span>
@@ -1723,23 +1720,23 @@
         <div class="left-panel left-panel-f10 s17-left-panel">
 
           <div>
-            <p class="q-text">8. באחד מסופי השבוע הזמן הפנוי של נועה גדל מ-300 דקות ל-360 דקות.</p>
-            <p class="q-text">נועה מחליטה להגדיל בהתאם גם את זמן המסך שלה מ-105 דקות (ביום רגיל) ל-126 דקות.</p>
+            <p class="q-text">8. في إحدى نهايات الأسبوع، ازداد وقت الفراغ لدى أمل من 300 دقيقة إلى 360 دقيقة.</p>
+            <p class="q-text">قرَّرَتْ أمل أنْ تزيد وقت الشاشة بالتلاؤُم، من 105 دقائق (في اليوم العاديّ) إلى 126 دقيقة.</p>
           </div>
-          <p class="q-bold">השלימו את המסקנה המתמטית של נועה:</p>
+          <p class="q-bold">أكمِلوا الاستنتاج الرياضيّ الذي توصّلَتْ إليه أمل:</p>
 
           <!-- תיבת fill-in: שורות טקסט + dropdown -->
           <div class="s17-fillin-box">
-            <p class="s17-fillin-line">איזה קטע!</p>
+            <p class="s17-fillin-line">يا للمفاجأة!</p>
 
             <!-- שורה עם dropdown 1 -->
             <div class="s17-dropdown-row">
-              <span class="s17-fillin-text">126 דקות מתוך 360 דקות, הם בדיוק</span>
+              <span class="s17-fillin-text">126 دقيقة من 360 دقيقة تُساوي تمامًا</span>
               <div class="s17-dropdown-wrap" id="dd1-wrap">
                 <button class="s17-dropdown-btn" id="dd1-btn"
                         onclick="toggleDropdownMenu(17, 1)" aria-haspopup="listbox"
                         aria-expanded="false" type="button">
-                  <span id="dd1-value" class="s17-dd-value">בחרו תשובה</span>
+                  <span id="dd1-value" class="s17-dd-value">اختاروا الإجابة</span>
                   <img src="assets/images/chevron-down.svg" class="s17-dd-chevron" alt="">
                 </button>
                 <ul class="s17-dropdown-list hidden" id="dd1-list" role="listbox">
@@ -1751,22 +1748,22 @@
               <span class="s17-fillin-text">.</span>
             </div>
 
-            <p class="s17-fillin-line">זה אומר שאם מגדילים את השלם ב-20%, וגם את החלק היחסי ב-20%, האחוז</p>
+            <p class="s17-fillin-line">هذا يعني أنّهُ إذا زِدْنا العدد الصحيح بـ %20، وزِدْنا الجُزء النِسبيّ أيضًا بـ %20، فإنّ النسبة المئويّة</p>
 
             <!-- שורה עם dropdown 2 -->
             <div class="s17-dropdown-row">
-              <span class="s17-fillin-text">שהחלק תופס מתוך השלם</span>
+              <span class="s17-fillin-text">التي يشكّلها الجُزء من الصحيح</span>
               <div class="s17-dropdown-wrap" id="dd2-wrap">
                 <button class="s17-dropdown-btn" id="dd2-btn"
                         onclick="toggleDropdownMenu(17, 2)" aria-haspopup="listbox"
                         aria-expanded="false" type="button">
-                  <span id="dd2-value" class="s17-dd-value">בחרו תשובה</span>
+                  <span id="dd2-value" class="s17-dd-value">اختاروا الإجابة</span>
                   <img src="assets/images/chevron-down.svg" class="s17-dd-chevron" alt="">
                 </button>
                 <ul class="s17-dropdown-list hidden" id="dd2-list" role="listbox">
-                  <li onclick="selectDropdown(17,2,'גדל')">גדל</li>
-                  <li onclick="selectDropdown(17,2,'קטן')">קטן</li>
-                  <li onclick="selectDropdown(17,2,'לא משתנה')">לא משתנה</li>
+                  <li onclick="selectDropdown(17,2,'تكبُر')">تكبُر</li>
+                  <li onclick="selectDropdown(17,2,'تصغُر')">تصغُر</li>
+                  <li onclick="selectDropdown(17,2,'لا تتغيّر')">لا تتغيّر</li>
                 </ul>
               </div>
               <span class="s17-fillin-text">.</span>
@@ -1775,23 +1772,23 @@
 
           <!-- ══ שורת "צדקתי?" — flex items בתוך הפאנל (Figma node 141:1551) ══ -->
           <button id="submit-btn-s17" class="submit-btn hidden"
-                  onclick="checkAnswersS17()" aria-label="בדוק תשובה"><span class="submit-label">צדקתי?</span></button>
+                  onclick="checkAnswersS17()" aria-label="فحص الإجابة"><span class="submit-label">هل إجابتي صحيحة؟</span></button>
           <div id="try-again-msg-s17" class="try-again-msg hidden">
-            <p class="try-again-err">זו אינה התשובה, נסו שוב.</p>
-            <p>תוכלו ללחוץ על כפתור העזרה</p>
-            <p>כדי לקבל רמז.</p>
+            <p class="try-again-err">هذه لَيْسَت الإجابة، حاوِلوا مرّة أخرى.</p>
+            <p>يُمكِنُكُم الضغط على زرّ مُساعَدة</p>
+            <p>للحصول على تلميح.</p>
           </div>
 
           <!-- ══ פידבק נכון / שגוי — inline בתוך left-panel (אחרי fill-in dropdowns)
                q8-feedback-box = dark rounded box, Figma ref node 259:1447 ══ -->
           <div id="feedback-s17-correct" class="q8-feedback-box hidden">
-            <p class="s11-feedback-title">צדקת! </p>
-            <p>כשמגדילים גם את השלם וגם את החלק באותו אחוז, היחס ביניהם נשמר. בואו נראה זאת בזמן המסך של נועה: ביום רגיל זמן המסך הוא 105 דקות מתוך 300 דקות, ובסוף השבוע זמן המסך גדל ל-126 דקות, והזמן הכולל ל-360 דקות. כלומר, בשני המקרים זמן המסך יהיה 35% מהזמן הפנוי שלה.</p>
+            <p class="s11-feedback-title">إجابتك صحيحة! </p>
+            <p>عندما نزيد العدد الصحيح وأيضًا الجُزء بنَفْس النسبة المئويّة، تبقى النسبة بينَهُما ثابتة. تعالوا نرى ذلك من خلال وقت الشاشة لدى أمل: في اليوم العاديّ، وقت الشاشة هو 105 دقائق مِن 300 دقيقة، وفي نهاية الأسبوع يزداد وقت الشاشة إلى 126 دقيقة، ويزداد الوقت الإجماليّ إلى 360 دقيقة. أيّ أنّ وقت الشاشة في الحالتَيْن يشكّل %35 من وقت فراغها.</p>
           </div>
 
           <div id="feedback-s17-incorrect" class="q8-feedback-box hidden">
-            <p class="s11-feedback-title s11-feedback-incorrect-title">זו טעות</p>
-            <p>כשמגדילים גם את השלם וגם את החלק באותו אחוז, היחס ביניהם נשמר. בואו נראה זאת בזמן המסך של נועה: ביום רגיל זמן המסך הוא 105 דקות מתוך 300 דקות, ובסוף השבוע זמן המסך גדל ל-126 דקות, והזמן הכולל ל-360 דקות. כלומר, בשני המקרים זמן המסך יהיה 35% מהזמן הפנוי שלה.</p>
+            <p class="s11-feedback-title s11-feedback-incorrect-title">هذا خطأ</p>
+            <p>عندما نزيد العدد الصحيح وأيضًا الجُزء بنَفْس النسبة المئويّة، تبقى النسبة بينَهُما ثابتة. تعالوا نرى ذلك من خلال وقت الشاشة لدى أمل: في اليوم العاديّ، وقت الشاشة هو 105 دقائق مِن 300 دقيقة، وفي نهاية الأسبوع يزداد وقت الشاشة إلى 126 دقيقة، ويزداد الوقت الإجماليّ إلى 360 دقيقة. أيّ أنّ وقت الشاشة في الحالتَيْن يشكّل %35 من وقت فراغها.</p>
           </div>
 
         </div><!-- /left-panel -->
@@ -1824,11 +1821,11 @@
          Figma: node 141:1740, bottom:0, left:calc(50%-266.75px)=693px, 444×715
          overflow:hidden clips the full character image to the visible portrait -->
     <div class="s17-noa-wrap">
-      <img class="s17-noa-img" src="assets/images/noa-character-s17.png" alt="נועה">
+      <img class="s17-noa-img" src="assets/images/noa-character-s17.png" alt="أمل">
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(17)" aria-label="חזרה"></button>
-    <button id="next-s17" class="nav-btn next-btn hidden" onclick="goTo(19)" aria-label="המשך"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(17)" aria-label="العودة"></button>
+    <button id="next-s17" class="nav-btn next-btn hidden" onclick="goTo(19)" aria-label="التالي"></button>
   </section>
 
   <!-- ═══════════════════════════════════════════════
@@ -1844,9 +1841,9 @@
 
     <div class="f6-header-text">
       <div>
-        <p>נועה כבר מסתדרת מעולה עם הזמן שלה, גם בימים עמוסים!</p>
-        <p>אבל מה קורה כשהיא צריכה לשמור על אחותה הקטנה?</p>
-        <p>אהה, את זה היא כבר תחשב בפעם אחרת…</p>
+        <p>أصبحَتْ أمل بارعة جدًّا في تنظيم وقتها، حتّى في الأيام المليئة بالمهام!</p>
+        <p>لكن ماذا يحدُث عندما تضطرّ إلى الاعتناء بأختِها الصغيرة؟</p>
+        <p>آهااا، ستقوم بحِساب ذلك في مرّة أخرى...</p>
       </div>
     </div>
 
@@ -1854,7 +1851,7 @@
          משתמש באותו Submit_Btn sprite כמו כפתורי "צדקתי?" — מאושר ב-Figma node I141:1807;61:160.
          הטקסט "סיימתי" מוצג דרך .submit-label (כמו שאר כפתורי הגשה בלומדה). -->
     <button class="s18-done-btn" onclick="completeMission()">
-      <span class="submit-label">סיימתי</span>
+      <span class="submit-label">اِنْتَهَيْتُ</span>
     </button>
 
     <!-- After-interaction overlay — מוסתר עד לחיצה על "סיימתי"
@@ -1862,30 +1859,30 @@
          ─ שכבת כהות: rgba(0,0,0,0.45)
          ─ כרטיס לבן ב-(529px, 294px) גודל 862×454px -->
     <div id="s18-completion-overlay" class="s18-completion-overlay hidden"
-         role="dialog" aria-modal="true" aria-label="משימה הושלמה">
+         role="dialog" aria-modal="true" aria-label="اِنْتَهَت المُهمّة">
       <div class="s18-completion-modal">
         <img class="s18-modal-bg" src="assets/images/textbox3.png" alt="">
         <!-- QA r1 (item 12): כפתור סגירה X — נכס PNG מ-Figma node 348:1583,
              במיקום מהקומפוננטה (left:759, top:45 בתוך הכרטיס 862×454). -->
-        <button class="s18-modal-close-btn" onclick="closeMission()" aria-label="סגור"></button>
+        <button class="s18-modal-close-btn" onclick="closeMission()" aria-label="إغلاق"></button>
         <div class="s18-modal-text">
-          <p class="s18-modal-title">כל הכבוד, המשימה הושלמה!</p>
-          <p class="s18-modal-grade">הציון שלך הוא <span id="user-grade-display">--</span>.</p>
+          <p class="s18-modal-title">كل الاحترام، أنهَيْت المهمّة!</p>
+          <p class="s18-modal-grade">علامتك هي <span id="user-grade-display">--</span>.</p>
           <p class="s18-modal-spacer">&ZeroWidthSpace;</p>
-          <p class="s18-modal-close">יש לסגור את המשימה בלחיצה על X.</p>
+          <p class="s18-modal-close">يجب إغلاق المهمّة من خلال الضغط على X.</p>
         </div>
       </div>
     </div>
 
-    <button class="nav-btn prev-btn" onclick="goTo(18)" aria-label="חזרה"></button>
-    <button class="nav-btn next-btn" onclick="goTo(19)" aria-label="המשך" style="visibility:hidden"></button>
+    <button class="nav-btn prev-btn" onclick="goTo(18)" aria-label="العودة"></button>
+    <button class="nav-btn next-btn" onclick="goTo(19)" aria-label="التالي" style="visibility:hidden"></button>
   </section>
 
   <!-- ═══ Graph Zoom Modal — בתוך #app כדי לשמור על קנה מידה ═══
        הכרטיסייה עצמה (#graph-card) מועברת לכאן ב-DOM כשפותחים זום
        ומוחזרת ל-#graph-card-host כשסוגרים. ═══════════════════ -->
   <div id="graph-zoom-modal" class="graph-zoom-overlay hidden"
-       onclick="closeGraphZoom()" role="dialog" aria-modal="true" aria-label="גרף מוגדל">
+       onclick="closeGraphZoom()" role="dialog" aria-modal="true" aria-label="خطّ بيانيّ مكبَّر">
     <div class="graph-zoom-content" onclick="event.stopPropagation()">
       <!-- אין כפתור X — כפתור הזום עצמו בתוך הכרטיסייה מחליף תמונה ל-zoom-out -->
       <div id="graph-zoom-host" class="graph-zoom-host"></div>

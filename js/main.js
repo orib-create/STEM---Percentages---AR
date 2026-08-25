@@ -249,14 +249,14 @@ function resetScreenState() {
     const dd1Value = document.getElementById('dd1-value');
     const dd1Btn   = document.getElementById('dd1-btn');
     const dd1List  = document.getElementById('dd1-list');
-    if (dd1Value) dd1Value.textContent = 'בחרו תשובה';
+    if (dd1Value) dd1Value.textContent = 'اختاروا الإجابة';
     if (dd1Btn)   { dd1Btn.classList.remove('correct', 'incorrect'); dd1Btn.disabled = false; }
     if (dd1List)  dd1List.classList.add('hidden');
     // אפס dropdown 2
     const dd2Value = document.getElementById('dd2-value');
     const dd2Btn   = document.getElementById('dd2-btn');
     const dd2List  = document.getElementById('dd2-list');
-    if (dd2Value) dd2Value.textContent = 'בחרו תשובה';
+    if (dd2Value) dd2Value.textContent = 'اختاروا الإجابة';
     if (dd2Btn)   { dd2Btn.classList.remove('correct', 'incorrect'); dd2Btn.disabled = false; }
     if (dd2List)  dd2List.classList.add('hidden');
     document.getElementById('submit-btn-s17')?.classList.add('hidden');
@@ -446,7 +446,7 @@ let attemptCountS17  = 0;
 let s17dd1Selection  = null;  // dropdown 1
 let s17dd2Selection  = null;  // dropdown 2
 const CORRECT_DD1    = '35%';
-const CORRECT_DD2    = 'לא משתנה';
+const CORRECT_DD2    = 'لا تتغيّر';
 
 /* Resume-state flag / selection / attempts for Q4 (Screen 10) */
 let screen9Done = false;
