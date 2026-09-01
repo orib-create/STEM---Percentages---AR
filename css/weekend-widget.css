@@ -105,7 +105,7 @@
   direction: rtl;
   padding: 22px 24px;
   box-sizing: border-box;
-  font-family: 'Assistant', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* QA r1 (item 11): shrink the embedded content slightly so it fits the
      605×754 host with no scrollbar by default (content was ~792px tall). */
   zoom: 0.94;

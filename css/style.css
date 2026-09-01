@@ -2,7 +2,7 @@
    STEM Math Lomdah — style.css
    Canvas: 1920 × 1080 px (scaled to viewport)
    Direction: RTL Hebrew
-   Fonts: Assistant (Hebrew), Open Sans (numbers)
+   Font: Open Sans (Hebrew + numbers)
    ============================================================ */
 
 /* ─── Local @font-face — offline-friendly (no Google Fonts) ───
@@ -10,55 +10,6 @@
    relative paths so the lomda renders correctly from file://
    and inside LMS/SCORM environments without internet access.
    ─────────────────────────────────────────────────────────── */
-@font-face {
-  font-family: 'Assistant';
-  src: url('../assets/fonts/Assistant-ExtraLight.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Assistant';
-  src: url('../assets/fonts/Assistant-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Assistant';
-  src: url('../assets/fonts/Assistant-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Assistant';
-  src: url('../assets/fonts/Assistant-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Assistant';
-  src: url('../assets/fonts/Assistant-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Assistant';
-  src: url('../assets/fonts/Assistant-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Assistant';
-  src: url('../assets/fonts/Assistant-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* Merriweather Bold Italic — used only for the tooltip info-icon "i" (Figma spec) */
 @font-face {
@@ -140,6 +91,37 @@
   font-display: swap;
 }
 
+/* Noto Sans Arabic — Open Sans has no Arabic glyphs (Latin/Greek/Cyrillic only),
+   so Arabic text falls through the font-family stack to this instead of the OS default. */
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/NotoSansArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/NotoSansArabic-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/NotoSansArabic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/NotoSansArabic-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ─── Reset & Base ─────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -152,7 +134,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   background: #111;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   direction: rtl;
 }
 
@@ -428,6 +410,11 @@ html, body {
   gap: 2px;
 }
 
+/* Screen 0 textbox — wider content box (scoped to #textbox-s0 only, not other screens) */
+#textbox-s0 .textbox1-content {
+  width: 1800px;
+}
+
 /* Screen 3 textbox starts at same position */
 .textbox1-s2 {
   left: 542px;
@@ -487,7 +474,7 @@ html, body {
 /* ─── Notification live-text overlay (Phase 2 refactor) ─────
    Replaces baked-text notification-msg2.png.
    notification-icon.png = pill background + hourglass icon only.
-   Text is live HTML (Figma: node I154:1541;5:26, font: Assistant).
+   Text is live HTML (Figma: node I154:1541;5:26, font: Open Sans).
    ─────────────────────────────────────────────────────────── */
 
 /* Background/icon image — fills the 537×179 pill container */
@@ -522,9 +509,9 @@ html, body {
   text-align: right;
 }
 
-/* Line 1 — Figma: Assistant SemiBold 24px */
+/* Line 1 — Figma: Open Sans SemiBold 24px */
 .notif-line1 {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 24px;
   font-weight: 600;
   color: #030303;
@@ -533,9 +520,9 @@ html, body {
   white-space: nowrap;
 }
 
-/* Line 2 — Figma: Assistant Bold 28px */
+/* Line 2 — Figma: Open Sans Bold 28px */
 .notif-line2 {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 700;
   color: #030303;
@@ -625,7 +612,7 @@ html, body {
 }
 
 /* ─── Help button live text label ────────────────────────────
-   Figma: Assistant Bold 36px #fcfafa, centered in the 150×150 button.
+   Figma: Open Sans Bold 36px #fcfafa, centered in the 150×150 button.
    Label appears only in Open state; hidden in Close state (X shown in image).
    Figma node: 44:41 / 43:38 (text layer within "Role=Open, State=Normal")
    ─────────────────────────────────────────────────────────── */
@@ -638,9 +625,10 @@ html, body {
   top: 63px;
   left: 66px;
   transform: translate(-50%, -50%);
-  font-family: 'Assistant', sans-serif;
-  font-size: 30px;
-  font-weight: 700;           /* Bold — Figma: font-['Assistant:Bold'] */
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
+  font-size: 22px;            /* QA: Arabic "مساعَدة" is wider than the original short
+                                  label — 30px overflowed past the button's circle art */
+  font-weight: 700;           /* Bold — Figma: font-['Open Sans:Bold'] */
   color: #fcfafa;             /* Figma: text-[#fcfafa] */
   white-space: nowrap;
   pointer-events: none;
@@ -677,7 +665,7 @@ html, body {
 }
 
 .help-popup p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-weight: 600; /* SemiBold */
   font-size: 36px;
   color: #030303;
@@ -686,25 +674,53 @@ html, body {
   white-space: normal;           /* טקסט עוטף שורות כמו בפיגמה */
 }
 
+/* QA: heights below are sized to the Arabic copy in each popup — the
+   Hebrew original's shorter text fit the original box sizes, but the
+   longer Arabic sentences were being clipped by `.help-popup`'s
+   overflow: hidden. */
 #help-popup-s3 {
   width: 450px;
+  height: 444px;
+}
+
+#help-popup-s4 {
+  height: 368px;
 }
 
 #help-popup-s6 {
-  height: 420px;
-}
-
-#help-popup-s17 {
-  height: 300px;
+  height: 672px;
 }
 
 #help-popup-s7 {
   width: 470px;
+  height: 368px;
+}
+
+#help-popup-s9 {
+  height: 368px;
+}
+
+#help-popup-s11 {
+  height: 444px;
+}
+
+#help-popup-s12 {
+  height: 444px;
 }
 
 #help-popup-s13 {
   width: 521px;
-  height: 220px;
+  height: 368px;
+}
+
+#help-popup-s15 {
+  height: 292px;
+}
+
+#help-popup-s17 {
+  height: 320px;
+  z-index: 11;
+  width: 1000px;
 }
 
 /* ─── Content Area (Screens 4 & 5) ─────────────────────── */
@@ -740,7 +756,7 @@ html, body {
   border-radius: 13px;
   background: linear-gradient(90.29deg, rgb(7,80,171) 0.3%, rgb(53,113,181) 50%, rgb(73,126,188) 99.7%);
   box-shadow: 1px 0 0.5px rgba(255,255,255,0.5);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-weight: 700;
   font-size: 36px;
   color: #fcfafa;
@@ -795,6 +811,13 @@ html, body {
   font-weight: 600;
   color: #030303;
   line-height: 1.55;
+}
+
+/* Screen 12 (Q5A): shrink the blank spacer line between the question and
+   "استعينوا بالخطّ البيانيّ..." — full q-text line-height left too much gap. */
+.q-text-spacer {
+  font-size: 14px;
+  line-height: 1;
 }
 
 .q-bold {
@@ -934,7 +957,7 @@ html, body {
   background: #fff; border: 1px solid #aeaeae; border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   padding: 12px 15px;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 26px; font-weight: 400; color: #222;
   white-space: normal;
   text-align: right; direction: rtl; line-height: normal;
@@ -963,7 +986,7 @@ html, body {
   background: #fefdfd;
   border: 3px solid #2b369b;
   border-radius: 8px;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-weight: 700;
   font-size: 34px;
   color: #030303;
@@ -1024,7 +1047,7 @@ html, body {
   padding: 18px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  /* gap: 12px; */
   direction: rtl;
   flex-shrink: 0;
 }
@@ -1037,7 +1060,7 @@ html, body {
 }
 
 .hint-title {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 800;
   color: #2b369b;
@@ -1057,7 +1080,7 @@ html, body {
 }
 
 .hint-text {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #030303;
@@ -1099,9 +1122,9 @@ html, body {
   justify-content: center;
 }
 
-/* תווית הכפתור — Figma: Assistant Bold 36px #fcfafa */
+/* תווית הכפתור — Figma: Open Sans Bold 36px #fcfafa */
 .submit-label {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 36px;
   font-weight: 700;
   color: #fcfafa;
@@ -1143,7 +1166,7 @@ html, body {
 
 /* ─── Try-Again inline message (after 1st wrong attempt) ─── */
 .try-again-msg {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   line-height: 1.55;
   text-align: right;
@@ -1168,9 +1191,11 @@ html, body {
    transform only — keeps the "צדקתי?" button and flex layout in place. */
 [data-screen="12"] .try-again-msg {
   transform: translateY(-160px);
+  margin-left: -420px;
 }
 [data-screen="14"] .try-again-msg {
   transform: translateY(-230px);
+  margin-left: -400px;
 }
 
 /* Screen 10 (Q4): lift the try-again message so it clears the hint card text,
@@ -1185,7 +1210,21 @@ html, body {
    bit LEFT so the message's right edge lines up with the question text. */
 [data-screen="13"] .submit-row {
   left: 217px;
-  top: 780px;
+  top: 812px;
+}
+
+[data-screen="5"] .submit-row {
+  left: 220px;
+  top: 717px;
+}
+
+[data-screen="7"] .submit-row {
+  left: 185px;
+  top: 777px;
+}
+
+[data-screen="8"] .submit-row {
+  left: 200px;
 }
 
 /* ─── Right Panel (TimeManagementWidget Container) ──────────
@@ -1213,10 +1252,10 @@ html, body {
    ──────────────────────────────────────────────────────── */
 .feedback-panel {
   position: absolute;
-  left: 80px;
-  top: 106px;
-  width: 815px;
-  height: 770px;
+  left: 140px;
+  top: 20px;
+  width: 640px;
+  height: 1050px;
   background: #171717;
   border-radius: 100px;
   overflow: hidden;
@@ -1231,10 +1270,12 @@ html, body {
 
 
 /* טקסט הפידבק — Figma: pt:80 pr:80 pb:271 pl:50, items-end, direction:rtl */
+/* QA: pb reduced from 271px (there is no character graphic reserving that
+   space in this box) to make room for the longer Arabic explanation text. */
 .feedback-text {
   position: absolute;
   inset: 0px 0 0 0;
-  padding: 40px 56px 271px 40px;
+  padding: 40px 56px 80px 40px;
   text-align: right;
   direction: rtl;
   z-index: 1;
@@ -1244,13 +1285,18 @@ html, body {
   overflow: hidden;
 }
 
-/* כל שורת טקסט — Assistant SemiBold 28px, whitespace-pre, leading-normal */
+/* כל שורת טקסט — Open Sans SemiBold 28px, leading-normal */
+/* QA: white-space changed from pre (no wrap — overflowed past the box on long
+   Arabic lines) to normal so long sentences wrap; line-height fixed at 1.3
+   instead of "normal" (the Open Sans / Noto Sans Arabic fallback pairing
+   computed a very tall "normal" line box, which was most of why this panel
+   needed so much vertical space). */
 .feedback-text p {
   font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
-  line-height: normal;
-  white-space: pre;
+  line-height: 1.3;
+  white-space: normal;
   width: 100%;
   text-align: right;
 }
@@ -1358,8 +1404,8 @@ html, body {
 /* תוויות טקסט על הפסים הצבעוניים */
 .s4-tv-label {
   position: absolute;
-  top: 154px;
-  font-family: 'Assistant', sans-serif;
+  top: 150px;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 700;
   color: #030303;
@@ -1369,7 +1415,7 @@ html, body {
 /* "40%" — קצה ימני ב-x≈392 בתוך מיכל 490.653px */
 .s4-tv-40   { right: 99px; }
 /* "השאר" — קצה ימני ב-x≈178 בתוך מיכל 490.653px */
-.s4-tv-rest { right: 313px; }
+.s4-tv-rest { right: 313px; top: 140px; }
 
 /* ─── Screen 5 (Frame 5): Feedback box (inside left panel) ──
    מופיע בתוך הפאנל השמאלי אחרי הגשת תשובה (לא overlay).
@@ -1392,8 +1438,33 @@ html, body {
   text-align: right;
 }
 
+/* QA: screen 7 (Q3a) only — the Arabic body lines wrapped to 2 lines each at
+   766px, pushing the box's bottom past the canvas edge. Widening (box grows
+   leftward here since it's right-aligned in RTL, away from the diagram on
+   the right) lets every line fit on one line again, so the box is short
+   enough to fit in the remaining vertical space below the radio buttons. */
+#feedback-s6-correct,
+#feedback-s6-incorrect {
+  width: 820px;
+  min-height: 225px;
+  padding: 24px 32px;   /* trimmed a few px off top/bottom padding — even
+                            at 1 line per row this box just grazed the
+                            canvas edge */
+  margin-right: -20px;
+}
+
+/* QA: screen 8 (Q3b) only — one very long sentence was wrapping to enough
+   lines at 766px that the box's bottom ran ~49px past the canvas edge.
+   920px is as wide as this box can go before its (fixed-right, RTL) left
+   edge would itself run off the canvas on the left. */
+#feedback-s7-correct,
+#feedback-s7-incorrect {
+  width: 920px;
+  margin-right: -120px;
+}
+
 .s4-feedback-title {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 700;
   color: #fcfafa;
@@ -1404,7 +1475,7 @@ html, body {
 }
 
 .s4-feedback-body {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
@@ -1436,12 +1507,13 @@ html, body {
 }
 .f6-textbox1 img {
   position: absolute;
-  width: 1920px; height: 1080px;
-  left: -400.75px; top: 0;
+  width: 2066px;
+  left: -530.75px;
+  top: 0;
 }
 
 /* Header text — Figma 120:448: right:0, top:0 within header (= canvas right edge),
-   w:1378px, h:163px, px:50px, py:10px, font: Assistant SemiBold 28px */
+   w:1378px, h:163px, px:50px, py:10px, font: Open Sans SemiBold 28px */
 .f6-header-text {
   position: absolute;
   right: 0; top: 0;
@@ -1458,7 +1530,7 @@ html, body {
   text-align: right;
 }
 .f6-header-text p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-weight: 600;
   font-size: 34px;
   line-height: 1.4;
@@ -1477,7 +1549,7 @@ html, body {
 /* Screen 11 only — widen the box to give the wrapped line more room. */
 [data-screen="11"] .f6-header-text {
   right: -32px;
-  width: 1426px;
+  width: 1526px;
 }
 
 /* Ofri's phone — container window at (139,225), full-canvas image clipped inside */
@@ -1523,7 +1595,7 @@ html, body {
 /* QA r1 (item 6): live message text + live timestamp over the empty bubbles
    (Figma node 118:428). Positions are in-bubble offsets from the Figma frame;
    text is right-aligned (anchored by `right`). Hebrew uses the project font
-   Assistant (Figma's Inter is Latin-only / not bundled offline). */
+   Open Sans (Figma's Inter is Latin-only / not bundled offline). */
 .ofri-text,
 .ofri-time {
   position: absolute;
@@ -1532,7 +1604,7 @@ html, body {
   text-align: right;
   white-space: nowrap;
   line-height: normal;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   pointer-events: none;
   user-select: none;
 }
@@ -1543,11 +1615,11 @@ html, body {
 /* Per-message offsets (right edge / top, within each bubble box) */
 .ofri-text-m1 { right: 112.6px; top: 44.36px; }
 .ofri-time-m1 { right: 71.47px; top: 86.95px; }
-.ofri-text-m2 { right: 47.61px; top: 27.64px; }
+.ofri-text-m2 { right: 47.61px; top: 10px; }
 .ofri-time-m2 { right: 56.99px; top: 69.07px; }
-.ofri-text-m3 { right: 47.61px; top: 28px; }
+.ofri-text-m3 { right: 47.61px; top: 26px; line-height: 1.15; }
 .ofri-time-m3 { right: 72.36px; top: 164.69px; }
-.ofri-text-m4 { right: 47.61px; top: 27.44px; }
+.ofri-text-m4 { right: 47.61px; top: 10px; }
 .ofri-time-m4 { right: 57.88px; top: 66.27px; }
 
 /* ─── Left panel Q3 variant ─────────────────────────────── */
@@ -1564,7 +1636,7 @@ html, body {
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0px;
   /*
     RTL flex reversal: flex-start = physical RIGHT.
     align-items: flex-start aligns each row to the right edge ✓
@@ -1590,7 +1662,7 @@ html, body {
 }
 
 .radio-label {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 400;
   color: #030303;
@@ -1742,7 +1814,7 @@ html, body {
 /* Label overlays — right-anchored using: right = container_w(522) − figma_left */
 .q3-tv-label {
   position: absolute;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 33px;
   font-weight: 700;
   white-space: nowrap;
@@ -1758,7 +1830,7 @@ html, body {
 .q3-tv-105      { right: 150px; top: 193px; color: #fcfafa; }
 
 /* Bottom row labels */
-.q3-tv-rest-bot { right: 282px; top: 328px; color: #030303; }
+.q3-tv-rest-bot { right: 256px; top: 318px; color: #030303; }
 .q3-tv-40       { right: 121px; top: 328px; color: #030303; }
 
 /* ─── Frame 9 (Screen 9): Calendar notification ──────────── */
@@ -1821,20 +1893,20 @@ html, body {
   z-index: 1;
 }
 .f9-m1-title {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 700;
   color: #030303;
   margin: 0;
-  line-height: normal;
+  line-height: 1.15;
 }
 .f9-m1-body {
-  font-family: 'Assistant', sans-serif;
-  font-size: 29px;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
+  font-size: 27px;
   font-weight: 600;
   color: #030303;
   margin: 0;
-  line-height: normal;
+  line-height: 1.15;
 }
 
 /* ─── Frame 10 (Screen 10): Q4 — full-width card ─────────── */
@@ -1847,7 +1919,7 @@ html, body {
   width: 1618px;
   height: 795px;
   padding: 80px 73px 271px 50px;
-  gap: 15px;
+  /* gap: 15px; */
   /* RTL: flex-start = physical right — aligns all children to the right */
   align-items: flex-start;
   /* let the inline feedback box overflow instead of being clipped (screens 10, 16, 18) */
@@ -1871,7 +1943,7 @@ html, body {
 [data-screen="10"] .s9-feedback-box {
   position: absolute;
   left: 50px;
-  top: 600px;
+  top: 400px;
 }
 
 /*
@@ -1946,7 +2018,7 @@ html, body {
   background: #fefdfd;
   border: 3px solid #2b369b;   /* כחול — Figma: border-[#2b369b] */
   border-radius: 8px;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 700;
   color: #030303;
@@ -1962,7 +2034,7 @@ html, body {
 .s11-input-field.incorrect { border-color: #ca433d !important; background: #fdf0f0; }
 
 .s11-unit {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 400;
   color: #030303;
@@ -1986,15 +2058,17 @@ html, body {
 }
 
 [data-screen="14"] .s11s12-feedback-pos {
-  top: 500px;
+  top: 400px;
   width: 800px;
 }
 
-/* Screen 12 only — push the feedback box down a touch. */
+/* Screen 12 only — push the feedback box down a touch.
+   QA: width grown from 1110px to 1190px — one Arabic line was wrapping to a
+   second line at 1110px, pushing the box's bottom past the canvas edge. */
 [data-screen="12"] .s11s12-feedback-pos {
-  top: 560px;
-  left: 127px;
-  width: 1110px;
+  top: 585px;
+  left: 152px;
+  width: 1000px;
 }
 
 /* ── OLD overlay feedback (kept for reference, no longer used on screens 12/12) ── */
@@ -2033,7 +2107,7 @@ html, body {
 }
 
 .s11-feedback-text p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
@@ -2057,9 +2131,9 @@ html, body {
 /* Figma: left:980, top:144, w:789, h:795, pt:80 pr:73 pb:271 pl:50 */
 .s11-right-panel {
   position: absolute;
-  left: 980px;
+  left: 910px;
   top: 144px;
-  width: 789px;
+  width: 900px;
   height: 795px;
   padding: 80px 73px 271px 50px;
   display: flex;
@@ -2077,12 +2151,12 @@ html, body {
   text-align: right;
 }
 .s11-context-text p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #030303;
   line-height: 1.45;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 /* ─── Graph card: 589×513, white bg, rounded, shadow, overflow:hidden */
@@ -2127,16 +2201,16 @@ html, body {
   position: absolute;
   left: 103px;
   top: 16px;
-  width: 151px;
+  width: 254px;
   height: 30px;
   background: #2b369b;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   color: #fefdfd;
   white-space: nowrap;
   direction: rtl;
@@ -2147,7 +2221,7 @@ html, body {
 .graph-lbl-bottom {
   position: absolute;
   left: 378px;
-  top: 390px;
+  top: 337px;
   width: 178px;
   background: #2b369b;
   border-radius: 5px;
@@ -2158,9 +2232,9 @@ html, body {
   direction: rtl;
 }
 .graph-lbl-bottom p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   color: #fefdfd;
   line-height: 1.3;
   text-align: right;
@@ -2213,7 +2287,7 @@ html, body {
    בהתאם לקומפוננטת Figma 132:1629 (State=Hover — תיבת bg-white). רקע אטום מבטיח
    שקווי הגרף לא ייראו מבעד לרקע התווית. */
 .gp .gp-lbl { display: none; position: absolute; left: 30px; top: 1px;
-  font-family: 'Assistant', sans-serif; font-size: 20px; font-weight: 500;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif; font-size: 20px; font-weight: 400;
   color: #030303; white-space: nowrap; direction: ltr;
   background: #ffffff; padding: 1px 7px; border-radius: 5px; }
 
@@ -2285,11 +2359,12 @@ html, body {
   z-index: 5;
 }
 .s11-graph-note p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 400;
   color: #2b369b;
   line-height: 1.45;
+  width: 300px;
 }
 
 /* Screen 13 (Q5B) has no context text above the graph, so the graph sits
@@ -2403,11 +2478,12 @@ html, body {
   text-align: right;
 }
 .s13-note-text p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 26px;
   font-weight: 600;
   color: #2b369b;
   line-height: 1.45;
+  width: 300px;
 }
 
 /* פידבק שגוי S13: CSS-only dark box at same position as s11-feedback-panel */
@@ -2450,7 +2526,7 @@ html, body {
 }
 
 .q8-feedback-box p {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #fcfafa;
@@ -2468,9 +2544,19 @@ html, body {
    the design instead of breaking earlier in the narrower 709px box. */
 [data-screen="16"] #feedback-s15-correct,
 [data-screen="16"] #feedback-s15-incorrect {
-  width: 812px;
+  width: 1000px;
   padding-left: 0;
   padding-right: 32px;
+  height: 400px;
+}
+
+/* QA: the Arabic first line ("عند زيادة عدد بنسبة مئويّة معيّنة...") wraps to
+   2 lines here no matter how wide the box gets, so the box was tightened
+   with a smaller line-height instead — otherwise the last line ran past the
+   canvas edge. */
+[data-screen="16"] #feedback-s15-correct p,
+[data-screen="16"] #feedback-s15-incorrect p {
+  line-height: 1.1;
 }
 
 /* Screen 16 (Q6) — feedback is inline in left-panel-f10 (no extra CSS) */
@@ -2561,7 +2647,7 @@ html, body {
 }
 
 .s17-fillin-line {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #030303;
@@ -2581,7 +2667,7 @@ html, body {
 }
 
 .s17-fillin-text {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #030303;
@@ -2603,7 +2689,7 @@ html, body {
   background: #fff;
   border: 3px solid #2b369b;
   border-radius: 8px;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #2b369b;
@@ -2656,7 +2742,7 @@ html, body {
 
 .s17-dropdown-list li {
   padding: 12px 18px;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 34px;
   font-weight: 600;
   color: #030303;
@@ -2803,7 +2889,7 @@ html, body {
 
 /* "כל הכבוד, המשימה הושלמה!" — 36px bold */
 .s18-modal-title {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 36px;
   font-weight: 700;
   color: #030303;
@@ -2812,7 +2898,7 @@ html, body {
 
 /* "הציון שלך הוא [UserGrade]." — 45px bold */
 .s18-modal-grade {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 45px;
   font-weight: 700;
   color: #030303;
@@ -2827,9 +2913,9 @@ html, body {
 
 /* "יש לסגור את המשימה בלחיצה על X." — 36px medium */
 .s18-modal-close {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 400;
   color: #030303;
   line-height: normal;
 }
